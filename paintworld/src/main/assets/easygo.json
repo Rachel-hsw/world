@@ -1,0 +1,19 @@
+{
+  "easyGoVersion": "1.0",
+  "client": "net.huanci.hsj",
+  "logicEntities": [
+    {
+      "head": {
+        "function": "magicwindow",
+        "required": "true"
+      },
+      "body": {
+        "mode": "0",
+        "activityPairs": [
+        ],
+        "transActivities": [
+        ]
+      }
+    }
+  ]
+}
