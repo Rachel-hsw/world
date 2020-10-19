@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rootview" android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/top_search_view" android:background="?top_bar_color" android:layout_width="fill_parent" android:layout_height="40.0dip">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:id="@id/imageView_search" android:paddingLeft="@dimen/margin_normal" android:paddingTop="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal_half" android:paddingBottom="@dimen/margin_normal" android:layout_width="38.0dip" android:layout_height="38.0dip" android:tint="?topbar_icon_color" app:srcCompat="@drawable/main_search" />
+        <net.lucode.hackware.magicindicator.MagicIndicator android:id="@id/magic_indicator" android:layout_width="fill_parent" android:layout_height="40.0dip" />
+    </LinearLayout>
+    <androidx.viewpager.widget.ViewPager android:id="@id/view_pager" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/top_search_view" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/top_search_view" layout="@layout/shadow_bottom" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/view_no_data_and_error" />
+</RelativeLayout>

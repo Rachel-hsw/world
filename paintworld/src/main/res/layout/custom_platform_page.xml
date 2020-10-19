@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/llPanel" android:background="#fff3f3f3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <TextView android:textSize="@dimen/sp_14" android:textColor="@color/_aaaaaa" android:id="@id/tv_tips" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_15" android:layout_marginTop="@dimen/margin_normal_plus" android:text="@string/ssdk_share_to" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rc1" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <View android:id="@id/view_divider" android:background="#ffd5d5d5" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rc2" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

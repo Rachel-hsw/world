@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.MaskImageView android:id="@id/imageView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" />
+    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center|right|top" android:id="@id/checkbtn" android:padding="@dimen/dp_7" android:layout_width="36.0dip" android:layout_height="36.0dip" />
+    <TextView android:textSize="@dimen/sp_14" android:textColor="?time_text_color" android:layout_gravity="bottom|center" android:id="@id/tv_camera" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp_30" android:text="相机" />
+</FrameLayout>

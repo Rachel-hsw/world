@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" />
+    <ListView android:id="@id/lv_selector" android:background="?item_clor" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:divider="?all_line_gray" android:dividerHeight="1.0px" android:layout_below="@id/topBar" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

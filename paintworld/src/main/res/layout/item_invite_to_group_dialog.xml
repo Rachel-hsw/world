@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.view.MaskImageView android:id="@id/maskIV" android:layout_width="@dimen/dp_35" android:layout_height="@dimen/dp_35" app:srcCompat="@mipmap/default_head_image"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

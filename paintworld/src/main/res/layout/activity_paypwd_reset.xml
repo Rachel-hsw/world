@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ver="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" />
+    <TextView android:textColor="?item_text_color" android:gravity="center" android:id="@id/tv_tips" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_triple_normal" android:text="@string/account_set_paypwd_tips" />
+    <net.huanci.hsj.view.VerificationCodeView android:layout_gravity="center_horizontal" android:id="@id/vc_codeView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:digits="1234567890*" ver:box="6" ver:child_height="50.0dip" ver:child_width="50.0dip" />
+</LinearLayout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RLinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/dp_300" app:background_normal="?dialog_bg_color" app:corner_radius="@dimen/dp_7"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/sp_15" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_double_normal" android:text="发送给：" android:layout_marginStart="@dimen/margin_double_normal" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/dp_35" android:layout_marginLeft="@dimen/dp_20" android:layout_marginTop="@dimen/dp_12" android:layout_marginRight="@dimen/dp_20">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/member_recyclerview" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:layout_gravity="center_vertical" android:id="@id/total_count_tv" android:layout_width="@dimen/dp_60" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <FrameLayout android:layout_gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_20">
+        <RelativeLayout android:id="@id/invite_content_layout" android:padding="@dimen/dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip">
+            <com.ruffian.library.widget.RFrameLayout android:id="@id/icon" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_centerVertical="true" android:layout_marginEnd="8.0dip" android:layout_alignParentEnd="true" app:background_normal="#ffe4f4ff" app:corner_radius="8.0dip">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/share_icon" android:layout_width="@dimen/dp_24" android:layout_height="wrap_content" app:srcCompat="@mipmap/ic_group_head" />
+            </com.ruffian.library.widget.RFrameLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="12.0dip" android:layout_marginEnd="10.0dip" android:layout_toStartOf="@id/icon">
+                <TextView android:textSize="18.0sp" android:textColor="?item_text_color" android:ellipsize="end" android:id="@id/share_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" android:includeFontPadding="false" />
+                <TextView android:textSize="12.0sp" android:textColor="?words_text_color" android:ellipsize="end" android:id="@id/share_des" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/group_invite_desc" android:maxLines="2" android:includeFontPadding="false" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+    <com.ruffian.library.widget.REditText android:textSize="14.0sp" android:textColor="?item_text_color" android:textColorHint="?time_text_color" android:gravity="center_vertical" android:id="@id/et_msg" android:paddingLeft="@dimen/dp_12" android:paddingRight="@dimen/dp_12" android:layout_width="fill_parent" android:layout_height="@dimen/dp_38" android:layout_marginLeft="@dimen/dp_20" android:layout_marginTop="@dimen/dp_12" android:layout_marginRight="@dimen/dp_20" android:hint="@string/group_invite_add_word" android:includeFontPadding="false" android:maxLength="100" app:background_normal="?big_divider" app:corner_radius="@dimen/dp_4" />
+    <View android:background="?dialog_line" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/dp_12" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_48">
+        <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?item_text_color" android:gravity="center" android:id="@id/tv_cancel" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/cancel" android:layout_toStartOf="@id/divider" />
+        <View android:id="@id/divider" android:background="?dialog_line" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_centerInParent="true" />
+        <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?colorAccent" android:gravity="center" android:id="@id/tv_send" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/send" android:layout_toEndOf="@id/divider" />
+    </RelativeLayout>
+</com.ruffian.library.widget.RLinearLayout>

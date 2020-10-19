@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_root_content" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/video_send_talk" android:background="?comment_pop_bg" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <net.huanci.hsj.view.AtEditText android:textColor="?item_text_color" android:textColorHint="?normal_text_color" android:layout_gravity="center" android:id="@id/send_talk_edit" android:visibility="visible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:hint="输入弹幕" android:maxLength="24" android:layout_weight="1.0" style="@style/NormalStyle" />
+        <androidx.appcompat.widget.AppCompatImageView android:gravity="center" android:layout_gravity="center" android:id="@id/send_talk_image" android:padding="@dimen/icon_padding" android:layout_width="@dimen/workdetail_bottom_height" android:layout_height="@dimen/workdetail_bottom_height" android:scaleType="fitCenter" android:tint="?colorAccent" app:srcCompat="@drawable/send" />
+    </LinearLayout>
+</RelativeLayout>

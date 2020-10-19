@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RLinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" ver:background_normal="?dialog_bg_color" ver:corner_radius="@dimen/dp_5"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ver="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_25" android:layout_marginTop="@dimen/dp_23">
+        <TextView android:textSize="@dimen/sp_16" android:textColor="?colorAccent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/input_pay_pwd" android:layout_centerInParent="true" />
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_close" android:layout_width="@dimen/dp_18" android:layout_height="@dimen/dp_18" android:layout_marginRight="@dimen/dp_17" android:layout_alignParentRight="true" android:layout_centerVertical="true" ver:srcCompat="@mipmap/close" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/sp_50" android:textColor="?words_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_triple_normal" android:text="0" />
+    <TextView android:textSize="@dimen/sp_14" android:textColor="?words_text_color" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_half" android:text="@string/shijiebi" />
+    <net.huanci.hsj.view.VerificationCodeView android:layout_gravity="center_horizontal" android:id="@id/vc_codeView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_plus" android:layout_marginTop="@dimen/dp_30" android:layout_marginRight="@dimen/margin_normal_plus" android:digits="1234567890*" ver:box="6" ver:child_height="@dimen/dp_48" ver:child_width="@dimen/dp_48" />
+    <TextView android:textSize="@dimen/sp_14" android:textColor="?words_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_total" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_22" android:layout_marginBottom="@dimen/dp_23" />
+</com.ruffian.library.widget.RLinearLayout>

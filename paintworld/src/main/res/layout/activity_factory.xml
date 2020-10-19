@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/factory" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topBar">
+        <RelativeLayout android:id="@id/layout_zip_crash" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="@dimen/dp_8">
+            <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/profile_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/zip_crash_log" android:layout_centerVertical="true" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/profile_iv" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="@dimen/margin_double_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_zip_web_log" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0px">
+            <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/weblog_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/zip_webLog_log" android:layout_centerVertical="true" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/weblog_iv" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="@dimen/margin_double_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_web_open" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0px">
+            <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/web_open_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/webLog_log_open" android:layout_centerVertical="true" />
+            <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/web_log_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

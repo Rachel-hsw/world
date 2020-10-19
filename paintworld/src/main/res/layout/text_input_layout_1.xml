@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EditText android:textSize="@dimen/sp_15" android:textColor="?bold_text_color" android:textColorHint="?normal_text_color" android:id="@id/editText" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

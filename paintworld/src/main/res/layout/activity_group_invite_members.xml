@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/toolbar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:srcCompat="@mipmap/ic_left_arrow" app:textRight="@string/send" app:title="@string/group_fans" />
+    <RelativeLayout android:id="@id/search_editlayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="10.0dip" android:minHeight="36.0dip" android:layout_below="@id/toolbar">
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?im_group_search_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="搜索" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/search_editlayout">
+        <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/rv_members" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/toolbar" layout="@layout/view_no_data_and_error" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/toolbar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

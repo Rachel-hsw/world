@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.view.LayerManagerView android:id="@id/layerManagerView" android:background="@color/bg_item" android:layout_width="wrap_content" android:layout_height="wrap_content" card_view:cardCornerRadius="4.0dip" card_view:cardElevation="2.0dip" card_view:cardUseCompatPadding="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <include android:id="@id/layer_four" android:layout_width="wrap_content" android:layout_height="120.0dip" layout="@layout/layer_view" />
+            <include layout="@layout/horizontal_divider" />
+            <include android:id="@id/layer_three" android:layout_width="wrap_content" android:layout_height="120.0dip" layout="@layout/layer_view" />
+            <include layout="@layout/horizontal_divider" />
+            <include android:id="@id/layer_two" android:layout_width="wrap_content" android:layout_height="120.0dip" layout="@layout/layer_view" />
+            <include layout="@layout/horizontal_divider" />
+            <include android:id="@id/layer_one" android:layout_width="wrap_content" android:layout_height="120.0dip" layout="@layout/layer_view" />
+        </LinearLayout>
+    </ScrollView>
+</net.huanci.hsj.view.LayerManagerView>

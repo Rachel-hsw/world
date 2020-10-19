@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lihang.ShadowLayout android:layout_width="fill_parent" android:layout_height="fill_parent" app:hl_cornerRadius="15.0dip" app:hl_dx="0.0dip" app:hl_dy="0.0dip" app:hl_shadowBackColor="@color/transparent" app:hl_shadowColor="@color/hsj_shadow_color_deep" app:hl_shadowLimit="@dimen/p_dp_15"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.ruffian.library.widget.RLinearLayout android:orientation="vertical" android:layout_width="@dimen/paint_more_layout_width" android:layout_height="wrap_content" app:background_normal="?item_clor" app:corner_radius="6.0dip">
+        <TextView android:textColor="?item_text_color" android:id="@id/create_folder" android:background="?selectableItemBackground" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/create_draft_folder" style="@style/TimeStyle" />
+        <include android:id="@id/view_divider1" layout="@layout/horizontal_divider_small" />
+        <TextView android:textColor="?item_text_color" android:id="@id/create_draft" android:background="?selectableItemBackground" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/canvas_new" style="@style/TimeStyle" />
+        <include android:id="@id/view_divider6" layout="@layout/horizontal_divider_small" />
+        <TextView android:textColor="?item_text_color" android:id="@id/import_draft" android:background="?selectableItemBackground" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/import_draft" style="@style/TimeStyle" />
+        <include android:id="@id/view_divider2" layout="@layout/horizontal_divider_small" />
+        <TextView android:textColor="?item_text_color" android:id="@id/upload_draft" android:background="?selectableItemBackground" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/upload_draft" style="@style/TimeStyle" />
+        <include android:id="@id/view_divider3" layout="@layout/horizontal_divider_small" />
+        <TextView android:textColor="?item_text_color" android:id="@id/select_draft" android:background="?selectableItemBackground" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/choose" style="@style/TimeStyle" />
+        <include android:id="@id/view_divider4" layout="@layout/horizontal_divider_small" />
+        <TextView android:textColor="?item_text_color" android:id="@id/draft_sort" android:background="?selectableItemBackground" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/sort" style="@style/TimeStyle" />
+        <include android:id="@id/view_divider5" layout="@layout/horizontal_divider_small" />
+        <TextView android:textColor="?item_text_color" android:id="@id/recent_del" android:background="?selectableItemBackground" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/recent_del" style="@style/TimeStyle" />
+    </com.ruffian.library.widget.RLinearLayout>
+</com.lihang.ShadowLayout>

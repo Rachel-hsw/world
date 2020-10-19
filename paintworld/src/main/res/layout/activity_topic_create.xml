@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showText" app:textRight="@string/topic_create" app:title="@string/topics" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topBar">
+        <FrameLayout android:layout_gravity="center_horizontal" android:layout_width="@dimen/dp_105" android:layout_height="@dimen/dp_105" android:layout_marginTop="@dimen/margin_double_normal">
+            <com.ruffian.library.widget.RImageView android:id="@id/img_head" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" app:corner_radius="@dimen/dp_4" app:icon_src_normal="@drawable/ic_camera" />
+            <TextView android:textSize="@dimen/sp_14" android:textColor="?time_text_color" android:layout_gravity="bottom|center" android:id="@id/tv_camera" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_double_normal" android:text="照片/相册" />
+        </FrameLayout>
+        <RelativeLayout android:id="@id/layout_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/dp_25" android:layout_marginRight="@dimen/margin_double_normal">
+            <EditText android:textSize="@dimen/sp_15" android:textColor="?item_text_color" android:textColorHint="?time_text_color" android:id="@id/et_title" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:hint="@string/topic_name" android:maxLength="20" android:layout_toLeftOf="@id/textView_tip20" android:layout_centerVertical="true" android:inputType="textPersonName" />
+            <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:id="@id/textView_tip20" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_double_normal" />
+        <RelativeLayout android:id="@id/layout_des" android:layout_width="fill_parent" android:layout_height="@dimen/dp_180" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_double_normal">
+            <EditText android:textSize="@dimen/sp_15" android:textColor="?item_text_color" android:textColorHint="?time_text_color" android:gravity="top" android:id="@id/et_subTitle" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="@dimen/margin_normal" android:hint="@string/topic_description" android:maxLength="500" android:layout_toLeftOf="@id/textView_tip500" android:layout_centerVertical="true" />
+            <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:id="@id/textView_tip500" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="500" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_double_normal" />
+    </LinearLayout>
+</RelativeLayout>

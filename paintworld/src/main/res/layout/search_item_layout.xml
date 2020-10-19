@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/delete_history" android:padding="@dimen/icon_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:scaleType="fitXY" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="?delete_history_icon" />
+    <TextView android:textColor="?item_text_color" android:gravity="center_vertical" android:id="@id/history_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginRight="20.0dip" android:singleLine="true" android:layout_toLeftOf="@id/delete_history" android:layout_centerVertical="true" style="@style/TimeStyle" />
+</RelativeLayout>

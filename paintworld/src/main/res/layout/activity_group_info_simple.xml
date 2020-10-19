@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showNone" app:title="" />
+    <ScrollView android:id="@id/scrollView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/topBar">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@id/groupInfo_View" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <net.huanci.hsj.view.MaskImageView android:id="@id/group_avatar_imageview" android:layout_width="@dimen/dp_50" android:layout_height="@dimen/dp_50" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/dp_16" />
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50" android:layout_marginLeft="@dimen/dp_16" android:layout_marginTop="@dimen/dp_16" android:layout_toRightOf="@id/group_avatar_imageview">
+                    <TextView android:textSize="@dimen/sp_16" android:textStyle="bold" android:textColor="?item_text_color" android:gravity="center|left" android:id="@id/group_name_textview" android:layout_width="fill_parent" android:layout_height="@dimen/dp_22" android:layout_marginTop="@dimen/dp_3" />
+                    <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:gravity="center|left" android:id="@id/group_member_count_textview" android:layout_width="fill_parent" android:layout_height="@dimen/dp_18" android:layout_marginTop="@dimen/dp_3" />
+                </LinearLayout>
+                <TextView android:textSize="@dimen/sp_15" android:textColor="?item_text_color" android:id="@id/group_desc_text_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="16.0dip" android:layout_marginRight="@dimen/margin_double_normal" android:layout_marginBottom="16.0dip" android:layout_below="@id/group_avatar_imageview" android:lineSpacingMultiplier="1.2" />
+            </RelativeLayout>
+            <View android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="@dimen/dp_8" />
+            <TextView android:textSize="16.0sp" android:textColor="?colorAccent" android:gravity="center" android:id="@id/opt_group_textview" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50" android:text="@string/group_apply_join" />
+        </LinearLayout>
+    </ScrollView>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

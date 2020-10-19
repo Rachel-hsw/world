@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/textView_workName" android:layout_width="fill_parent" android:layout_height="30.0dip" android:text="当前作品：" />
+    <View android:background="@color/divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/textView_view" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="查看作品" />
+    <View android:background="@color/divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/textView_agree" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="赞成" />
+    <View android:background="@color/divider" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/textView_disagree" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="反对" />
+</LinearLayout>

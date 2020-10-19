@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" />
+    <RelativeLayout android:id="@id/rl_reset_pay_pwds" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="@dimen/margin_normal">
+        <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/tv_reset_pay_pwds" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/wallet_set_paypwd" android:layout_centerVertical="true" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="@dimen/margin_double_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+    </RelativeLayout>
+</LinearLayout>

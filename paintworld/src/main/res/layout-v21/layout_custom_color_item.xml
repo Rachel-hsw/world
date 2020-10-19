@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/head_view" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:id="@id/item_title_tv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_20" android:layout_marginRight="@dimen/dp_4" android:text="@string/offical_base_color" android:layout_toLeftOf="@id/share_iv" android:layout_centerVertical="true" />
+        <RadioButton android:theme="?radiobutton_style" android:textSize="@dimen/sp_12" android:textColor="?name_text_color" android:gravity="center" android:id="@id/set_default_rb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_16" android:layout_marginRight="@dimen/dp_20" android:layout_marginBottom="@dimen/dp_16" android:text="@string/set_default" android:includeFontPadding="false" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/delete_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_12" android:src="@drawable/ic_delete_for_base_color" android:scaleType="centerCrop" android:layout_toLeftOf="@id/set_default_rb" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/share_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_12" android:src="@drawable/ic_share_for_base_color" android:scaleType="centerCrop" android:layout_toLeftOf="@id/delete_iv" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView" android:paddingLeft="@dimen/dp_20" android:paddingRight="@dimen/dp_20" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp_20" android:layout_below="@id/head_view" android:nestedScrollingEnabled="false" />
+</RelativeLayout>

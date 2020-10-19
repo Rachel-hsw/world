@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rootview" android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/content" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <androidx.viewpager.widget.ViewPager android:id="@id/viewPager" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+            <com.google.android.material.appbar.AppBarLayout android:id="@id/appBarLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_behavior=".view.AppBarLayoutBehavior">
+                <com.google.android.material.appbar.CollapsingToolbarLayout android:id="@id/collapsingToolbarLayout" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="1.0px" app:contentScrim="?item_clor" app:layout_scrollFlags="enterAlways|enterAlwaysCollapsed|scroll" app:scrimAnimationDuration="0" app:titleEnabled="false">
+                    <LinearLayout android:orientation="vertical" android:id="@id/id_stickynavlayout_topview" android:paddingTop="@dimen/top_bar_height" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="250.0dip" layout="@layout/no_work_layout" />
+                        <RelativeLayout android:id="@id/pic_parent" android:layout_width="fill_parent" android:layout_height="200.0dip">
+                            <FrameLayout android:id="@id/flVideoContainer_parent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                                <FrameLayout android:id="@id/flVideoContainer" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                                <View android:id="@id/flVideoMask" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                            </FrameLayout>
+                            <net.huanci.hsj.view.MaskImageView android:id="@id/imageView_pic" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+                            <net.huanci.hsj.view.WaterMarkViewTiny android:id="@id/watermarktiny" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+                            <androidx.appcompat.widget.AppCompatImageView android:id="@id/longTypeIcon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal_half" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" app:srcCompat="@drawable/work_long" />
+                            <net.huanci.hsj.view.RiskWarn android:id="@id/risk_warn" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+                        </RelativeLayout>
+                        <LinearLayout android:orientation="vertical" android:id="@id/layout_work_info" android:background="?item_clor" android:paddingLeft="16.0dip" android:paddingTop="16.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                            <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="?item_text_color" android:id="@id/textView_work_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="14.0dip" />
+                            <net.huanci.hsj.view.AtTextView android:textSize="15.0sp" android:textColor="?item_text_color" android:id="@id/textView_work_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:lineSpacingExtra="3.5dip" />
+                            <LinearLayout android:orientation="horizontal" android:id="@id/heat_lineCount_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@id/heat_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="18.0dip">
+                                    <androidx.appcompat.widget.AppCompatImageView android:layout_width="14.0dip" android:layout_height="14.0dip" app:srcCompat="@mipmap/heat_degree" app:tint="?item_text_color" />
+                                    <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:id="@id/heat_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+                                    <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:id="@id/heat_tv1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="热度" />
+                                </LinearLayout>
+                                <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@id/line_count_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                    <androidx.appcompat.widget.AppCompatImageView android:id="@id/line_count_icon" android:layout_width="14.0dip" android:layout_height="14.0dip" app:srcCompat="@mipmap/line_count" app:tint="?item_text_color" />
+                                    <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:id="@id/line_count_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+                                    <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:id="@id/line_count_tv1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" />
+                                </LinearLayout>
+                            </LinearLayout>
+                            <net.huanci.hsj.view.TagsView android:id="@id/textView_tags" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" />
+                            <LinearLayout android:orientation="vertical" android:id="@id/albums_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <TextView android:textSize="12.0sp" android:textColor="?time_text_color" android:id="@id/create_time_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="16.0dip" />
+                        <LinearLayout android:orientation="vertical" android:id="@id/layout_group" android:background="?item_clor" android:paddingLeft="16.0dip" android:paddingTop="10.0dip" android:paddingRight="16.0dip" android:paddingBottom="20.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                            <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="?item_text_color" android:id="@id/textView_group" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/he_li" />
+                            <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView_group" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="13.0dip" />
+                        </LinearLayout>
+                        <RelativeLayout android:id="@id/layout_contributer" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="80.0dip" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_normal">
+                            <TextView android:id="@id/textView_contributor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="贡献者" />
+                            <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView_contributor" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/textView_contributor" />
+                        </RelativeLayout>
+                        <LinearLayout android:orientation="vertical" android:id="@id/workOptLayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                            <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+                            <LinearLayout android:orientation="horizontal" android:background="?item_clor" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                                <FrameLayout android:id="@id/recommendWorkLayout" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                                    <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="@color/assist_color_green" android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/recommendStatePb" android:background="@color/transparent" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="35.0dip" android:text="@string/loading" android:drawableLeft="@drawable/recommend_btn_selector" android:drawablePadding="5.0dip" />
+                                    <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="@color/assist_color_green" android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/recommendLoadErrorTv" android:background="@color/transparent" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="35.0dip" android:text="@string/load_fail" android:drawableLeft="@drawable/recommend_btn_selector" android:drawablePadding="5.0dip" />
+                                    <Button android:textSize="15.0sp" android:textStyle="bold" android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/recommendWork" android:background="@color/transparent" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="35.0dip" android:text="@string/recommend_work" android:drawableLeft="@drawable/recommend_btn_selector" android:drawablePadding="5.0dip" />
+                                </FrameLayout>
+                                <View android:id="@id/view_divider" android:background="?all_line_gray" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="3.0dip" android:layout_marginBottom="3.0dip" />
+                                <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                                    <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="@color/colorAccent" android:gravity="center_vertical" android:layout_gravity="center" android:id="@id/imageView_replay" android:background="@color/transparent" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="35.0dip" android:text="@string/see_replay" android:drawableLeft="@drawable/work_see_replay" android:drawablePadding="5.0dip" />
+                                </FrameLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <RelativeLayout android:id="@id/top_nav_layout" android:background="?top_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height">
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_back" android:padding="@dimen/margin_normal" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="centerInside" android:layout_centerVertical="true" app:srcCompat="@mipmap/ic_left_arrow" app:tint="?topbar_icon_color" />
+            <RelativeLayout android:id="@id/head_layout" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_toRightOf="@id/imageView_back" android:layout_centerVertical="true">
+                <net.huanci.hsj.view.MaskImageView android:id="@id/user_head" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_centerInParent="true" />
+                <net.huanci.hsj.view.MaskImageView android:id="@id/user_ident" android:visibility="gone" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" app:srcCompat="@drawable/bg_vip" />
+            </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_share" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="centerInside" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/work_share" app:tint="?topbar_icon_color" />
+            <Button android:textSize="12.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/focus_auther_btn" android:paddingLeft="8.0dip" android:paddingTop="0.0dip" android:paddingRight="8.0dip" android:paddingBottom="0.0dip" android:layout_width="wrap_content" android:layout_height="25.0dip" android:layout_marginRight="8.0dip" android:minWidth="53.0dip" android:includeFontPadding="false" android:layout_toLeftOf="@id/imageView_share" android:layout_centerVertical="true" style="?android:borderlessButtonStyle" />
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:layout_marginRight="10.0dip" android:layout_toLeftOf="@id/focus_auther_btn" android:layout_toRightOf="@id/head_layout" android:layout_centerVertical="true">
+                <TextView android:textSize="14.0sp" android:textColor="?topbar_words_color" android:ellipsize="end" android:id="@id/user_nick_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+            </FrameLayout>
+        </RelativeLayout>
+        <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/top_nav_layout" layout="@layout/shadow_bottom" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/layout_bottom" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="46.0dip" android:layout_alignParentBottom="true">
+            <RelativeLayout android:id="@id/layout_gift" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:id="@id/button_gift" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/give_gift" android:drawableLeft="@drawable/work_flower" android:drawablePadding="@dimen/margin_normal_half" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_comment" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:id="@id/button_comment" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/comment" android:drawableLeft="@drawable/work_comment" android:drawablePadding="@dimen/margin_normal_half" android:layout_centerInParent="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/layout_praise" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:id="@id/button_praise" android:paddingTop="@dimen/margin_normal" android:paddingBottom="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/like" android:drawableLeft="@drawable/dynamic_like_selector" android:drawablePadding="@dimen/margin_normal_half" android:layout_centerInParent="true" />
+            </RelativeLayout>
+        </LinearLayout>
+        <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_above="@id/layout_bottom" />
+    </RelativeLayout>
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/view_no_data_and_error" />
+    <FrameLayout android:id="@id/flVideoContainerLandScape" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

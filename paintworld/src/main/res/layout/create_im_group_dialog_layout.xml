@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/create_group_tip_title" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_16">
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?time_text_color" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/create_group_tip_user" android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?time_text_color" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/create_group_tip_count" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10">
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="@dimen/dp_16" android:src="@drawable/vip_gold" android:scaleType="centerCrop" />
+            <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_3" android:text="@string/create_group_tip_vip" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/create_group_tip_vip_count" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10">
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="@dimen/dp_16" android:src="@drawable/vip_year" android:scaleType="centerCrop" />
+            <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_3" android:text="@string/create_group_tip_yearvip" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/create_group_tip_yearvip_count" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10">
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:gravity="center_vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_3" android:text="@string/create_group_tip_level5" android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/create_group_tip_level5_count" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

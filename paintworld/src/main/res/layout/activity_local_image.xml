@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/navigation_root" android:background="?top_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/navigation_back" android:background="?android:selectableItemBackground" android:layout_width="@dimen/dp_20" android:layout_height="@dimen/dp_20" android:layout_marginLeft="@dimen/margin_normal_plus" android:tint="?topbar_icon_color" android:layout_centerVertical="true" app:srcCompat="@mipmap/close" />
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?topbar_right_text_color" android:id="@id/okbtn" android:padding="@dimen/margin_normal_half" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal_half" android:text="@string/sure_with_count" android:layout_alignParentRight="true" android:layout_centerInParent="true" />
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ly_title" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" android:layout_marginLeft="@dimen/dp_52" android:layout_marginRight="50.0dip" android:minWidth="200.0dip" android:layout_centerInParent="true">
+            <TextView android:textSize="@dimen/sp_17" android:typeface="monospace" android:textStyle="bold" android:textColor="?title_text_color" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/navigation_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="最新图片" android:singleLine="true" />
+            <androidx.appcompat.widget.AppCompatImageView android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/img_up" android:layout_width="@dimen/dp_12" android:layout_height="@dimen/dp_12" android:layout_marginLeft="5.0dip" android:tint="?topbar_icon_color" app:srcCompat="@drawable/icon_arrow_down" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/bottomLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <RelativeLayout android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="46.0dip">
+            <TextView android:textSize="15.0sp" android:textColor="?time_text_color" android:gravity="center" android:id="@id/preview_tv" android:paddingLeft="@dimen/margin_normal_plus" android:paddingRight="@dimen/margin_normal_plus" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/preview" />
+            <androidx.appcompat.widget.AppCompatCheckBox android:theme="?checkbox_style" android:textSize="15.0sp" android:textColor="@color/item_text_color" android:id="@id/ori_cb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/chat_image_preview_ori" android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/bottomLayout" android:layout_below="@id/navigation_root">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerview_image" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dp_10" android:layout_marginTop="@dimen/dp_8" android:layout_marginRight="@dimen/dp_10" />
+        <androidx.cardview.widget.CardView android:id="@id/recyclerview_album_parent" android:background="@drawable/rating_card_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardBackgroundColor="?item_clor" app:cardElevation="8.0dip" app:cardPreventCornerOverlap="false" app:cardUseCompatPadding="true">
+            <androidx.recyclerview.widget.RecyclerView android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/recyclerview_album" android:background="?item_clor" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="350.0dip" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/navigation_root" layout="@layout/shadow_bottom" />
+</RelativeLayout>

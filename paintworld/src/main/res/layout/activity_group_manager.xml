@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showText" app:title="@string/group_manage" />
+    <LinearLayout android:orientation="vertical" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/topBar">
+        <RelativeLayout android:id="@id/name_intro_relativelayout" android:layout_width="fill_parent" android:layout_height="@dimen/dp_60" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_double_normal" android:layout_centerVertical="true">
+            <TextView android:textSize="@dimen/sp_16" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/group_manager_name_add_intro" android:layout_centerVertical="true" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/right" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/add_type_relativelayout" android:layout_width="fill_parent" android:layout_height="@dimen/dp_60" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_double_normal" android:layout_centerVertical="true">
+            <TextView android:textSize="@dimen/sp_16" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/group_manager_add_type" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/right_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/right" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:id="@id/add_type_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_10" android:layout_toLeftOf="@id/right_iv" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/admin_RelativeLayout" android:layout_width="fill_parent" android:layout_height="@dimen/dp_60" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_double_normal" android:layout_centerVertical="true">
+            <TextView android:textSize="@dimen/sp_16" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/group_manager_admin" android:layout_centerVertical="true" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/right" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

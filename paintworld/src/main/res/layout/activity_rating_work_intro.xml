@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topbar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/rating_intor_title" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topbar" layout="@layout/shadow_bottom" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/topbar">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_20" android:layout_marginTop="@dimen/dp_24" android:layout_marginRight="@dimen/dp_20">
+            <include layout="@layout/layout_rating_rule" />
+            <Button android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="@color/white" android:id="@id/start_test_btn" android:background="#ff008fff" android:layout_width="fill_parent" android:layout_height="@dimen/dp_40" android:layout_marginTop="@dimen/dp_15" android:layout_marginBottom="@dimen/dp_40" android:text="@string/rating_start_test" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

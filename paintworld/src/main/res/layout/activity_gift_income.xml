@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/wallet_gift_income" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" layout="@layout/shadow_bottom" />
+    <com.lihang.ShadowLayout android:id="@id/view_layer_parent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_16" android:layout_marginTop="@dimen/dp_6" android:layout_marginRight="@dimen/dp_16" android:layout_marginBottom="@dimen/dp_16" android:minHeight="@dimen/dp_110" app:hl_cornerRadius="@dimen/dp_8" app:hl_leftShow="false" app:hl_rightShow="false" app:hl_shadowBackColor="?colorAccent" app:hl_shadowColor="?colorAccent" app:hl_shadowLimit="@dimen/dp_10" app:hl_topShow="false">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/ic_wallet_mask" android:padding="@dimen/margin_normal_plus" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wallet_can_draw_count2" android:drawableLeft="@drawable/ic_gift" android:drawablePadding="@dimen/dp_5" />
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_plus">
+                <TextView android:textSize="@dimen/sp_28" android:textStyle="bold" android:textColor="@color/white" android:id="@id/tv_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="¥0.0" />
+                <TextView android:textSize="@dimen/sp_12" android:textColor="@color/white" android:gravity="center" android:layout_gravity="bottom|center|right" android:id="@id/tv_draw" android:background="@drawable/bg_white_rectangle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/dp_67" android:minHeight="@dimen/dp_30" android:text="@string/wallet_draw" />
+            </FrameLayout>
+        </LinearLayout>
+    </com.lihang.ShadowLayout>
+    <com.ruffian.library.widget.RFrameLayout android:id="@id/rl_gift_list" android:layout_width="fill_parent" android:layout_height="@dimen/dp_45" android:layout_marginLeft="@dimen/dp_16" android:layout_marginRight="@dimen/dp_16" app:border_color_normal="#fff0f1f6" app:border_width_normal="@dimen/dp_1" app:corner_radius="@dimen/dp_4">
+        <TextView android:textSize="@dimen/small_font_size" android:textColor="?normal_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_plus" android:text="@string/wallet_gift_list" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center|right" android:layout_width="@dimen/dp_11" android:layout_height="@dimen/dp_11" android:layout_marginRight="@dimen/margin_normal_plus" android:tint="?setting_arrow_color" app:srcCompat="@mipmap/right" />
+    </com.ruffian.library.widget.RFrameLayout>
+    <com.ruffian.library.widget.RFrameLayout android:id="@id/rl_draw_history" android:layout_width="fill_parent" android:layout_height="@dimen/dp_45" android:layout_marginLeft="@dimen/dp_16" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/dp_16" app:border_color_normal="#fff0f1f6" app:border_width_normal="@dimen/dp_1" app:corner_radius="@dimen/dp_4">
+        <TextView android:textSize="@dimen/small_font_size" android:textColor="?normal_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_plus" android:text="@string/wallet_draw_history" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center|right" android:layout_width="@dimen/dp_11" android:layout_height="@dimen/dp_11" android:layout_marginRight="@dimen/margin_normal_plus" android:tint="?setting_arrow_color" app:srcCompat="@mipmap/right" />
+    </com.ruffian.library.widget.RFrameLayout>
+</LinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RRelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" app:corner_radius="@dimen/dp_8"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.WaterMarkImageView android:id="@id/iv_work" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_12" android:layout_marginRight="@dimen/dp_12" android:scaleType="centerCrop" />
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_link" android:background="@drawable/bg_album_link" android:padding="@dimen/dp_6" android:visibility="gone" android:layout_width="@dimen/dp_28" android:layout_height="@dimen/dp_28" android:layout_alignLeft="@id/iv_work" android:layout_alignTop="@id/iv_work" app:srcCompat="@drawable/ic_link" />
+    <master.flame.danmaku.ui.widget.DanmakuView android:id="@id/dmkView" android:layout_width="fill_parent" android:layout_height="@dimen/dp_160" android:layout_marginTop="@dimen/margin_double_normal" />
+    <View android:id="@id/placeholder" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dp_70" android:layout_below="@id/iv_work" />
+</com.ruffian.library.widget.RRelativeLayout>

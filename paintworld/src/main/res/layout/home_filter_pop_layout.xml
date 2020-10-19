@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/layout_tool" android:background="@drawable/bg_common_gray_border" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textColor="@drawable/selector_select_textcolor" android:gravity="center" android:id="@id/tv_all" android:layout_width="200.0dip" android:layout_height="45.0dip" android:text="@string/all" style="@style/TimeStyle" />
+    <View android:background="?dialog_line" android:layout_width="200.0dip" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" />
+    <TextView android:textColor="@drawable/selector_select_textcolor" android:gravity="center" android:id="@id/tv_filter_special_focus" android:layout_width="200.0dip" android:layout_height="45.0dip" android:text="@string/special_list" style="@style/TimeStyle" />
+    <View android:background="?dialog_line" android:layout_width="200.0dip" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" />
+    <TextView android:textColor="@drawable/selector_select_textcolor" android:gravity="center" android:id="@id/tv_filter_paint" android:layout_width="200.0dip" android:layout_height="45.0dip" android:text="@string/home_filter_paint_str" style="@style/TimeStyle" />
+    <View android:background="?dialog_line" android:layout_width="200.0dip" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" />
+    <TextView android:textColor="@drawable/selector_select_textcolor" android:gravity="center" android:id="@id/tv_filter_status" android:layout_width="200.0dip" android:layout_height="45.0dip" android:text="@string/home_filter_status_str" style="@style/TimeStyle" />
+</LinearLayout>

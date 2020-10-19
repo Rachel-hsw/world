@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lihang.ShadowLayout android:layout_width="fill_parent" android:layout_height="fill_parent" app:hl_dx="0.0dip" app:hl_dy="0.0dip" app:hl_leftShow="false" app:hl_shadowBackColor="@color/transparent" app:hl_shadowColor="@color/hsj_shadow_color" app:hl_shadowLimit="@dimen/hsj_shadow_limit"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="?dialog_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_43" android:layout_marginLeft="@dimen/margin_normal_plus" android:layout_marginRight="@dimen/margin_normal_plus">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center|right" android:id="@id/iv_ok1" android:visibility="gone" android:layout_width="@dimen/dp_14" android:layout_height="@dimen/dp_14" app:srcCompat="@drawable/ic_ok" />
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="?item_text_color" android:gravity="center_vertical" android:id="@id/tv_filter_all" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/all" />
+        </FrameLayout>
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_43" android:layout_marginLeft="@dimen/margin_normal_plus" android:layout_marginRight="@dimen/margin_normal_plus">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center|right" android:id="@id/iv_ok2" android:visibility="gone" android:layout_width="@dimen/dp_14" android:layout_height="@dimen/dp_14" app:srcCompat="@drawable/ic_ok" />
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="?item_text_color" android:gravity="center_vertical" android:id="@id/tv_filter_work" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/work" />
+        </FrameLayout>
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_43" android:layout_marginLeft="@dimen/margin_normal_plus" android:layout_marginRight="@dimen/margin_normal_plus">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center|right" android:id="@id/iv_ok3" android:visibility="gone" android:layout_width="@dimen/dp_14" android:layout_height="@dimen/dp_14" app:srcCompat="@drawable/ic_ok" />
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="?item_text_color" android:gravity="center_vertical" android:id="@id/tv_filter_shuoshuo" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/shuoshuo" />
+        </FrameLayout>
+    </LinearLayout>
+</com.lihang.ShadowLayout>

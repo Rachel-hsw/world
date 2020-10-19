@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/fragment_not_login" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/not_login" />
+        <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="9.0dip" android:text="更多好玩功能，登录后解锁哦~" />
+        <Button android:textSize="15.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/button_login" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="35.0dip" android:minWidth="90.0dip" android:minHeight="34.0dip" android:text="登录" android:includeFontPadding="false" style="?android:borderlessButtonStyle" />
+    </LinearLayout>
+</RelativeLayout>

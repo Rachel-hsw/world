@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showText" app:textRight="@string/sure" app:title="@string/group_manage" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+    <RadioGroup android:orientation="vertical" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_double_normal" android:layout_below="@id/topBar">
+        <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="@dimen/sp_16" android:textColor="?name_text_color" android:id="@id/radioButton_any" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50" android:checked="true" android:text="@string/group_manager_add_type_any" android:layout_centerVertical="true" />
+        <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="@dimen/sp_16" android:textColor="?name_text_color" android:id="@id/radioButton_auth" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50" android:text="@string/group_manager_add_type_auth" android:layout_centerVertical="true" />
+        <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="@dimen/sp_16" android:textColor="?name_text_color" android:id="@id/radioButton_forbid" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50" android:text="@string/group_manager_add_type_forbid" android:layout_centerVertical="true" />
+    </RadioGroup>
+</RelativeLayout>

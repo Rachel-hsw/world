@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="39.0dip" android:layout_height="39.0dip" android:layout_toRightOf="@id/imageView_back">
+        <net.huanci.hsj.view.MaskImageView android:id="@id/user_head" android:layout_width="34.0dip" android:layout_height="34.0dip" android:layout_centerInParent="true" />
+        <net.huanci.hsj.view.MaskImageView android:id="@id/user_ident" android:visibility="gone" android:layout_width="17.0dip" android:layout_height="17.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" app:srcCompat="@drawable/bg_vip" />
+    </RelativeLayout>
+    <TextView android:textSize="13.0sp" android:textColor="?item_text_color" android:ellipsize="end" android:id="@id/nick" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:maxWidth="120.0dip" android:singleLine="true" />
+    <TextView android:textSize="12.0sp" android:textColor="?time_text_color" android:id="@id/line_count_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" />
+</LinearLayout>

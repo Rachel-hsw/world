@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RRelativeLayout android:id="@id/share_room_layout" android:padding="@dimen/dp_10" android:layout_width="210.0dip" android:layout_height="wrap_content" app:background_normal="@drawable/bg_bubble_other"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.ruffian.library.widget.RFrameLayout android:id="@id/icon" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginRight="5.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:background_normal="#ffffe25a" app:corner_radius="@dimen/dp_3">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/share_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@mipmap/menu_chahui" />
+    </com.ruffian.library.widget.RFrameLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="10.0dip" android:layout_toLeftOf="@id/icon" android:layout_centerVertical="true">
+        <TextView android:textSize="18.0sp" android:textColor="@color/item_text_color" android:id="@id/share_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="邀您来茶绘" android:includeFontPadding="false" />
+        <TextView android:textSize="12.0sp" android:textColor="@color/words_text_color" android:ellipsize="end" android:id="@id/share_des" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="快来和我一起茶绘吧" android:maxLines="3" android:includeFontPadding="false" />
+    </LinearLayout>
+</com.ruffian.library.widget.RRelativeLayout>

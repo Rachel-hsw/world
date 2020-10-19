@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topbar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/pay" />
+    <include android:id="@id/shadow" android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topbar" layout="@layout/shadow_bottom" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_2" android:layout_below="@id/shadow">
+        <TextView android:textSize="@dimen/bigger_text_size" android:textStyle="bold" android:textColor="?bold_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_normal" android:text="充值" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_double_normal">
+            <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/recyclerView" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <include android:id="@id/loading_layout1" android:layout_width="fill_parent" android:layout_height="200.0dip" layout="@layout/loading_layout" />
+        </FrameLayout>
+        <View android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="@dimen/dp_8" android:layout_marginTop="@dimen/margin_normal" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_double_normal">
+            <LinearLayout android:orientation="vertical" android:id="@id/pay_type_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_half">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/bigger_text_size" android:textStyle="bold" android:textColor="?bold_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pay_type" />
+                    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:id="@id/charge_coin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/charge_coin" android:drawableRight="@mipmap/right_arrow1" android:drawablePadding="@dimen/margin_normal_half" android:layout_alignParentRight="true" android:drawableTint="#ffffae00" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="60.0dip">
+                    <com.ruffian.library.widget.RTextView android:textSize="14.0sp" android:textColor="?item_text_color" android:id="@id/shijiebi_count_tv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/coin_remain" android:drawablePadding="@dimen/margin_normal" android:layout_toLeftOf="@id/shijiebi_count_rb" android:layout_centerVertical="true" app:icon_src_normal="@drawable/hsj_coin" />
+                    <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:id="@id/shijiebi_count_rb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <include android:id="@id/loading_layout2" android:layout_width="fill_parent" android:layout_height="200.0dip" layout="@layout/loading_layout" />
+        </FrameLayout>
+    </LinearLayout>
+    <TextView android:textSize="@dimen/sp_15" android:textColor="?bold_text_color" android:gravity="center" android:id="@id/button_pay" android:background="@drawable/bg_vip_open" android:layout_width="fill_parent" android:layout_height="@dimen/dp_40" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_double_normal" android:layout_marginBottom="@dimen/margin_normal" android:text="支付" android:layout_alignParentBottom="true" />
+</RelativeLayout>

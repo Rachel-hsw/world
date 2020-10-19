@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#50000000" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:background="?top_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/img_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" app:srcCompat="@mipmap/ic_left_arrow" />
+        <net.huanci.hsj.view.ClearEditText android:textColor="?item_text_color" android:textColorHint="?normal_text_color" android:id="@id/et_search" android:background="@drawable/search_edittext_bg" android:paddingLeft="@dimen/margin_normal_half" android:paddingRight="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="8.0dip" android:layout_marginRight="@dimen/margin_normal" android:layout_marginBottom="8.0dip" android:hint="搜索" android:singleLine="true" android:imeOptions="actionSearch" style="@style/NormalStyle" />
+    </LinearLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/rv_members" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</LinearLayout>

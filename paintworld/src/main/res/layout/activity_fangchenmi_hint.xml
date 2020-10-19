@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showNone" app:title="" />
+    <TextView android:textSize="24.0sp" android:textColor="?item_text_color" android:id="@id/opt_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="42.0dip" android:text="防沉迷提示" android:layout_below="@id/topBar" android:layout_centerHorizontal="true" />
+    <FrameLayout android:id="@id/hintLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/opt_name">
+        <TextView android:id="@id/hint1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="45.0dip" android:layout_marginTop="11.0dip" android:layout_marginRight="45.0dip" android:text="您在画世界单日累计使用超过1小时，今日内无法使用画世界，或由监护人输入密码后继续使用" />
+        <TextView android:id="@id/hint2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="45.0dip" android:layout_marginTop="11.0dip" android:layout_marginRight="45.0dip" android:text="为了保障充足的休息时间，您在每日晚22时至次日6时间内无法使用画世界，或由监护人输入密码后继续使用" />
+    </FrameLayout>
+    <net.huanci.hsj.view.VerificationCodeView android:id="@id/youth_codeView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_plus" android:layout_marginTop="@dimen/dp_30" android:layout_marginRight="@dimen/margin_normal_plus" android:digits="1234567890*" android:layout_below="@id/hintLayout" android:layout_centerHorizontal="true" app:box="4" app:child_height="@dimen/dp_48" app:child_width="@dimen/dp_48" />
+    <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="?time_text_color" android:gravity="center" android:id="@id/next_step" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="21.0dip" android:layout_marginTop="46.0dip" android:layout_marginRight="21.0dip" android:minHeight="40.0dip" android:text="下一步" android:layout_below="@id/youth_codeView" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_below="@id/next_step" android:layout_centerHorizontal="true">
+        <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:id="@id/modify_pwd" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="修改密码" />
+        <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:id="@id/forgot_pwd" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="忘记密码" android:layout_marginStart="40.0dip" />
+    </LinearLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

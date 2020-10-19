@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/gif_make_item_view" android:layout_width="53.0dip" android:layout_height="53.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.paint.LayerImageView android:id="@id/bg_view" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" app:content_height="53.0dip" app:content_width="53.0dip" app:sel_stroke_color="?colorAccent" app:show_block="true" app:stroke_width="1.0dip" />
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/thumb_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="1.0dip" android:scaleType="fitCenter" />
+    <TextView android:textSize="10.0sp" android:textColor="?item_text_color" android:id="@id/index" android:paddingLeft="5.0dip" android:paddingTop="1.0px" android:paddingRight="5.0dip" android:paddingBottom="1.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+    <TextView android:textSize="9.0sp" android:textColor="#ffffffff" android:id="@id/coverTv" android:background="?colorAccent" android:paddingLeft="2.0dip" android:paddingTop="1.0dip" android:paddingRight="2.0dip" android:paddingBottom="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="1.0dip" android:text="封面" android:includeFontPadding="false" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <View android:id="@id/selected_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <View android:id="@id/frame_foreview" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

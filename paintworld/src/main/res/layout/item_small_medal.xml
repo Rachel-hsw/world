@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:clipChildren="false" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:id="@id/iv_dot" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_half" android:layout_marginRight="@dimen/margin_normal_half" app:srcCompat="@drawable/ic_medal_dot" />
+    <FrameLayout android:layout_gravity="center_vertical" android:layout_width="@dimen/dp_40" android:layout_height="@dimen/dp_40">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/iv_medal" android:layout_width="@dimen/dp_32" android:layout_height="@dimen/dp_32" android:scaleType="centerCrop" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/iv_mask" android:background="@drawable/bg_medal_small" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+</LinearLayout>

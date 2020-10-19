@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:textRight="@string/save" app:title="@string/topic_contribute_setting" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+    <RelativeLayout android:id="@id/min_level_setting_view" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="@dimen/dp_56" android:layout_below="@id/topBar">
+        <TextView android:textSize="@dimen/sp_16" android:textColor="?name_text_color" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/topic_min_level_setting" android:layout_centerVertical="true" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/level_LinearLayout" android:padding="@dimen/dp_10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_10" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:id="@id/level_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+            <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="级" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/right_iv" android:layout_width="@dimen/dp_12" android:layout_height="@dimen/dp_12" android:tint="?setting_arrow_color" app:srcCompat="@mipmap/right" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/contribute_setting_view" android:background="?item_clor" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dp_56" android:layout_marginTop="@dimen/dp_8" android:layout_below="@id/min_level_setting_view">
+        <TextView android:textSize="@dimen/sp_16" android:textColor="?name_text_color" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/topic_need_subscribe" android:layout_centerVertical="true" />
+        <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/switch_show_fans" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:checked="false" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

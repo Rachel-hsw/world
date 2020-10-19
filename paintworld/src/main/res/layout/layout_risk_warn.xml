@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:orientation="vertical" android:id="@id/warn_root" android:layout_width="fill_parent" android:layout_height="wrap_content" app:background_normal="#ffcfcfcf" app:corner_radius="@dimen/dp_8"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/sp_14" android:textColor="?leave_message_tips_text_color" android:id="@id/tv_tip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_plus" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal_plus" android:layout_marginBottom="@dimen/margin_normal" android:text="@string/risk_warn_text" android:lineSpacingExtra="@dimen/dp_4" />
+    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="right" android:id="@id/iv_close" android:padding="@dimen/dp_5" android:visibility="gone" android:layout_width="@dimen/dp_24" android:layout_height="@dimen/dp_24" android:layout_marginTop="@dimen/dp_10" android:layout_marginRight="@dimen/dp_10" app:srcCompat="@mipmap/icon_close" />
+</merge>

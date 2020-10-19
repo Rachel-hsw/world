@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/mp_offline_layout" android:background="?half_trans_bg" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="16.0sp" android:textColor="?words_text_color" android:id="@id/hintTv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="连接中..." android:layout_centerInParent="true" />
+    <LinearLayout android:orientation="vertical" android:id="@id/opt_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_centerInParent="true">
+        <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/reconnectBtn" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="重连" style="?android:borderlessButtonStyle" />
+        <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="?words_text_color" android:id="@id/saveAsSelfDraft" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="20.0dip" android:text="@string/save_self_draft" style="?android:borderlessButtonStyle" />
+        <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="?words_text_color" android:id="@id/offline_publish" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="20.0dip" android:text="@string/publish_work" style="?android:borderlessButtonStyle" />
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/exit_room" android:background="?android:selectableItemBackground" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="42.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" app:srcCompat="@mipmap/menu_close" />
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="?bg_draw_top" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:background="#33cccccc" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dp_8">
+        <RelativeLayout android:id="@id/color_pick_relat" android:background="@drawable/color_rect_shape_for_top_color_palette" android:layout_width="@dimen/paint_top_color_palette" android:layout_height="@dimen/paint_top_color_palette">
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/color_pick_iv" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/quse" />
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/color_hori_recyclerview" android:layout_width="fill_parent" android:layout_height="@dimen/paint_top_color_palette" android:layout_marginLeft="@dimen/dp_3" />
+    </LinearLayout>
+    <View android:layout_gravity="bottom" android:background="#33cccccc" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</FrameLayout>

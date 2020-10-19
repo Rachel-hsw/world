@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/top_layout" android:background="?top_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/top_back" android:padding="@dimen/icon_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:tint="?topbar_icon_color" android:layout_alignParentLeft="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/ic_left_arrow" />
+        <TextView android:id="@id/top_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/draw_idea" android:layout_centerInParent="true" style="@style/AppTitleStyle" />
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_idea_add" android:padding="@dimen/icon_padding" android:layout_width="40.0dip" android:layout_height="40.0dip" android:scaleType="centerCrop" android:layout_toLeftOf="@id/iv_search" android:layout_centerVertical="true" app:srcCompat="@drawable/idea_add" />
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_search" android:padding="@dimen/icon_padding" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginRight="@dimen/margin_normal" android:scaleType="centerCrop" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@drawable/main_search" />
+    </RelativeLayout>
+    <net.lucode.hackware.magicindicator.MagicIndicator android:id="@id/magic_indicator" android:background="?top_bar_color" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_below="@id/top_layout" />
+    <androidx.viewpager.widget.ViewPager android:id="@id/viewpager" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/magic_indicator" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/magic_indicator" layout="@layout/shadow_bottom" />
+</RelativeLayout>

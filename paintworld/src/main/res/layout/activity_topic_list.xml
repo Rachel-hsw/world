@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topbar_topic_list" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/topic_list" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/search_editlayout" android:background="?item_clor" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="@dimen/dp_40" android:layout_marginTop="@dimen/margin_normal_half" android:layout_marginBottom="@dimen/margin_normal_half" android:layout_below="@id/topbar_topic_list">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="@dimen/margin_normal" android:scaleType="fitCenter" android:tint="?item_text_color" app:srcCompat="@drawable/main_search" />
+        <net.huanci.hsj.view.ClearEditText android:textColor="?item_text_color" android:textColorHint="?normal_text_color" android:gravity="center_vertical" android:id="@id/search_edittext" android:background="@null" android:paddingRight="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_normal" android:hint="@string/topic_search" android:singleLine="true" android:imeOptions="actionSearch" style="@style/NormalStyle" />
+    </LinearLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/search_editlayout">
+        <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/rv_topics" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/search_editlayout" layout="@layout/view_no_data_and_error" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topbar_topic_list" layout="@layout/shadow_bottom" />
+</RelativeLayout>

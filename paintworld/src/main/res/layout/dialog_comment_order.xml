@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/small_font_size" android:textColor="?normal_text_color" android:gravity="center_vertical" android:id="@id/tv_time" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:text="@string/order_by_time" />
+    <TextView android:textSize="@dimen/small_font_size" android:textColor="?normal_text_color" android:gravity="center_vertical" android:id="@id/tv_time_desc" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:text="@string/order_by_time_desc" />
+    <TextView android:textSize="@dimen/small_font_size" android:textColor="?normal_text_color" android:gravity="center_vertical" android:id="@id/tv_hot" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:text="@string/order_by_hot" />
+</LinearLayout>

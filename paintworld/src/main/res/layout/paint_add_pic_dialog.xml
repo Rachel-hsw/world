@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="46.0dip">
+        <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="?bold_text_color" android:id="@id/layout_setting_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/linmocankao" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="21.0dip">
+        <androidx.appcompat.widget.AppCompatCheckBox android:theme="?checkbox_style" android:textSize="13.0sp" android:textColor="?item_text_color" android:gravity="center_vertical" android:id="@id/checkBox_fixedPos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/lock_pos" android:layout_centerVertical="true" />
+        <TextView android:textSize="13.0sp" android:textColor="?item_text_color" android:gravity="center_vertical" android:id="@id/refer_pic_edit" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView" android:layout_width="fill_parent" android:layout_height="@dimen/linmocankao_height" android:layout_marginLeft="19.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="19.0dip" android:layout_marginBottom="15.0dip" />
+</LinearLayout>

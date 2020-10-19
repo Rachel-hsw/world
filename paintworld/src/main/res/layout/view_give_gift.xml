@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="141.0dip">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/view_comment_no_data_and_error" />
+    </FrameLayout>
+    <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <RelativeLayout android:id="@id/bottom_layout" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height">
+        <TextView android:textSize="13.0sp" android:textColor="?words_text_color" android:gravity="center_vertical" android:id="@id/free_flower_count_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:drawableLeft="@drawable/flower_icon" android:drawablePadding="3.0dip" android:layout_centerVertical="true" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/icon_count_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_toRightOf="@id/free_flower_count_tv" android:layout_centerVertical="true">
+            <TextView android:textSize="13.0sp" android:textColor="?words_text_color" android:gravity="center_vertical" android:id="@id/coin_count_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:drawableLeft="@drawable/hsj_coin" android:drawablePadding="3.0dip" />
+            <androidx.appcompat.widget.AppCompatImageView android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginLeft="2.0dip" app:srcCompat="@mipmap/right_arrow1" app:tint="?words_text_color" />
+        </LinearLayout>
+        <Button android:textSize="15.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/button_send" android:padding="0.0dip" android:layout_width="64.0dip" android:layout_height="30.0dip" android:text="@string/send_out" android:includeFontPadding="false" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="?android:borderlessButtonStyle" />
+    </RelativeLayout>
+</LinearLayout>

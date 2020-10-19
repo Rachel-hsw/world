@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/rl_top_content" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="注册" />
+    <include layout="@layout/shadow_bottom" />
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:layout_marginBottom="@dimen/margin_normal">
+        <TextView android:textSize="@dimen/small_font_size" android:textColor="?time_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sms_sent_to" />
+        <TextView android:textSize="@dimen/small_font_size" android:textColor="?time_text_color" android:id="@id/textView_tips" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_double_normal" android:minHeight="60.0dip">
+        <net.huanci.hsj.view.CompatibalTextInputLayut android:id="@id/inputLayout_yanzhengma" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <TextView android:enabled="false" android:textColor="?colorAccent" android:gravity="center" android:id="@id/button_resend" android:padding="@dimen/margin_normal_half" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/get_sms1" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <Button android:textSize="@dimen/normal_text_size" android:textColor="@color/colorPrimary" android:id="@id/button_register" android:background="?colorAccent" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_double_normal" android:text="@string/next_step" />
+</LinearLayout>

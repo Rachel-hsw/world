@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?android:selectableItemBackground" android:paddingLeft="24.0dip" android:paddingRight="23.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="13.0sp" android:textColor="?item_text_color" android:id="@id/desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+    <TextView android:textSize="13.0sp" android:textColor="?time_text_color" android:id="@id/desc1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/desc" android:layout_centerVertical="true" />
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/layout_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="?paint_icon_tink" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/layer_small" />
+    <TextView android:textSize="13.0sp" android:textColor="?item_text_color" android:id="@id/layout_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_toLeftOf="@id/layout_icon" android:layout_centerVertical="true" />
+</RelativeLayout>

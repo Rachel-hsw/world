@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?dialog_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="?bold_text_color" android:gravity="center" android:id="@id/tv_edit" android:layout_width="fill_parent" android:layout_height="45.0dip" android:text="@string/album_edit" style="@style/TimeStyle" />
+    <View android:background="?dialog_line" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" />
+    <TextView android:textColor="?bold_text_color" android:gravity="center" android:id="@id/tv_pa_manager" android:layout_width="fill_parent" android:layout_height="45.0dip" android:text="作品管理" style="@style/TimeStyle" />
+    <View android:background="?dialog_line" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" />
+    <TextView android:textColor="?bold_text_color" android:gravity="center" android:id="@id/tv_del" android:layout_width="fill_parent" android:layout_height="45.0dip" android:text="@string/album_del" style="@style/TimeStyle" />
+    <View android:background="?dialog_line" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" />
+    <TextView android:textColor="?bold_text_color" android:gravity="center" android:id="@id/tv_top" android:layout_width="fill_parent" android:layout_height="45.0dip" android:text="@string/album_top" style="@style/TimeStyle" />
+</LinearLayout>

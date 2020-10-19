@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.view.NoDataView android:id="@id/nodataview" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/nodata_hint_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="?no_data_icon_color" android:layout_centerHorizontal="true" app:srcCompat="@drawable/no_data" />
+    <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:id="@id/nodata_hint_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/no_data" android:layout_below="@id/nodata_hint_img" android:layout_centerHorizontal="true" />
+</net.huanci.hsj.view.NoDataView>

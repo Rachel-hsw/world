@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/words_font_item" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="42.0dip">
+        <View android:id="@id/downloadProgress" android:background="?colorAccent" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerVertical="true" />
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/fontselect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="9.0dip" android:tint="?paint_icon_tink" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/paint_sure" />
+        <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:ellipsize="end" android:gravity="left" android:id="@id/fontname" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="5.0dip" android:text="字体名称" android:singleLine="true" android:layout_toLeftOf="@id/fontselect" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

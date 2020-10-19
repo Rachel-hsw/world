@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <net.huanci.hsj.view.TopBar android:id="@id/rl_top_content" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="画题须知" />
+        <include layout="@layout/shadow_bottom" />
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="?bold_text_color" android:id="@id/textView7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_normal" android:text="画题是什么？" />
+        <TextView android:textColor="?item_text_color" android:id="@id/textView8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_normal" android:text="画题是指围绕某个主题聚集起来的一些画作以及同好人群，我们希望通过画题能够让大家找到同好好友以及让更多优秀的作品获得展示的机会" />
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="?bold_text_color" android:id="@id/textView9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_double_normal" android:text="画题规则" />
+        <TextView android:textColor="?item_text_color" android:id="@id/textView10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_normal" android:text="创建完画题之后即为画题的题主。\n画题题主可以设置管理员协助管理画题（目前需向官方ID:76 申请），题主身份可以转让。\n取消关注画题后，题主身份将自动转让给画世界官方。\n题主和管理员有义务维护画题内部作品质量。\n违反社区规定或者恶意灌水的画题将会被解散。" />
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="?bold_text_color" android:id="@id/textView11" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_double_normal" android:text="画题限制" />
+        <TextView android:textColor="?item_text_color" android:id="@id/textView12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_normal" android:text="画题创建有数量限制，世界游民暂时不可以创建画题，世界居民可以创建至多10个画题。" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/layout_rule" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginBottom="@dimen/margin_normal" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <androidx.appcompat.widget.AppCompatCheckBox android:theme="?checkbox_style" android:textSize="14.0sp" android:textColor="?item_text_color" android:id="@id/checkBox_rule" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="已阅读和了解" />
+        <TextView android:textSize="14.0sp" android:textColor="?colorAccent" android:id="@id/textView_rule" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="《画世界社区规范》" />
+    </LinearLayout>
+    <Button android:textColor="@color/colorPrimary" android:id="@id/start_topic" android:background="?colorAccent" android:paddingLeft="40.0dip" android:paddingRight="40.0dip" android:layout_width="120.0dip" android:layout_height="40.0dip" android:layout_marginBottom="10.0dip" android:text="@string/start" android:layout_above="@id/layout_rule" android:layout_centerHorizontal="true" />
+</RelativeLayout>

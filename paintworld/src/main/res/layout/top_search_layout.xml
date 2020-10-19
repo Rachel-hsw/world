@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#66000000" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topbar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showNone" app:title="" />
+    <net.huanci.hsj.view.ClearEditText android:textColor="?item_text_color" android:textColorHint="?normal_text_color" android:id="@id/search_input" android:background="@drawable/search_edittext_bg" android:paddingLeft="@dimen/margin_normal_half" android:paddingRight="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" android:layout_marginLeft="45.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="8.0dip" android:hint="@string/search" android:singleLine="true" android:layout_alignTop="@id/topbar" android:layout_alignBottom="@id/topbar" android:imeOptions="actionSearch" style="@style/NormalStyle" />
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/search_refresh_layout" android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/create_room_layout" android:layout_below="@id/topbar">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="9.0dip" android:layout_marginRight="9.0dip" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topbar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

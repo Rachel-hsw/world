@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/rl_top_content" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/setting_change_account" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/account_rv" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/rl_top_content" layout="@layout/shadow_bottom" />
+</RelativeLayout>

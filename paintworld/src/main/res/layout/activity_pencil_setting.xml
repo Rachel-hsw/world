@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/rl_top_content" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/pressure_setting" />
+    <androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/rl_top_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/paint_setting_pressure" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="@dimen/dp_8">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/use_pressure" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/switch_pressure" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/textView_only_pencil" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/use_only_pencil" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@id/view_only_pencil_tips" android:padding="@dimen/icon_padding" android:layout_width="35.0dip" android:layout_height="35.0dip" android:tint="?item_text_color" android:layout_toRightOf="@id/textView_only_pencil" android:layout_centerVertical="true" app:srcCompat="@drawable/questions" />
+                <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/switch_only_pencil" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/rl_top_content" layout="@layout/shadow_bottom" />
+</RelativeLayout>

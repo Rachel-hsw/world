@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RLinearLayout android:orientation="vertical" android:paddingLeft="20.0dip" android:paddingRight="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" ver:background_normal="?dialog_bg_color" ver:corner_radius="@dimen/dp_5"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ver="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/sp_15" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_double_normal" android:text="@string/share_tips" android:includeFontPadding="false" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_120" android:layout_marginTop="@dimen/margin_normal_plus">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_horizontal" android:id="@id/iv_work" android:layout_width="@dimen/dp_120" android:layout_height="@dimen/dp_120" android:scaleType="centerCrop" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/share_words_tv_parent" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:tint="?words_text_color" ver:srcCompat="@drawable/ic_share_quote" />
+            <net.huanci.hsj.view.AtTextView android:textSize="15.0sp" android:textColor="?item_text_color" android:ellipsize="end" android:id="@id/share_words_tv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="dfsfadfasfasf" android:maxLines="3" android:includeFontPadding="false" />
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="80.0dip">
+        <EditText android:textSize="@dimen/sp_15" android:textColor="@color/words_text_color" android:textColorHint="#ffaaaaaa" android:gravity="top" android:id="@id/et_reason" android:background="@drawable/bg_edit_text" android:padding="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="15.0dip" android:hint="@string/share_content_tips" android:inputType="textMultiLine" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/words_text_color" android:layout_gravity="bottom|center|right" android:id="@id/wordsCountView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" android:includeFontPadding="false" />
+    </FrameLayout>
+    <View android:background="?dialog_line" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/margin_normal" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_48">
+        <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?item_text_color" android:gravity="center" android:id="@id/tv_cancel" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/cancel" android:layout_toLeftOf="@id/divider" />
+        <View android:id="@id/divider" android:background="?dialog_line" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_centerInParent="true" />
+        <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?colorAccent" android:gravity="center" android:id="@id/tv_ok" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/share" android:layout_toRightOf="@id/divider" />
+    </RelativeLayout>
+</com.ruffian.library.widget.RLinearLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/sp_15" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/create_new_base_color" />
+    <RelativeLayout android:id="@id/bg_view" android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="@dimen/dp_36" android:layout_marginTop="@dimen/dp_20">
+        <EditText android:textSize="14.0sp" android:textColor="?name_text_color" android:textColorHint="?time_text_color" android:gravity="center_vertical" android:id="@id/name_et" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dp_16" android:hint="@string/create_custom_base_color_hint" android:singleLine="true" android:maxLength="10" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:id="@id/scrollview" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <net.huanci.hsj.album.ui.VerticalStepViewIndicator android:id="@id/left_vsvi" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_alignParentLeft="true" app:lineColor="?time_text_color" />
+        <LinearLayout android:orientation="vertical" android:id="@id/right_ll" android:padding="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toRightOf="@id/left_vsvi">
+            <RadioGroup android:id="@id/rg" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal">
+                <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/rb_vertical_screen" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="竖屏浏览" android:drawablePadding="0.0dip" />
+                <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/rb_landscape_screen" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="横屏浏览" android:drawablePadding="0.0dip" />
+            </RadioGroup>
+            <RelativeLayout android:id="@id/layout_cover" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal">
+                <net.huanci.hsj.view.MaskImageView android:id="@id/cover_iv" android:background="@drawable/huaji_cover_por" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:scaleType="fitXY" />
+            </RelativeLayout>
+            <EditText android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:textColorHint="?normal_text_color" android:gravity="top" android:id="@id/name_et" android:background="@drawable/bg_edit_gray_border" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:layout_width="250.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_double_normal" android:hint="输入名字" android:singleLine="true" android:maxLength="@integer/integer_10" />
+            <EditText android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:textColorHint="?normal_text_color" android:gravity="top" android:id="@id/introduce_et" android:background="@drawable/bg_edit_gray_border" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:layout_width="250.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_double_normal" android:hint="画集描述" android:lines="6" android:maxLength="100" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/theme_tv" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_double_normal" android:text="选个主题" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/theme_rv" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="120.0dip" android:layout_marginTop="@dimen/margin_normal" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/end_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_double_normal" android:text="完成" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

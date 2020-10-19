@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/empty_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_no_data" android:layout_width="fill_parent" android:layout_height="wrap_content" android:tint="?no_data_icon_color" android:layout_above="@id/textView_tips" app:srcCompat="@drawable/no_data" />
+    <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:gravity="center" android:id="@id/textView_tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/no_data" android:layout_centerInParent="true" />
+    <TextView android:textSize="@dimen/sp_15" android:textColor="?colorAccent" android:id="@id/tv_action" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:text="@string/click_retry" android:layout_below="@id/textView_tips" android:layout_centerHorizontal="true" />
+</RelativeLayout>

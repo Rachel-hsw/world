@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<View android:id="@id/basic_color1" android:background="@drawable/color_rect_shape1" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

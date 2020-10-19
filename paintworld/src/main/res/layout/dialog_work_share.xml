@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RLinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/dp_139" app:background_normal="?dialog_bg_color" app:corner_radius="@dimen/dp_7"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/sp_15" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_double_normal" android:text="发送给：" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/dp_12">
+        <include android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/include_head_layout" />
+        <TextView android:textSize="14.0sp" android:textColor="?name_text_color" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/tv_name" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:singleLine="true" />
+    </LinearLayout>
+    <FrameLayout android:layout_gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_12">
+        <com.ruffian.library.widget.RImageView android:layout_gravity="center_horizontal" android:id="@id/iv_work" android:layout_width="@dimen/dp_120" android:layout_height="@dimen/dp_120" android:scaleType="centerCrop" app:corner_radius="@dimen/dp_4" />
+        <RelativeLayout android:id="@id/share_room_layout" android:padding="@dimen/dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip">
+            <com.ruffian.library.widget.RFrameLayout android:id="@id/icon" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginRight="8.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:background_normal="#ffffe25a" app:corner_radius="@dimen/dp_3">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/share_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </com.ruffian.library.widget.RFrameLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="10.0dip" android:layout_toLeftOf="@id/icon" android:layout_centerVertical="true">
+                <TextView android:textSize="18.0sp" android:textColor="?item_text_color" android:id="@id/share_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="邀您来茶绘" android:includeFontPadding="false" />
+                <TextView android:textSize="12.0sp" android:textColor="?words_text_color" android:ellipsize="end" android:id="@id/share_des" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="快来和我一起茶绘吧" android:maxLines="2" android:includeFontPadding="false" />
+            </LinearLayout>
+        </RelativeLayout>
+    </FrameLayout>
+    <com.ruffian.library.widget.REditText android:textSize="14.0sp" android:textColor="?item_text_color" android:textColorHint="?time_text_color" android:gravity="center_vertical" android:id="@id/et_msg" android:paddingLeft="@dimen/dp_12" android:paddingRight="@dimen/dp_12" android:layout_width="fill_parent" android:layout_height="@dimen/dp_38" android:layout_marginLeft="@dimen/dp_20" android:layout_marginTop="@dimen/dp_12" android:layout_marginRight="@dimen/dp_20" android:hint="@string/share_words" android:includeFontPadding="false" android:maxLength="200" app:background_normal="?big_divider" app:corner_radius="@dimen/dp_4" />
+    <View android:background="?dialog_line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="@dimen/dp_12" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_48">
+        <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?item_text_color" android:gravity="center" android:id="@id/tv_cancel" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/cancel" android:layout_toLeftOf="@id/divider" />
+        <View android:id="@id/divider" android:background="?dialog_line" android:layout_width="@dimen/dp_1" android:layout_height="fill_parent" android:layout_centerInParent="true" />
+        <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?colorAccent" android:gravity="center" android:id="@id/tv_send" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/send" android:layout_toRightOf="@id/divider" />
+    </RelativeLayout>
+</com.ruffian.library.widget.RLinearLayout>

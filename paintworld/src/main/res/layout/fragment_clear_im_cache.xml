@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/recylerview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bottom_view" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/view_no_data_and_error" />
+    <RelativeLayout android:id="@id/bottom_view" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50" android:layout_alignParentBottom="true">
+        <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/checkbox_linear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_16" android:layout_centerVertical="true">
+            <androidx.appcompat.widget.AppCompatCheckBox android:id="@id/all_checkbox" android:background="@drawable/bg_checkbox_for_clear_imcache" android:layout_width="@dimen/dp_20" android:layout_height="@dimen/dp_20" android:button="@null" />
+            <TextView android:textSize="@dimen/sp_16" android:textColor="@color/name_text_color" android:id="@id/all_select_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_8" android:text="@string/select_all" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?time_text_color" android:id="@id/cacheSize" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_15" android:text="共 0B" android:layout_toLeftOf="@id/delete_btn" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/sp_16" android:textColor="?colorAccent" android:id="@id/delete_btn" android:background="#00000000" android:paddingLeft="@dimen/dp_5" android:paddingRight="@dimen/dp_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_7" android:layout_marginRight="@dimen/dp_15" android:text="@string/delete" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0sp" android:textColor="?words_text_color" android:id="@id/gift_words_tv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lineSpacingExtra="3.5dip" />
+    <EditText android:textSize="14.0sp" android:textColor="?item_text_color" android:textColorHint="?time_text_color" android:gravity="center_vertical" android:id="@id/gift_words_et" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:minHeight="36.0dip" android:hint="@string/share_words" android:singleLine="true" android:inputType="text" />
+</LinearLayout>

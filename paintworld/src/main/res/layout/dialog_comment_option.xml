@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_reply" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="回复评论" />
+    <View android:id="@id/view_divider_reply" android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_copy" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="复制评论" />
+    <View android:id="@id/view_divider_top" android:background="?all_line_gray" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_setTop" android:background="?android:selectableItemBackground" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="置顶评论" />
+    <View android:id="@id/view_divider_report" android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_report" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="举报评论" />
+    <View android:id="@id/view_divider_delete" android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_delete" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="删除评论" />
+    <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_cancel" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="取消" />
+</LinearLayout>

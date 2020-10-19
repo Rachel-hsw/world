@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/top_panel" android:background="@mipmap/top_bg" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" android:layout_alignParentTop="true" android:layout_centerHorizontal="true">
+        <ImageButton android:id="@id/btnBack" android:background="@mipmap/top_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/big_font_size" android:textColor="@color/black" android:id="@id/textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="房间列表" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/bottom_panel" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <RelativeLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageButton android:id="@id/btnCreateRoom" android:background="@mipmap/createroom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <ImageButton android:id="@id/btnQuickEnterRoom" android:background="@mipmap/quickenter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recylerview" android:background="@color/bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bottom_panel" android:layout_below="@id/top_panel" />
+    <TextView android:id="@id/textView_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="正在登录..." android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+</RelativeLayout>

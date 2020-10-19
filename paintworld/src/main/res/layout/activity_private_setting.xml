@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showText" app:textRight="@string/save" app:title="@string/private_setting" />
+    <RelativeLayout android:id="@id/layout_chat_level" android:background="?item_clor" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="@dimen/margin_normal" android:layout_below="@id/topBar">
+        <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/private_chat_level" android:layout_centerVertical="true" />
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/private_chat_iv" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="@dimen/margin_double_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+        <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:id="@id/tv_chat_level" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:layout_toLeftOf="@id/private_chat_iv" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/show_fans_layout" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip" android:layout_below="@id/layout_chat_level">
+        <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/show_fans" android:layout_centerVertical="true" />
+        <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/switch_show_fans" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/show_focus_layout" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip" android:layout_below="@id/show_fans_layout">
+        <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/show_focus" android:layout_centerVertical="true" />
+        <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/switch_show_focus" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/show_topic_layout" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip" android:layout_below="@id/show_focus_layout">
+        <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/show_topic" android:layout_centerVertical="true" />
+        <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/switch_show_topic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/recommend_work_layout" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip" android:layout_below="@id/show_topic_layout">
+        <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/allow_recommend_work" android:layout_centerVertical="true" />
+        <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/switch_recommend_work" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_pay_manager" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="@string/wallet_pay_manager" />
+    <View android:id="@id/view_divider_reply" android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_deal_detail" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="@string/wallet_deal_detail" />
+    <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_sjb_withdraw" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="@string/wallet_sjb_withdraw" />
+</LinearLayout>

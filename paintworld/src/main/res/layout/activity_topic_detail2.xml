@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/topic_detail" />
+    <androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topBar">
+        <LinearLayout android:orientation="vertical" android:paddingBottom="@dimen/margin_normal_plus" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:paddingTop="@dimen/margin_double_normal" android:paddingRight="@dimen/margin_double_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/dp_60">
+                    <net.huanci.hsj.view.MaskImageView android:id="@id/img_head" android:layout_width="@dimen/dp_60" android:layout_height="@dimen/dp_60" android:scaleType="centerCrop" />
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_double_normal">
+                        <RelativeLayout android:id="@id/ll_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_8">
+                            <TextView android:textSize="@dimen/sp_17" android:textStyle="bold" android:textColor="?bold_text_color" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="标题" android:layout_centerVertical="true" />
+                            <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_edit_topic" android:visibility="gone" android:layout_width="@dimen/dp_20" android:layout_height="@dimen/dp_20" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@drawable/ic_edit" />
+                        </RelativeLayout>
+                        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_half" android:layout_below="@id/ll_name">
+                            <TextView android:textSize="@dimen/sp_12" android:textColor="?normal_text_color" android:id="@id/tv_workCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0作品" />
+                            <TextView android:textSize="@dimen/sp_12" android:textColor="?normal_text_color" android:id="@id/tv_readCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:text="0浏览" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+                <net.huanci.hsj.view.AtTextView android:textSize="@dimen/sp_15" android:textColor="?item_text_color" android:id="@id/tv_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_plus" android:layout_marginBottom="@dimen/margin_normal_plus" android:textIsSelectable="true" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/sp_16" android:textColor="?bold_text_color" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:paddingTop="@dimen/margin_normal_plus" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_8" android:text="@string/topic_member" />
+            <RelativeLayout android:id="@id/container_members" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:paddingRight="@dimen/margin_double_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <FrameLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_70" android:layout_marginRight="@dimen/margin_normal_half" android:layout_marginBottom="@dimen/margin_normal_plus" android:layout_toLeftOf="@id/container_member_count">
+                    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_members" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="right" android:layout_width="@dimen/dp_35" android:layout_height="fill_parent" android:scaleType="centerCrop" android:tint="?item_clor" app:srcCompat="@drawable/ic_topic_member_cover" />
+                </FrameLayout>
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/container_member_count" android:layout_width="wrap_content" android:layout_height="@dimen/dp_50" android:layout_marginTop="@dimen/margin_normal" android:layout_alignParentRight="true">
+                    <TextView android:textSize="@dimen/sp_12" android:textColor="?normal_text_color" android:layout_gravity="center_vertical" android:id="@id/tv_memberCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:text="0人" />
+                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:id="@id/iv_members" android:layout_width="@dimen/dp_12" android:layout_height="@dimen/dp_12" android:tint="?setting_arrow_color" app:srcCompat="@mipmap/right" />
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/contribute_setting_view" android:background="?item_clor" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dp_56" android:layout_marginTop="@dimen/dp_8">
+                <TextView android:textSize="@dimen/sp_16" android:textColor="?bold_text_color" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/topic_contribute_setting" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="@dimen/dp_12" android:layout_height="@dimen/dp_12" android:layout_marginRight="@dimen/dp_20" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+            <RelativeLayout android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_8">
+                <TextView android:textSize="@dimen/sp_16" android:textColor="?bold_text_color" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_plus" android:text="@string/topic_notice" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_add_notice" android:padding="5.0dip" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="@dimen/margin_normal" android:layout_alignParentRight="true" app:srcCompat="@drawable/ic_edit" />
+            </RelativeLayout>
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/smart_refresh_layout" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <FrameLayout android:paddingTop="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_notice" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                    <TextView android:textSize="@dimen/sp_15" android:textColor="?time_text_color" android:layout_gravity="center_horizontal" android:id="@id/tv_empty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_double_normal" android:layout_marginBottom="@dimen/margin_double_normal" android:text="@string/notice_none" />
+                </FrameLayout>
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

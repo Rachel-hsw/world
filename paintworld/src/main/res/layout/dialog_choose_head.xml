@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?dialog_bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="?bold_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_camera" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="拍照" />
+    <View android:id="@id/line1" android:background="?dialog_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textColor="?bold_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_picture" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="相册" />
+    <View android:background="?dialog_line" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textColor="?bold_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_cancel" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="取消" />
+</LinearLayout>

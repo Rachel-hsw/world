@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/rl_top_content" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/paint_setting" />
+    <androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/rl_top_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:id="@id/paint_setting_pressure" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="@dimen/dp_8">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pressure_setting" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/paint_setting_pickcolor" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pick_color_setting" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/paint_setting_key" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/key_setting" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+            <RelativeLayout android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/high_quality_gif_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/high_quality_gif" android:layout_centerVertical="true" />
+                <TextView android:textSize="12.0sp" android:textColor="?words_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/high_quality_gif_intro" android:layout_toRightOf="@id/high_quality_gif_title" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/high_quality_gif" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/touguangtai_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/toutuangtai_opacity" android:layout_centerVertical="true" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/touguangtai_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:text="50%" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                <include android:id="@id/touguangtai_sb" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_half" android:layout_marginRight="@dimen/margin_normal_half" android:layout_toLeftOf="@id/touguangtai_value" android:layout_toRightOf="@id/touguangtai_tv" android:layout_centerVertical="true" layout="@layout/seekbar_custom" />
+            </RelativeLayout>
+            <RelativeLayout android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/redo_undo_left" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/switch_redo_undo_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/redo_opt_hint" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/switch_redo_hint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/canvas_can_rotate" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/switch_canvas_can_rotate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/auto_save_show_rate_view" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/switch_auto_show_rate_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/paint_setting_watermark" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="1.0dip">
+                <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/water_mark_setting" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/rl_top_content" layout="@layout/shadow_bottom" />
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="42.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="12.0sp" android:textColor="?bold_text_color" android:id="@id/text1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_centerVertical="true" />
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/select_flag" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="11.0dip" android:tint="?paint_icon_tink" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/paint_sure" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_double_normal" android:text="选择日期：" />
+    <DatePicker android:theme="@style/DateTimePicker" android:layout_gravity="center_horizontal" android:id="@id/datepicker" android:descendantFocusability="blocksDescendants" android:layout_width="wrap_content" android:layout_height="@dimen/dp_150" android:calendarViewShown="false" android:datePickerMode="spinner" />
+    <TextView android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="选择时间：" />
+    <TimePicker android:theme="@style/DateTimePicker" android:layout_gravity="center_horizontal" android:id="@id/timepicker" android:layout_width="wrap_content" android:layout_height="@dimen/dp_150" android:timePickerMode="spinner" />
+    <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?colorAccent" android:layout_gravity="right" android:id="@id/tv_sure" android:background="?android:selectableItemBackground" android:paddingLeft="@dimen/dp_20" android:paddingTop="@dimen/dp_10" android:paddingRight="@dimen/dp_20" android:paddingBottom="@dimen/dp_10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_normal" android:text="@string/sure" />
+</LinearLayout>

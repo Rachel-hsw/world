@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/choose_brush_item" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/brush_icon" android:padding="5.0dip" android:layout_width="35.0dip" android:layout_height="35.0dip" android:scaleType="centerInside" android:tint="?paint_icon_tink" android:layout_centerVertical="true" />
+    <TextView android:textSize="16.0sp" android:textColor="?name_text_color" android:id="@id/brush_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="@dimen/margin_normal_half" android:layout_toEndOf="@id/brush_icon" />
+    <androidx.appcompat.widget.AppCompatCheckBox android:theme="?checkbox_style" android:textColor="?item_text_color" android:id="@id/brush_checkbox" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+</RelativeLayout>

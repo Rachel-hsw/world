@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.view.palette.ColorSettingView android:orientation="vertical" android:id="@id/color_setting" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/pickView" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="-14.0dip" android:layout_below="@id/layout1">
+            <net.huanci.hsj.view.palette.ColorPickerView android:layout_gravity="center" android:id="@id/color_pick_view" android:tag="portrait" android:layout_width="@dimen/paint_pickcolor_width" android:layout_height="@dimen/paint_pickcolor_height" android:layout_centerHorizontal="true" android:layerType="software" app:SliderTrackerColor="?colorAccent" app:canTouch="true" app:type="rect" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout1" android:paddingBottom="@dimen/dp_5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_20" android:layout_marginTop="@dimen/dp_5" android:layout_marginRight="@dimen/dp_20">
+            <LinearLayout android:orientation="horizontal" android:id="@id/color_panel" android:padding="1.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                <View android:id="@id/old_color_panel" android:layout_width="@dimen/old_color_panel_width" android:layout_height="@dimen/old_color_panel_height" />
+                <View android:id="@id/new_color_panel" android:layout_width="@dimen/old_color_panel_width" android:layout_height="@dimen/old_color_panel_height" />
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/addColor" android:padding="@dimen/dp_5" android:visibility="visible" android:layout_width="@dimen/paint_quse_width" android:layout_height="@dimen/paint_quse_width" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@drawable/ic_add_color_to_palette" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <include android:layout_gravity="center" android:id="@id/h_setting" android:layout_width="@dimen/paint_pickcolor_hsv_width" android:layout_height="wrap_content" android:layout_marginTop="-12.0dip" layout="@layout/view_brush_setting" />
+    <include android:layout_gravity="center" android:id="@id/s_setting" android:layout_width="@dimen/paint_pickcolor_hsv_width" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
+    <include android:layout_gravity="center" android:id="@id/v_setting" android:layout_width="@dimen/paint_pickcolor_hsv_width" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
+</net.huanci.hsj.view.palette.ColorSettingView>

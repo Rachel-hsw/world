@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/key_setting_view" android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topbar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/key_setting" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/key_setting_title" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_below="@id/topbar">
+        <TextView android:textSize="16.0sp" android:textColor="?bold_text_color" android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/opt_name" android:layout_weight="1.0" />
+        <TextView android:textSize="16.0sp" android:textColor="?bold_text_color" android:gravity="center" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/key_code" android:layout_weight="1.0" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/key_setting_rv" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:layout_below="@id/key_setting_title" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topbar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

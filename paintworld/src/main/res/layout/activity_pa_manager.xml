@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topbar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/album_manager_str" />
+    <Button android:textSize="@dimen/normal_text_size" android:textColor="@color/white" android:gravity="center" android:id="@id/btn_save" android:background="?colorAccent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="保存" android:layout_alignParentBottom="true" style="@style/NormalStyle" />
+    <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/rv" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dp_8" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/dp_8" android:layout_above="@id/btn_save" android:layout_below="@id/topbar" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topbar" layout="@layout/view_no_data_and_error" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topbar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_give_topic" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="转让画题" />
+    <View android:id="@id/view_divider1" android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_upgrade" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="升为管理" />
+    <View android:id="@id/view_divider2" android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center" android:layout_gravity="center" android:id="@id/textView_remove" android:layout_width="fill_parent" android:layout_height="@dimen/app_bar_height" android:text="移出画题" />
+</LinearLayout>

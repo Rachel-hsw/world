@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rootview" android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/storage_space" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/topBar">
+        <RelativeLayout android:id="@id/clear_im_relativelayout" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:paddingTop="@dimen/dp_15" android:paddingRight="@dimen/margin_double_normal" android:paddingBottom="@dimen/dp_15" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true">
+            <TextView android:textSize="@dimen/sp_16" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/storage_space_clear_im_cache" android:layout_centerVertical="true" />
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/right" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/clear_other_relativelayout" android:background="?item_clor" android:paddingLeft="@dimen/margin_double_normal" android:paddingTop="@dimen/dp_15" android:paddingRight="@dimen/margin_double_normal" android:paddingBottom="@dimen/dp_15" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_8" android:layout_centerVertical="true">
+            <RelativeLayout android:id="@id/relativelayout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/sp_16" android:textColor="?name_text_color" android:id="@id/title_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/storage_space_clear_other_cache" android:layout_centerVertical="true" />
+                <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:id="@id/cache_size_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0M" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" android:text="@string/storage_space_clear_other_cache_detail" android:includeFontPadding="false" android:layout_below="@id/relativelayout" />
+        </RelativeLayout>
+    </LinearLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.paint.ScaleIndicator android:id="@id/scale_indicator_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minWidth="160.0dip" android:alpha="0.8" app:cardBackgroundColor="?paint_item_bg" app:cardCornerRadius="5.0dip" app:cardElevation="3.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textColor="?bold_text_color" android:layout_gravity="center" android:id="@id/indicator_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_normal" android:text="100%" style="@style/TimeStyle" />
+</net.huanci.hsj.paint.ScaleIndicator>

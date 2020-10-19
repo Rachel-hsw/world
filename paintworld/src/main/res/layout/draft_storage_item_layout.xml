@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/draft_storage_item_layout" android:background="?item_clor" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="42.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true">
+        <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:id="@id/radiobtn" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:text="" />
+        <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:id="@id/storage_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" />
+        <TextView android:textSize="12.0sp" android:textColor="?words_text_color" android:id="@id/leftSize" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+    </LinearLayout>
+</RelativeLayout>

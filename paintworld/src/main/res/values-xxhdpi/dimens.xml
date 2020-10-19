@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="pens_panel_height">140.0dip</dimen>
+    <dimen name="select_pen_panel_width">320.0dip</dimen>
+    <dimen name="login_logo_margin">50.0dip</dimen>
+</resources>

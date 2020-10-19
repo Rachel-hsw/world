@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?item_clor" android:padding="@dimen/margin_double_normal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <net.huanci.hsj.utils.YearMonthDataPicker android:theme="@style/DateTimePicker" android:layout_gravity="center_horizontal" android:id="@id/date_picker" android:descendantFocusability="blocksDescendants" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minDate="12/01/2017" android:calendarViewShown="false" />
+    <RelativeLayout android:layout_gravity="right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal">
+        <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?colorAccent" android:id="@id/tv_choose_time" android:background="?android:selectableItemBackground" android:paddingLeft="@dimen/dp_10" android:paddingTop="@dimen/dp_10" android:paddingRight="@dimen/dp_10" android:paddingBottom="@dimen/dp_10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="选中时间" android:layout_alignParentRight="true" />
+        <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?colorAccent" android:id="@id/tv_all_time" android:background="?android:selectableItemBackground" android:paddingLeft="@dimen/dp_10" android:paddingTop="@dimen/dp_10" android:paddingRight="@dimen/dp_10" android:paddingBottom="@dimen/dp_10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="全部时间" android:layout_toLeftOf="@id/tv_choose_time" />
+    </RelativeLayout>
+</LinearLayout>

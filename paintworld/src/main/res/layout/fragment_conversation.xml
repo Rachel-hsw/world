@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root" android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="50.0dip">
+        <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/recylerview" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/view_no_data_and_error" />
+    <LinearLayout android:orientation="vertical" android:id="@id/opt_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/draft_bottom_btn_height" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="horizontal" android:background="?tabbar_bg_color" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textColor="?normal_text_color" android:gravity="center" android:id="@id/selectAllBtn" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/select_all" android:layout_weight="1.0" style="@style/NormalStyle" />
+            <include android:id="@id/bottom_divider" layout="@layout/vertical_divider" />
+            <TextView android:textColor="?colorAccent" android:gravity="center" android:id="@id/optBtn" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/delete" android:layout_weight="1.0" style="@style/NormalStyle" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

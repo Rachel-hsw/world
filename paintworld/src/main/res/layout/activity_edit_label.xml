@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showText" app:textRight="保存" app:title="画题投稿" />
+    <androidx.core.widget.NestedScrollView android:scrollbarSize="8.0dip" android:scrollbarThumbVertical="?all_line_gray" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topBar" android:fadeScrollbars="false">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:id="@id/layout_add_topic" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="@dimen/margin_normal">
+                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/imageView12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="?bold_text_color" android:layout_marginStart="@dimen/margin_normal_plus" app:srcCompat="@drawable/topic_add" />
+                    <TextView android:textSize="15.0sp" android:textColor="?item_text_color" android:layout_gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="添加画题" android:layout_weight="1.0" android:layout_marginStart="@dimen/margin_normal" />
+                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/imageView13" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="?bold_text_color" android:layout_marginStart="@dimen/margin_normal_plus" android:layout_marginEnd="@dimen/margin_normal_plus" app:srcCompat="@drawable/go_next" />
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView_new" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_plus" android:layout_marginRight="@dimen/margin_normal_plus" />
+                <TextView android:textSize="15.0sp" android:textColor="?item_text_color" android:id="@id/textView_stored" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_normal_plus" android:text="最近画题" />
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView_custom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_plus" android:layout_marginRight="@dimen/margin_normal_plus" />
+            </LinearLayout>
+            <View android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="8.0dip" />
+            <LinearLayout android:orientation="vertical" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="15.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_normal_plus" android:text="选择作品分类（必选）" />
+                <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView_sys" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <TextView android:textSize="14.0sp" android:textColor="?normal_text_color" android:gravity="center" android:id="@id/click_load_again" android:padding="@dimen/margin_normal_plus" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="100.0dip" android:text="@string/load_fail_click_load_again" />
+                </FrameLayout>
+            </LinearLayout>
+            <View android:layout_width="fill_parent" android:layout_height="8.0dip" />
+            <LinearLayout android:orientation="vertical" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="15.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_plus" android:layout_marginTop="@dimen/margin_normal_plus" android:layout_marginRight="@dimen/margin_normal_plus" android:text="@string/hint" />
+                <TextView android:textSize="12.0sp" android:textColor="?words_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_plus" android:layout_marginTop="@dimen/margin_normal_half" android:layout_marginRight="@dimen/margin_normal_plus" android:layout_marginBottom="@dimen/margin_double_normal" android:text="@string/tags_hint" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

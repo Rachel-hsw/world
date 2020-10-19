@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/add_new_album" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" layout="@layout/shadow_bottom" />
+    <RelativeLayout android:paddingLeft="@dimen/dp_18" android:paddingRight="@dimen/dp_18" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_plus">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:layout_width="@dimen/dp_19" android:layout_height="@dimen/dp_19" android:tint="?item_text_color" app:srcCompat="@drawable/ic_pa_land" />
+            <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?item_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_half" android:text="横向" />
+            <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_8" android:text="横向浏览" />
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatRadioButton android:id="@id/rb_land" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <RelativeLayout android:paddingLeft="@dimen/dp_18" android:paddingRight="@dimen/dp_18" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_plus">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:layout_width="@dimen/dp_19" android:layout_height="@dimen/dp_19" android:tint="?item_text_color" app:srcCompat="@drawable/ic_pa_vertical" />
+            <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?item_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_half" android:text="纵向" />
+            <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_8" android:text="纵向浏览" />
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatRadioButton android:id="@id/rb_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/dp_18" android:layout_marginTop="@dimen/dp_18" android:layout_marginRight="@dimen/dp_18" />
+    <FrameLayout android:layout_width="@dimen/dp_105" android:layout_height="@dimen/dp_105" android:layout_marginLeft="@dimen/dp_18" android:layout_marginTop="@dimen/margin_double_normal">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_cover" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" app:srcCompat="@drawable/ic_camera" />
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?time_text_color" android:layout_gravity="bottom|center" android:id="@id/tv_choose_cover" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_double_normal" android:text="设置封面" />
+    </FrameLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_18" android:layout_marginTop="@dimen/dp_25" android:layout_marginRight="@dimen/dp_18">
+        <EditText android:textSize="@dimen/sp_15" android:textColor="?item_text_color" android:textColorHint="?time_text_color" android:id="@id/et_title" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:hint="画集标题" android:maxLength="20" android:layout_toLeftOf="@id/tv_tip_title" android:layout_centerVertical="true" android:inputType="textPersonName" />
+        <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:id="@id/tv_tip_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_double_normal" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_110" android:layout_marginLeft="@dimen/dp_18" android:layout_marginTop="@dimen/margin_normal_plus" android:layout_marginRight="@dimen/dp_18">
+        <EditText android:textSize="@dimen/sp_15" android:textColor="?item_text_color" android:textColorHint="?time_text_color" android:gravity="top" android:id="@id/et_desc" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="@dimen/margin_normal" android:hint="画集描述" android:maxLength="500" android:layout_toLeftOf="@id/tv_tip_desc" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:id="@id/tv_tip_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="70" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_double_normal" />
+    <RelativeLayout android:paddingLeft="@dimen/dp_18" android:paddingRight="@dimen/dp_18" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_plus">
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:id="@id/iv_private" android:layout_width="@dimen/dp_19" android:layout_height="@dimen/dp_19" android:scaleType="fitCenter" android:tint="?item_text_color" app:srcCompat="@drawable/unlock" />
+            <TextView android:textSize="@dimen/sp_15" android:textColor="?item_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_half" android:text="私人可见" />
+        </LinearLayout>
+        <Switch android:id="@id/sw_private" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</LinearLayout>

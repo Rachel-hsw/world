@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.watermark.WaterMarkPosSettingView android:id="@id/waterMark_pos_setting" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <net.huanci.hsj.view.MaskImageView android:id="@id/bottom_iv" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <net.huanci.hsj.view.MaskImageView android:id="@id/water_mark_iv" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="matrix" />
+</net.huanci.hsj.watermark.WaterMarkPosSettingView>

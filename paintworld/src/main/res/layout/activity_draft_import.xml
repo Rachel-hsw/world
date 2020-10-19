@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/rl_top_content" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/draft_info" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip">
+        <Button android:textSize="@dimen/normal_text_size" android:textColor="@color/white" android:gravity="center" android:id="@id/opt_btn" android:background="?colorAccent" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="60.0dip" android:layout_marginRight="60.0dip" android:text="@string/draft_download" android:layout_centerInParent="true" style="@style/NormalStyle" />
+        <TextView android:textColor="?bold_text_color" android:ellipsize="middle" android:gravity="center" android:id="@id/draft_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip" android:layout_marginBottom="50.0dip" android:text="xxxx.hsj" android:maxLines="2" android:layout_above="@id/opt_btn" android:layout_centerHorizontal="true" style="@style/NormalStyle" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_width="66.0dip" android:layout_height="66.0dip" android:layout_marginBottom="15.0dip" android:layout_above="@id/draft_name" android:layout_centerHorizontal="true" app:srcCompat="@drawable/hsj_logo" />
+    </RelativeLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/rl_top_content" layout="@layout/shadow_bottom" />
+</RelativeLayout>

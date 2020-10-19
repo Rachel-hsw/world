@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/bg_view" android:background="@drawable/color_rect_shape_for_top_color_palette" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:id="@id/base_color" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/base_color_sel" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/color_setting_select" />
+</FrameLayout>

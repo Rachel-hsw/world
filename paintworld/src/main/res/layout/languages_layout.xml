@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="10.0dip" android:paddingTop="16.0dip" android:paddingRight="10.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:gravity="center_vertical" android:id="@id/lan_sys" android:background="?android:selectableItemBackground" android:paddingLeft="16.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="@string/language_auto" />
+    <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:gravity="center_vertical" android:id="@id/lan_zh" android:background="?android:selectableItemBackground" android:paddingLeft="16.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="@string/language_cn" />
+    <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:gravity="center_vertical" android:id="@id/lan_en" android:background="?android:selectableItemBackground" android:paddingLeft="16.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="@string/language_en" />
+</LinearLayout>

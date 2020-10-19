@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/opt_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/draft_bottom_btn_height" android:layout_alignParentBottom="true">
+        <TextView android:textColor="?colorAccent" android:gravity="center" android:id="@id/delete_draft" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/delete" style="@style/NormalStyle" />
+    </LinearLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/opt_layout">
+        <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/recyclerView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/recyclerv_item_half_space" android:layout_marginRight="@dimen/recyclerv_item_half_space" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_above="@id/opt_layout" layout="@layout/shadow_top" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/rl_top_content" layout="@layout/view_no_data_and_error" />
+</RelativeLayout>

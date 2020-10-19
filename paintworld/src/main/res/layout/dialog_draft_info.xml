@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="?item_text_color" android:gravity="center" android:layout_width="fill_parent" android:layout_height="46.0dip" android:text="画作信息" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginRight="24.0dip" android:minHeight="35.0dip">
+        <TextView android:textSize="13.0sp" android:textColor="?time_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="    创建于" />
+        <TextView android:textSize="13.0sp" android:textColor="?item_text_color" android:id="@id/draft_info_create_time" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginRight="24.0dip" android:minHeight="35.0dip">
+        <TextView android:textSize="13.0sp" android:textColor="?time_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="    分辨率" />
+        <TextView android:textSize="13.0sp" android:textColor="?item_text_color" android:id="@id/draft_info_resolution" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginRight="24.0dip" android:minHeight="35.0dip">
+        <TextView android:textSize="13.0sp" android:textColor="?time_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="一共画了" />
+        <TextView android:textSize="13.0sp" android:textColor="?item_text_color" android:id="@id/draft_info_line_count" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginRight="24.0dip" android:layout_marginBottom="20.0dip" android:minHeight="35.0dip">
+        <TextView android:textSize="13.0sp" android:textColor="?time_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="作画耗时" />
+        <TextView android:textSize="13.0sp" android:textColor="?item_text_color" android:id="@id/draft_info_paintTime" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+    </LinearLayout>
+</LinearLayout>

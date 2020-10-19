@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/recommend_item" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/imageView_pic_parent" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <net.huanci.hsj.view.MaskImageView android:id="@id/imageView_pic" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center|right|top" android:id="@id/pic_flag_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_normal_half" app:srcCompat="@mipmap/flag_img" />
+        <androidx.appcompat.widget.AppCompatImageView android:gravity="center" android:layout_gravity="center|right|top" android:id="@id/video_flag_iv" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_normal_half" app:srcCompat="@mipmap/flag_video" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center|right|top" android:id="@id/TopSigIcon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_normal_half" app:srcCompat="@drawable/ic_topic_worktop" />
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="bottom|center|right" android:id="@id/longTypeIcon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_normal_half" app:srcCompat="@drawable/work_long" />
+    </FrameLayout>
+    <TextView android:textSize="13.0sp" android:textStyle="bold" android:textColor="?bold_text_color" android:ellipsize="end" android:id="@id/textView_title" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_normal_half" android:maxLines="2" />
+    <net.huanci.hsj.view.AtTextView android:textSize="@dimen/smallest_font_size" android:textColor="?words_text_color" android:ellipsize="end" android:id="@id/textView_des" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/margin_normal_half" android:maxLines="2" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_user" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/rl_user_info" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <net.huanci.hsj.view.MaskImageView android:id="@id/imageView_head" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_margin="@dimen/margin_normal_half" android:layout_centerVertical="true" app:srcCompat="@mipmap/default_head_image" />
+            <net.huanci.hsj.view.MaskImageView android:id="@id/user_vip" android:visibility="gone" android:layout_width="13.0dip" android:layout_height="13.0dip" android:layout_marginRight="-3.0dip" android:layout_alignRight="@id/imageView_head" android:layout_alignBottom="@id/imageView_head" app:srcCompat="@drawable/bg_vip" />
+            <TextView android:textSize="@dimen/smallest_font_size" android:textColor="#ff909090" android:ellipsize="end" android:id="@id/textView_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:singleLine="true" android:layout_toRightOf="@id/imageView_head" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@id/rl_like" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_normal_half" android:layout_marginRight="@dimen/margin_normal_half">
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_like" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/recommend_like_selector" />
+            <TextView android:textSize="@dimen/smallest_font_size" android:textColor="#ff909090" android:id="@id/likeCountTv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

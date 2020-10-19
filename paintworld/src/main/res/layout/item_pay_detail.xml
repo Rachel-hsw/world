@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_double_normal">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/icon" android:layout_width="@dimen/dp_16" android:layout_height="@dimen/dp_16" android:layout_centerVertical="true" app:srcCompat="@drawable/hsj_coin" />
+        <TextView android:textSize="@dimen/normal_text_size" android:textColor="?bold_text_color" android:id="@id/textView_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_half" android:layout_toRightOf="@id/icon" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/small_font_size" android:textColor="?time_text_color" android:id="@id/textView_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="TextView" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/normal_text_size" android:textColor="?normal_text_color" android:id="@id/textView_des" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal_half" android:layout_marginRight="@dimen/margin_double_normal" android:text="TextView" />
+    <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/margin_normal" />
+</LinearLayout>

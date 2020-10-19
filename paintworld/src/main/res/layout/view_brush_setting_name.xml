@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/group_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="不透明度" android:layout_centerInParent="true" style="@style/NormalStyle" />
+    <TextView android:id="@id/setting_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="最小" android:layout_alignBottom="@id/group_name" style="@style/TimeStyle" />
+    <TextView android:id="@id/setting_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="最大" android:layout_alignBottom="@id/group_name" android:layout_alignParentRight="true" style="@style/TimeStyle" />
+</RelativeLayout>

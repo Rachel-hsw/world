@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.view.TopBar android:background="@color/bg_topbar" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/top_back" android:padding="@dimen/icon_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/top_back" />
+        <TextView android:textStyle="bold" android:id="@id/top_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="标题" android:layout_centerInParent="true" style="@style/TitleStyle" />
+    </RelativeLayout>
+</net.huanci.hsj.view.TopBar>

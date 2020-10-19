@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.view.PublishAtLayout android:background="?comment_pop_bg" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/publish_at_btn" android:padding="@dimen/icon_padding" android:layout_width="@dimen/workdetail_bottom_height" android:layout_height="@dimen/workdetail_bottom_height" android:tint="?colorAccent" android:layout_alignParentRight="true" app:srcCompat="@drawable/at_friend" />
+</net.huanci.hsj.view.PublishAtLayout>

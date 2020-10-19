@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView android:id="@id/photoVi_item_imgViewer" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/photo_iv" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ProgressBar android:layout_gravity="center" android:id="@id/proBar_item_imgViewer" android:layout_width="30.0dip" android:layout_height="30.0dip" />
+    <net.huanci.hsj.view.WaterMarkView android:layout_gravity="center" android:id="@id/watermarkview" android:layout_width="120.0dip" android:layout_height="120.0dip" />
+</FrameLayout>

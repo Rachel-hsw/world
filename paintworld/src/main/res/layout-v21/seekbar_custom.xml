@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.view.CustomSeekbar android:layout_width="fill_parent" android:layout_height="wrap_content" app:bg_color_mode="0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <SeekBar android:layout_gravity="center" android:id="@id/hsj_seek_bar" android:background="@null" android:paddingTop="7.0dip" android:paddingBottom="7.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/thumb_stroke_width" android:paddingEnd="@dimen/thumb_stroke_width" android:splitTrack="false" style="@style/Widget.SeekBar.Paint" />
+</net.huanci.hsj.view.CustomSeekbar>

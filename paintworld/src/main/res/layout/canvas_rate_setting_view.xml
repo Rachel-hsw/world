@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.view.CanvasRateSettingView android:orientation="vertical" android:id="@id/canvas_rate_setting_view" android:layout_width="260.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:card_view="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView android:background="?paint_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" card_view:cardElevation="4.0dip" card_view:cardUseCompatPadding="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <FrameLayout android:background="?paint_bg" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                <TextView android:textColor="?bold_text_color" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/canvas_size_change" style="@style/TitleStyle" />
+            </FrameLayout>
+            <include layout="@layout/horizontal_divider" />
+            <FrameLayout android:id="@id/rate_16_9" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                <TextView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="9 : 16" style="@style/TitleStyle" />
+            </FrameLayout>
+            <include layout="@layout/horizontal_divider" />
+            <FrameLayout android:id="@id/rate_4_3" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                <TextView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3 : 4" style="@style/TitleStyle" />
+            </FrameLayout>
+            <include layout="@layout/horizontal_divider" />
+            <FrameLayout android:id="@id/rate_1_1" android:layout_width="fill_parent" android:layout_height="60.0dip">
+                <TextView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1 : 1" style="@style/TitleStyle" />
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_horizontal" android:id="@id/close" android:padding="@dimen/icon_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" card_view:srcCompat="@mipmap/close" />
+</net.huanci.hsj.view.CanvasRateSettingView>

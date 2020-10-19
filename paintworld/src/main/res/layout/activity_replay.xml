@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.paint.PaintView android:id="@id/replay_paintview" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <View android:id="@id/clickview" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <net.huanci.hsj.view.MaskImageView android:id="@id/replay_mask" android:layout_width="fill_parent" android:layout_height="fill_parent" app:miv_is_ignore_alpha="false" />
+    <LinearLayout android:orientation="vertical" android:id="@id/replay_bottom_view" android:background="?bg_draw_top" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <include android:id="@id/replay_progress" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="5.0dip" android:paddingStart="3.0dip" android:paddingEnd="3.0dip" layout="@layout/seekbar_custom" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/back_btn" android:background="@drawable/retangle_mask_selector" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/back_page" android:drawableTop="@mipmap/replay_back" android:drawablePadding="4.0dip" style="@style/TimeStyle" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/pause_btn" android:background="@drawable/retangle_mask_selector" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="播放" android:drawableTop="@drawable/pause_btn_normal" android:drawablePadding="4.0dip" style="@style/TimeStyle" />
+                <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/play_btn" android:background="@drawable/retangle_mask_selector" android:padding="5.0dip" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="暂停" android:drawableTop="@drawable/play_btn_normal" android:drawablePadding="4.0dip" style="@style/TimeStyle" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/normal_mode" android:background="@drawable/retangle_mask_selector" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="正常模式" android:drawableTop="@drawable/replay_normal_mode" android:drawablePadding="4.0dip" style="@style/TimeStyle" />
+                <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/strengthen_mode" android:background="@drawable/retangle_mask_selector" android:padding="5.0dip" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="增强模式" android:drawableTop="@drawable/replay_strengthen_mode" android:drawablePadding="4.0dip" style="@style/TimeStyle" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/speed_btn" android:background="@drawable/retangle_mask_selector" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="x1" android:drawableTop="@drawable/speed_btn_normal" android:drawablePadding="4.0dip" style="@style/TimeStyle" />
+            </FrameLayout>
+            <FrameLayout android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/replay_more" android:background="@drawable/retangle_mask_selector" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/setting" android:drawableTop="@mipmap/more" android:drawablePadding="4.0dip" style="@style/TimeStyle" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_above="@id/replay_bottom_view" layout="@layout/shadow_top" />
+    <net.huanci.hsj.view.WaterMarkView android:id="@id/watermarkview" android:layout_width="120.0dip" android:layout_height="120.0dip" android:layout_centerInParent="true" />
+</RelativeLayout>

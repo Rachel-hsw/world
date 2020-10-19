@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/add_to_album_root" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_double_normal"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/content_view" android:padding="@dimen/dp_4" android:layout_width="fill_parent" android:layout_height="@dimen/dp_130">
+        <net.huanci.hsj.view.MaskImageView android:id="@id/img_head" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+        <RelativeLayout android:gravity="center" android:id="@id/create_new_album" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/add" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="?time_text_color" android:layout_centerHorizontal="true" app:srcCompat="@mipmap/create_album" />
+            <TextView android:textSize="12.0sp" android:textColor="?time_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/create_new_paint_album" android:layout_below="@id/add" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </FrameLayout>
+    <TextView android:textSize="@dimen/sp_14" android:textStyle="bold" android:textColor="?bold_text_color" android:ellipsize="end" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_2" android:layout_marginTop="@dimen/margin_normal_half" android:maxLines="1" />
+</LinearLayout>

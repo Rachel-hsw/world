@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?paint_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:background="?paint_bg" android:layout_width="fill_parent" android:layout_height="@dimen/paint_selburhs_title_height">
+        <TextView android:textColor="?bold_text_color" android:id="@id/layout_setting_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/setting" android:layout_centerInParent="true" style="@style/NormalStyle" />
+        <TextView android:textSize="14.0sp" android:id="@id/save_album" android:padding="@dimen/margin_normal_half" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/export_picture" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <include layout="@layout/horizontal_divider" />
+    <LinearLayout android:orientation="vertical" android:padding="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="14.0sp" android:textColor="?words_text_color" android:id="@id/draft_origin_size" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="14.0sp" android:textColor="?words_text_color" android:id="@id/draft_play_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" android:text="@string/draft_play_size" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal">
+            <net.huanci.hsj.view.CompatibalTextInputLayut android:id="@id/play_width" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" />
+            <net.huanci.hsj.view.CompatibalTextInputLayut android:id="@id/play_height" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" />
+        </LinearLayout>
+        <Button android:textColor="@color/colorPrimary" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/sure_btn" android:background="@drawable/common_button_selector" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="32.0dip" android:layout_marginTop="@dimen/margin_normal" android:layout_marginBottom="@dimen/margin_normal" android:text="@string/sure" />
+    </LinearLayout>
+</LinearLayout>

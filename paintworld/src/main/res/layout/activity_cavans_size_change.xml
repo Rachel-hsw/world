@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:naviIcon="@mipmap/close" app:showType="showText" app:textRight="@string/sure" app:title="@string/canvas_size_change" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topBar">
+        <LinearLayout android:orientation="vertical" android:id="@id/opt_layout" android:background="?item_clor" android:padding="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal_half" android:layout_alignParentBottom="true">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:id="@id/maodianlayout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:layout_centerVertical="true">
+                    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/maodian" />
+                    <Spinner android:textSize="16.0sp" android:entries="@array/canvas_maodian" android:layout_gravity="center_vertical" android:id="@id/spinner_maodian" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal_half" />
+                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatCheckBox android:theme="?checkbox_style" android:textSize="16.0sp" android:textColor="?item_text_color" android:gravity="center_vertical" android:id="@id/checkBox_fixWH" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="7.0dip" android:text="@string/fixed_width_and_height" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <include android:id="@id/xtailor_seekb" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="5.0dip" layout="@layout/view_brush_setting" />
+            <include android:id="@id/ytailor_seekb" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="@dimen/margin_normal_half" android:layout_marginRight="5.0dip" layout="@layout/view_brush_setting" />
+        </LinearLayout>
+        <net.huanci.hsj.paint.CanvasSizeChangeEffectView android:id="@id/effect_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/opt_layout" />
+        <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_above="@id/opt_layout" layout="@layout/shadow_top" />
+    </RelativeLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topbar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:imageRight="@drawable/questions" app:showType="showText" app:textRight="@string/rating_history2" app:title="@string/rating_intor_title" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topbar" layout="@layout/shadow_bottom" />
+    <RelativeLayout android:id="@id/content_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topbar">
+        <net.huanci.hsj.view.SwipeCard.SwipeFlingAdapterView android:id="@id/swipe_view" android:layout_width="fill_parent" android:layout_height="fill_parent" app:max_visible="2" app:min_adapter_stack="2" app:y_offset_step="27.0dip" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/fuhuo" android:layout_width="fill_parent" android:layout_height="110.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:baselineAligned="false" android:layout_alignParentBottom="true">
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:textSize="12.0sp" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/agree" android:background="@drawable/rating_button_bg" android:layout_width="60.0dip" android:layout_height="60.0dip" android:text="赞成" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:textSize="12.0sp" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/against" android:background="@drawable/rating_button_bg" android:layout_width="60.0dip" android:layout_height="60.0dip" android:text="反对" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/dafen" android:layout_width="fill_parent" android:layout_height="110.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:baselineAligned="false" android:layout_alignParentBottom="true">
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:textSize="12.0sp" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/bad" android:background="@drawable/rating_button_bg" android:layout_width="60.0dip" android:layout_height="60.0dip" android:text="不要捣乱" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:textSize="12.0sp" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/soso" android:background="@drawable/rating_button_bg" android:layout_width="60.0dip" android:layout_height="60.0dip" android:text="再接再厉" />
+            </FrameLayout>
+            <FrameLayout android:clipChildren="false" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:textSize="12.0sp" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/excellent" android:background="@drawable/rating_button_bg" android:layout_width="60.0dip" android:layout_height="60.0dip" android:text="推专区" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                <Button android:textSize="12.0sp" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@id/perfect" android:background="@drawable/rating_button_bg" android:layout_width="60.0dip" android:layout_height="60.0dip" android:text="推首页" />
+            </FrameLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <include android:id="@id/nodataView" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topbar" layout="@layout/view_no_data_and_error" />
+</RelativeLayout>

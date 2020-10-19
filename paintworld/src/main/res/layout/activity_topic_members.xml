@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/toolbar_members" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:imageRight="@drawable/main_search" app:srcCompat="@mipmap/ic_left_arrow" app:title="@string/topic_member" />
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/toolbar_members">
+        <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/rv_members" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/toolbar_members" layout="@layout/view_no_data_and_error" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/toolbar_members" layout="@layout/shadow_bottom" />
+    <FrameLayout android:id="@id/fl_root" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

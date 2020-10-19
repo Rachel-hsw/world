@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showText" app:textRight="@string/save" app:title="@string/water_mark_pos_setting" />
+    <FrameLayout android:id="@id/waterMark_parent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="@dimen/margin_normal_half" android:layout_below="@id/topBar">
+        <include android:layout_gravity="center" android:id="@id/waterMark_pos_setting" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/water_mark_pos_setting_view" />
+    </FrameLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

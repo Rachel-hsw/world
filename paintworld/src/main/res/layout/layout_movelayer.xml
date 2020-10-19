@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/layout_moveLayer" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <include android:layout_width="@dimen/shadow_width_small" android:layout_height="fill_parent" layout="@layout/shadow_left" />
+        <LinearLayout android:orientation="horizontal" android:background="?bg_draw_top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/paint_movelayer_view_min_width">
+            <TextView android:textColor="?bold_text_color" android:gravity="center" android:layout_width="0.0dip" android:layout_height="@dimen/paint_icon_width" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:text="正在移动图层" android:layout_weight="1.0" style="@style/NormalStyle" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/moveLayer_cancle" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/close" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/moveLayer_confirm" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/paint_sure" />
+        </LinearLayout>
+        <include android:layout_width="@dimen/shadow_width_small" android:layout_height="fill_parent" layout="@layout/shadow_right" />
+    </LinearLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width_small" android:layout_marginLeft="@dimen/shadow_width_small" android:layout_marginRight="@dimen/shadow_width_small" layout="@layout/shadow_bottom" />
+</LinearLayout>

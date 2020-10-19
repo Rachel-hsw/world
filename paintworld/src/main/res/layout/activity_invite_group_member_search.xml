@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:id="@id/search_view" android:background="?top_bar_color" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height">
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/search_back" android:layout_width="40.0dip" android:layout_height="@dimen/top_bar_height" android:scaleType="centerInside" android:tint="?topbar_icon_color" app:srcCompat="@mipmap/ic_left_arrow" />
+        <net.huanci.hsj.view.ClearEditText android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:textColorHint="?normal_text_color" android:gravity="center_vertical" android:id="@id/search_edittext" android:background="@drawable/search_edittext_bg" android:padding="5.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:hint="@string/search" android:singleLine="true" android:layout_weight="1.0" android:inputType="text" android:imeOptions="actionSearch" style="@style/NormalStyle" />
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/beginSearch" android:layout_width="@dimen/top_bar_height" android:layout_height="@dimen/top_bar_height" android:scaleType="centerInside" android:tint="?topbar_icon_color" app:srcCompat="@drawable/main_search" />
+    </LinearLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/search_view">
+        <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/empty_rv" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/search_view" layout="@layout/view_no_data_and_error" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/search_view" layout="@layout/shadow_bottom" />
+</RelativeLayout>

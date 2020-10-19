@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView android:orientation="vertical" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/margin_double_normal" android:paddingRight="@dimen/margin_double_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_double_normal">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:id="@id/textView_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ID：" />
+                <Button android:textSize="11.0sp" android:textColor="?words_text_color" android:gravity="center" android:id="@id/copy_id_btn" android:padding="0.0dip" android:paddingLeft="6.0dip" android:paddingTop="2.0dip" android:paddingRight="6.0dip" android:paddingBottom="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="49.0dip" android:minHeight="21.0dip" android:text="@string/copy_id" android:includeFontPadding="false" android:layout_marginStart="15.0dip" style="?android:borderlessButtonStyle" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_14">
+                <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:id="@id/textView_level" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="等级：" />
+                <TextView android:textSize="@dimen/small_font_size" android:textColor="?colorAccent" android:id="@id/textView_kaoshi" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:text="我要升级" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:gravity="center_vertical" android:id="@id/textView_cert" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_14" android:text="认证：" />
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:gravity="center_vertical" android:id="@id/textView_sig" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_14" android:text="@string/Signature1" android:lineSpacingMultiplier="1.2" />
+            <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="@dimen/margin_normal_plus" />
+            <RelativeLayout android:id="@id/layout_gift" android:layout_width="fill_parent" android:layout_height="@dimen/dp_52">
+                <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_gift" android:layout_width="19.0dip" android:layout_height="19.0dip" android:scaleType="fitCenter" android:layout_centerVertical="true" app:srcCompat="@drawable/ic_message_gift" />
+                <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:id="@id/textView_giftCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_5" android:layout_marginRight="@dimen/margin_normal_half" android:text="收到的礼物：" android:layout_toRightOf="@id/iv_gift" android:layout_centerVertical="true" />
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView_gift" android:layout_width="wrap_content" android:layout_height="@dimen/dp_32" android:layout_marginRight="@dimen/margin_normal" android:layout_toLeftOf="@id/imageView_more_gift" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_more_gift" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+            <View android:id="@id/medal_divider" android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            <RelativeLayout android:id="@id/layout_medal" android:layout_width="fill_parent" android:layout_height="@dimen/dp_52">
+                <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_medal" android:layout_width="19.0dip" android:layout_height="19.0dip" android:scaleType="fitCenter" android:layout_centerVertical="true" app:srcCompat="@drawable/ic_medal" />
+                <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:id="@id/textView_medalCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_5" android:layout_marginRight="@dimen/margin_normal_half" android:text="我的徽章：" android:layout_toRightOf="@id/iv_medal" android:layout_centerVertical="true" />
+                <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView_medal" android:layout_width="wrap_content" android:layout_height="@dimen/dp_32" android:layout_marginRight="@dimen/margin_normal" android:layout_toLeftOf="@id/imageView_more_medal" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_more_medal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+            <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:gravity="center_vertical" android:id="@id/textView_city" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_14" android:text="所在地：" />
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:gravity="center_vertical" android:id="@id/textView_reg_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_14" android:layout_marginBottom="@dimen/dp_14" android:text="注册时间：" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

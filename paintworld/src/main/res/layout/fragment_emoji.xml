@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.viewpager.widget.ViewPager android:layout_gravity="center_horizontal" android:id="@id/face_viewPager" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/face_indicator" />
+    <net.huanci.hsj.im.view.face.EmojiIndicatorView android:gravity="center_horizontal" android:id="@id/face_indicator" android:layout_width="fill_parent" android:layout_height="15.0dip" android:layout_alignParentBottom="true" />
+</RelativeLayout>

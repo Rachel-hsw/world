@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showNone" app:title="" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="42.0dip" android:layout_marginTop="38.0dip" android:layout_marginRight="42.0dip" android:layout_marginBottom="38.0dip" android:layout_below="@id/topBar">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="15.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="若您忘记了青少年模式密码，请您发送邮件至yunying@huanci.net，主题命名为【您的画世界账号+ID+青少年模式密码重置】" android:lineSpacingMultiplier="1.2" />
+            <TextView android:textSize="15.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:text="邮件中请您上传本人手持身份证和写有“仅用于画世界密码重置”纸张的照片" android:lineSpacingMultiplier="1.2" />
+            <TextView android:textSize="15.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:text="要求本人，身份证和纸张在同一张照片中，且字迹身份证信息清晰可辨" android:lineSpacingMultiplier="1.2" />
+            <TextView android:textSize="15.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:text="您的身份证信息仅用于画世界密码申诉，画世界不会泄露您的个人信息。并会尽快为您处理" android:lineSpacingMultiplier="1.2" />
+        </LinearLayout>
+    </ScrollView>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

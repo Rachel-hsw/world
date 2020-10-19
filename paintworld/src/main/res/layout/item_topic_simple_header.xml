@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent" android:layout_height="40.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/sp_15" android:textColor="?normal_text_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/textView_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:text="@string/topics" android:layout_weight="1.0" />
+    <TextView android:textSize="@dimen/sp_13" android:textColor="?colorAccent" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/textView_show_all" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="@string/All_drawing_topic" />
+</LinearLayout>

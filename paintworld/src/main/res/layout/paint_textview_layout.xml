@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.view.PaintTextView android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="40.0sp" android:layout_gravity="center" android:id="@id/words_tv_horizontal" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <net.huanci.hsj.view.TextViewVertical android:layout_gravity="center" android:id="@id/words_tv_vercical" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</net.huanci.hsj.view.PaintTextView>

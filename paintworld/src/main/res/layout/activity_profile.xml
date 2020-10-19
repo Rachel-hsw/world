@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topBar">
+        <RelativeLayout android:id="@id/layout_head" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="@dimen/margin_normal">
+            <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/Profile_photo" android:layout_centerVertical="true" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_right11" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="@dimen/margin_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            <net.huanci.hsj.view.MaskImageView android:id="@id/imageView_head" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginRight="@dimen/margin_normal" android:layout_toLeftOf="@id/imageView_right11" android:layout_centerVertical="true" app:srcCompat="@mipmap/default_head_image" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/layout_nick" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height" android:layout_marginTop="@dimen/margin_normal">
+            <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/nick" android:layout_centerVertical="true" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_right" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="@dimen/margin_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:id="@id/textView_nick" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:layout_toLeftOf="@id/imageView_right" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <RelativeLayout android:id="@id/layout_sex" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height">
+            <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/Gender" android:layout_centerVertical="true" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_right2" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="@dimen/margin_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:id="@id/textView_sex" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="男" android:layout_toLeftOf="@id/imageView_right2" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <RelativeLayout android:id="@id/layout_area" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height">
+            <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/Place" android:layout_centerVertical="true" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_right3" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="@dimen/margin_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:id="@id/textView_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="北京" android:layout_toLeftOf="@id/imageView_right3" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <RelativeLayout android:id="@id/layout_sig" android:background="?item_clor" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/item_height">
+            <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <TextView android:textSize="@dimen/normal_text_size" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:text="@string/Signature" android:layout_centerVertical="true" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_right4" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="@dimen/margin_normal" android:tint="?setting_arrow_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
+            <TextView android:textSize="@dimen/small_font_size" android:textColor="?words_text_color" android:id="@id/textView_sig" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal" android:text="什么都没有说" android:layout_toLeftOf="@id/imageView_right4" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

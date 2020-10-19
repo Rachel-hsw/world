@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/add_color_to_palette" />
+    <RelativeLayout android:id="@id/bg_view" android:background="@drawable/bg_add_color_to_basecolor" android:paddingLeft="@dimen/dp_16" android:paddingTop="@dimen/dp_1" android:paddingBottom="@dimen/dp_1" android:layout_width="fill_parent" android:layout_height="@dimen/dp_40" android:layout_marginTop="@dimen/dp_20">
+        <Spinner android:textSize="14.0sp" android:textColor="?time_text_color" android:id="@id/spinner" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+</LinearLayout>

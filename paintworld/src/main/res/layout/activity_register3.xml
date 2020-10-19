@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/rl_top_content" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="注册" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_marginBottom="30.0dip" layout="@layout/shadow_bottom" />
+    <net.huanci.hsj.view.CompatibalTextInputLayut android:id="@id/editText_nick" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_double_normal" />
+    <net.huanci.hsj.view.CompatibalTextInputLayut android:id="@id/editText_pwd" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_double_normal" />
+    <Button android:textSize="@dimen/normal_text_size" android:textColor="@color/colorPrimary" android:id="@id/button_register" android:background="?colorAccent" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_margin="@dimen/margin_double_normal" android:text="注册" />
+</LinearLayout>

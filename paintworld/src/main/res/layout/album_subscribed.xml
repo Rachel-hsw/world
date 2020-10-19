@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/rv_album" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginBottom="@dimen/dp_8" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dp_100" layout="@layout/view_no_data_and_error" />
+    <View android:layout_gravity="bottom" android:id="@id/divider" android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="@dimen/dp_8" />
+</FrameLayout>

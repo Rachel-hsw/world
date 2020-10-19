@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RLinearLayout android:orientation="vertical" android:layout_width="160.0dip" android:layout_height="187.0dip" app:background_normal="@color/white" app:corner_radius="@dimen/dp_8"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="@dimen/dp_160" android:layout_height="@dimen/dp_160">
+        <com.ruffian.library.widget.RImageView android:id="@id/iv_work" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" app:corner_radius_top_left="@dimen/dp_8" app:corner_radius_top_right="@dimen/dp_8" />
+        <TextView android:textSize="@dimen/sp_12" android:textColor="@color/white" android:gravity="bottom" android:id="@id/tv_name" android:background="@drawable/bg_item_rating_history" android:paddingLeft="@dimen/dp_12" android:paddingBottom="@dimen/dp_5" android:layout_width="fill_parent" android:layout_height="@dimen/dp_40" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/sp_12" android:textColor="@color/_aaaaaa" android:gravity="center_vertical" android:paddingLeft="@dimen/dp_12" android:layout_width="fill_parent" android:layout_height="@dimen/dp_27" android:text="分享绘画" android:maxLines="1" />
+</com.ruffian.library.widget.RLinearLayout>

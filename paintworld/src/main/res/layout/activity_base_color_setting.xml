@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/base_color_top_bar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:imageRight="@drawable/add" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/base_color_top_bar">
+        <FrameLayout android:orientation="horizontal" android:paddingBottom="@dimen/dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/color_palette_margin_left" android:layout_marginTop="6.0dip" android:layout_marginRight="@dimen/color_palette_margin_left">
+            <include android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/view_palette_quse" />
+            <LinearLayout android:gravity="center_vertical" android:layout_gravity="bottom|center|right" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp_70">
+                <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\#" />
+                <EditText android:textSize="@dimen/sp_14" android:textColor="?normal_text_color" android:gravity="center" android:id="@id/edit_text" android:background="@drawable/bg_custom_color_edittext" android:paddingLeft="@dimen/dp_8" android:paddingTop="@dimen/dp_4" android:paddingRight="@dimen/dp_8" android:paddingBottom="@dimen/dp_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_5" android:minWidth="@dimen/dp_70" android:text="000000" android:includeFontPadding="false" android:maxLength="6" android:digits="@string/color_digits" />
+            </LinearLayout>
+            <TextView android:textSize="@dimen/sp_14" android:textColor="@color/white" android:gravity="center" android:layout_gravity="bottom|center|right" android:id="@id/save_tv" android:paddingLeft="@dimen/dp_20" android:paddingTop="@dimen/dp_6" android:paddingRight="@dimen/dp_20" android:paddingBottom="@dimen/dp_6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp_24" android:text="@string/save" android:includeFontPadding="false" />
+        </FrameLayout>
+        <View android:id="@id/line" android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="@dimen/dp_8" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recylerview" android:background="?bg_color" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/base_color_top_bar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/key_setting_item_view" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="@dimen/item_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:gravity="center" android:id="@id/func_name" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    <TextView android:textSize="14.0sp" android:textColor="?colorAccent" android:gravity="center" android:id="@id/key_name" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+</LinearLayout>

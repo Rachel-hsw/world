@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/color_card_detail" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="50.0dip">
+        <com.ruffian.library.widget.RFrameLayout android:id="@id/avatar_view" android:layout_width="@dimen/dp_70" android:layout_height="@dimen/dp_70" android:layout_marginTop="@dimen/dp_70" android:layout_centerHorizontal="true" app:background_normal="#fff5d3ff" app:corner_radius="@dimen/dp_8">
+            <androidx.appcompat.widget.AppCompatImageView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="@dimen/dp_10" android:layout_centerHorizontal="true" app:srcCompat="@drawable/ic_share_base_color" />
+        </com.ruffian.library.widget.RFrameLayout>
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?name_text_color" android:ellipsize="end" android:gravity="center" android:id="@id/color_palette_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_20" android:layout_marginTop="@dimen/dp_20" android:layout_marginRight="@dimen/dp_20" android:text="" android:maxLines="2" android:layout_below="@id/avatar_view" android:layout_centerHorizontal="true" />
+        <Button android:textSize="@dimen/normal_text_size" android:textColor="@color/white" android:gravity="center" android:id="@id/opt_btn" android:background="?colorAccent" android:layout_width="fill_parent" android:layout_height="@dimen/dp_40" android:layout_marginLeft="@dimen/dp_60" android:layout_marginTop="@dimen/dp_80" android:layout_marginRight="@dimen/dp_60" android:maxWidth="@dimen/dp_330" android:text="@string/import_to_color_card" android:layout_below="@id/color_palette_name" style="@style/NormalStyle" />
+    </RelativeLayout>
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+</RelativeLayout>

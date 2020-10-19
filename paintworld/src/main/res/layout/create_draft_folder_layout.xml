@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_22" android:layout_marginTop="18.0dip" android:text="新建文件夹" />
+    <EditText android:textSize="@dimen/sp_14" android:textColor="@color/words_text_color" android:textColorHint="#ffaaaaaa" android:gravity="top" android:id="@id/folder_name_et" android:background="@drawable/bg_edit_text" android:padding="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dp_22" android:layout_marginTop="@dimen/dp_22" android:layout_marginRight="@dimen/dp_22" android:layout_marginBottom="22.0dip" android:hint="添加文件夹名" android:maxEms="10" android:singleLine="true" android:inputType="text" />
+</LinearLayout>

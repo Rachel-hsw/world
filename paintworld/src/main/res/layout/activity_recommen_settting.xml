@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topbar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showText" app:textRight="@string/chat_save" app:title="@string/recommend_setting" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" layout="@layout/shadow_bottom" />
+        <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/recommend_style" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_double_normal" android:layout_marginBottom="@dimen/margin_normal_half">
+                    <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="你希望本作品：" />
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_notify" android:padding="@dimen/icon_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/paint_question" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:id="@id/recommend_radiogroup1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal">
+                    <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="15.0sp" android:textColor="?item_text_color" android:id="@id/recommend_none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="不被推荐" />
+                    <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="15.0sp" android:textColor="?item_text_color" android:id="@id/recommend_other" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_half" android:checked="false" android:text="@string/recommend_by_other" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_recommend_self" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_half">
+                        <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="15.0sp" android:textColor="?item_text_color" android:id="@id/recommend_self" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="自荐" />
+                        <TextView android:textSize="14.0sp" android:textColor="?colorAccent" android:id="@id/recommend_leftCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" android:text="剩余一次" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View android:id="@id/divider_line1" android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_margin="@dimen/margin_normal" />
+                <TextView android:textSize="16.0sp" android:textColor="?item_text_color" android:id="@id/textView_type" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginBottom="@dimen/margin_normal_half" android:text="意向专区：    (竞争激烈度)" />
+                <RelativeLayout android:id="@id/layout_type" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <RadioGroup android:orientation="vertical" android:id="@id/recommend_radiogroup2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_double_normal" />
+                    <LinearLayout android:orientation="vertical" android:id="@id/layout_rating" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_toRightOf="@id/recommend_radiogroup2" />
+                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/view_no_data_and_error" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+</LinearLayout>

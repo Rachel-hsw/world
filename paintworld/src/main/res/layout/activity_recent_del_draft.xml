@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/topbar_layout" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height">
+        <net.huanci.hsj.view.TopBar android:id="@id/topbar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:imageRight="@mipmap/more" app:showType="showImg" app:title="@string/recent_del" />
+        <LinearLayout android:layout_gravity="end|center" android:orientation="horizontal" android:id="@id/top_right_opt" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="11.0dip">
+            <TextView android:textSize="12.0sp" android:textColor="?topbar_right_text_color" android:id="@id/top_sel_all" android:background="?selectableItemBackground" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/select_all" android:includeFontPadding="false" />
+            <TextView android:textSize="12.0sp" android:textColor="?topbar_right_text_color" android:id="@id/top_cancel" android:background="?selectableItemBackground" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cancel" android:includeFontPadding="false" />
+        </LinearLayout>
+    </FrameLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/opt_layout" android:background="?tabbar_bg_color" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/draft_bottom_btn_height" android:layout_alignParentBottom="true">
+        <TextView android:textColor="?normal_text_color" android:gravity="center" android:id="@id/restore_draft" android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/restore" style="@style/NormalStyle" />
+    </LinearLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/opt_layout" android:layout_below="@id/topbar_layout">
+        <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/recylerview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/recyclerv_item_half_space" android:layout_marginRight="@dimen/recyclerv_item_half_space" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topbar_layout" layout="@layout/view_no_data_and_error" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topbar_layout" layout="@layout/shadow_bottom" />
+</RelativeLayout>

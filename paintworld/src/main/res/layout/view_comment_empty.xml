@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/empty_view" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_no_data" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:layout_centerHorizontal="true" app:srcCompat="@drawable/no_data" app:tint="?no_data_icon_color" />
+    <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:id="@id/textView_tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/no_data" android:layout_below="@id/imageView_no_data" android:layout_centerHorizontal="true" />
+</RelativeLayout>

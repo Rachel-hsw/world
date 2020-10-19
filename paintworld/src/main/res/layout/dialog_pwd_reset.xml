@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruffian.library.widget.RLinearLayout android:orientation="vertical" android:background="@drawable/shape_round_white" android:focusable="false" android:layout_width="fill_parent" android:layout_height="@dimen/dp_139" app:background_normal="?dialog_bg_color" app:corner_radius="@dimen/dp_5"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/sp_15" android:textColor="?bold_text_color" android:gravity="center" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_25" android:layout_marginTop="@dimen/dp_27" android:layout_marginRight="@dimen/dp_25" android:text="@string/bonus_pwd_error" />
+    <View android:id="@id/view_divider_1" android:background="?dialog_line" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/margin_normal" android:layout_marginTop="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_normal" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/dp_45">
+        <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="@color/_2c8bf2" android:gravity="center" android:id="@id/tv_retry" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/retry" android:layout_toLeftOf="@id/divider" />
+        <View android:id="@id/divider" android:background="?dialog_line" android:layout_width="@dimen/dp_1" android:layout_height="fill_parent" android:layout_marginTop="@dimen/margin_normal_half" android:layout_marginBottom="@dimen/margin_normal_half" android:layout_centerInParent="true" />
+        <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="@color/_2c8bf2" android:gravity="center" android:id="@id/tv_pwd_forget" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/pwd_forget" android:layout_toRightOf="@id/divider" />
+    </RelativeLayout>
+</com.ruffian.library.widget.RLinearLayout>

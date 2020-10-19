@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button android:id="@id/connect" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="链接" />
+    <EditText android:id="@id/content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/connect" />
+    <Button android:id="@id/send" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="发送" android:layout_below="@id/content" />
+    <TextView android:id="@id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="返回的内容" android:layout_below="@id/send" />
+</RelativeLayout>

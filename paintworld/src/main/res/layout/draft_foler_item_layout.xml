@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/draft_folder_item_layout" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.MaskImageView android:id="@id/draft_folder_img_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" app:srcCompat="@mipmap/draft_folder_img" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="9.0dip" android:layout_alignParentBottom="true" android:layout_marginStart="12.0dip" android:layout_marginEnd="12.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="@color/item_text_color" android:ellipsize="end" android:id="@id/folder_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" />
+        <TextView android:textSize="12.0sp" android:textColor="@color/words_text_color" android:id="@id/item_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:includeFontPadding="false" />
+    </LinearLayout>
+    <com.ruffian.library.widget.RFrameLayout android:id="@id/left_time_fl" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/recycle_top_margin" android:minWidth="29.0dip" android:minHeight="16.0dip" android:layout_alignParentTop="true" android:layout_marginEnd="8.0dip" android:layout_alignParentEnd="true" app:background_normal="?replied_comment_bg" app:corner_radius="3.0dip">
+        <TextView android:textSize="12.0sp" android:textColor="?words_text_color" android:layout_gravity="center" android:id="@id/left_item_tv" android:paddingLeft="5.0dip" android:paddingTop="3.0dip" android:paddingRight="5.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+    </com.ruffian.library.widget.RFrameLayout>
+    <RelativeLayout android:id="@id/layout_foreview" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <net.huanci.hsj.view.DraftSelFlagView android:id="@id/draft_item_foreview" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+</RelativeLayout>

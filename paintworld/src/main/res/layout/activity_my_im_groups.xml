@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/root_view" android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topbar_im_group" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/im_my_groups" />
+    <RelativeLayout android:id="@id/search_editlayout" android:layout_width="fill_parent" android:layout_height="@dimen/dp_40" android:layout_margin="@dimen/dp_16" android:layout_below="@id/topbar_im_group">
+        <TextView android:textSize="@dimen/sp_14" android:textColor="?im_group_search_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/im_group_search_title" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/search_editlayout">
+        <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/rv_topics" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/search_editlayout" layout="@layout/view_no_data_and_error" />
+    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topbar_im_group" layout="@layout/shadow_bottom" />
+</RelativeLayout>

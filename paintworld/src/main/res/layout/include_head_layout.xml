@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/user_icon_layout" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/head_layout" android:layout_width="@dimen/dp_40" android:layout_height="@dimen/dp_40">
+        <net.huanci.hsj.view.MaskImageView android:id="@id/dynamic_userIcon" android:layout_width="34.0dip" android:layout_height="34.0dip" android:layout_centerInParent="true" app:srcCompat="@mipmap/default_head_image" />
+        <net.huanci.hsj.view.MaskImageView android:id="@id/user_vip" android:visibility="gone" android:layout_width="17.0dip" android:layout_height="17.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" app:srcCompat="@drawable/bg_vip" />
+    </RelativeLayout>
+    <TextView android:textSize="10.0sp" android:textColor="?colorAccent" android:id="@id/tv_level" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="LV.1" android:layout_below="@id/head_layout" android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.view.LayerManagerView android:id="@id/view_layer_manager" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:id="@id/clickview" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.lihang.ShadowLayout android:layout_gravity="end|center" android:id="@id/view_layer_parent" android:layout_width="wrap_content" android:layout_height="wrap_content" app:hl_cornerRadius="15.0dip" app:hl_dx="0.0dip" app:hl_dy="0.0dip" app:hl_rightShow="false" app:hl_shadowBackColor="@color/transparent" app:hl_shadowColor="@color/hsj_shadow_color" app:hl_shadowLimit="@dimen/hsj_shadow_limit">
+        <LinearLayout android:orientation="vertical" android:id="@id/content" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <FrameLayout android:id="@id/control_player_pp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                <LinearLayout android:gravity="center_horizontal" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/control_player_p" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="1.5dip">
+                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="9.0dip" android:scaleType="fitCenter" android:tint="?colorAccent" app:srcCompat="@mipmap/control_flag1" />
+                    <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:ellipsize="end" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/control_player_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:singleLine="true" />
+                </LinearLayout>
+            </FrameLayout>
+            <RelativeLayout android:id="@id/imageView_addLayer_parent" android:layout_width="fill_parent" android:layout_height="42.0dip">
+                <androidx.appcompat.widget.AppCompatImageView android:id="@id/imageView_addLayer" android:paddingLeft="25.0dip" android:paddingTop="10.0dip" android:paddingRight="25.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/plus" />
+                <TextView android:textSize="13.0sp" android:textStyle="bold" android:textColor="?colorAccent" android:ellipsize="end" android:gravity="center" android:id="@id/mp_player_nick" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:singleLine="true" />
+                <RelativeLayout android:id="@id/mp_players" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@id/mp_players_iv" android:paddingLeft="17.0dip" android:paddingRight="17.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/mp_players" />
+                    <View android:background="?android:selectableItemBackground" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignLeft="@id/mp_players_iv" android:layout_alignRight="@id/mp_players_iv" />
+                </RelativeLayout>
+                <RelativeLayout android:id="@id/touguangtai_layout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+                    <androidx.appcompat.widget.AppCompatImageView android:id="@id/touguangtai_iv" android:paddingLeft="17.0dip" android:paddingRight="17.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="centerInside" />
+                    <View android:background="?android:selectableItemBackground" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignLeft="@id/touguangtai_iv" android:layout_alignRight="@id/touguangtai_iv" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <include layout="@layout/horizontal_divider_big" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerview" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+            <include layout="@layout/horizontal_divider_big" />
+            <include android:id="@id/canvas_bg" android:layout_width="fill_parent" android:layout_height="69.0dip" layout="@layout/item_layer" />
+            <View android:id="@id/close_control_divider" android:background="?big_divider" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="?item_text_color" android:gravity="center" android:id="@id/close_control" android:layout_width="fill_parent" android:layout_height="42.0dip" android:text="@string/close_control" />
+        </LinearLayout>
+    </com.lihang.ShadowLayout>
+</net.huanci.hsj.view.LayerManagerView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_root_content" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/video_send_talk" android:background="?item_clor" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <net.huanci.hsj.view.AtEditText android:textColor="?item_text_color" android:textColorHint="?normal_text_color" android:layout_gravity="center" android:id="@id/send_talk_edit" android:background="@null" android:visibility="visible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:hint="@string/rating_add_comment" android:maxLength="24" android:layout_weight="1.0" style="@style/NormalStyle" />
+        <androidx.appcompat.widget.AppCompatImageView android:gravity="center" android:layout_gravity="center" android:id="@id/send_talk_image" android:padding="@dimen/icon_padding" android:layout_width="@dimen/workdetail_bottom_height" android:layout_height="@dimen/workdetail_bottom_height" android:layout_marginRight="@dimen/dp_10" android:scaleType="fitCenter" android:tint="?colorAccent" app:srcCompat="@drawable/send" />
+    </LinearLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/comments_linear" android:background="?item_clor" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dp_250" android:layout_above="@id/video_send_talk">
+        <TextView android:textSize="@dimen/sp_12" android:textStyle="bold" android:textColor="?name_text_color" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_20" android:layout_marginTop="@dimen/dp_16" android:text="@string/rating_my_comments" />
+        <androidx.appcompat.widget.AppCompatImageView android:id="@id/closeBtn" android:padding="5.0dip" android:layout_width="@dimen/dp_25" android:layout_height="@dimen/dp_25" android:layout_marginTop="@dimen/dp_10" android:layout_marginRight="@dimen/dp_16" android:scaleType="fitCenter" android:tint="?item_text_color" android:layout_alignParentRight="true" app:srcCompat="@mipmap/close" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/dp_10" android:layout_below="@id/title" />
+        <View android:background="?all_line_gray" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</RelativeLayout>

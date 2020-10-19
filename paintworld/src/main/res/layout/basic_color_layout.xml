@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/memory_color_layout" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:id="@id/basic_color1" android:background="@drawable/color_rect_shape1" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" />
+        <View android:id="@id/basic_color16" android:background="@drawable/color_rect_shape16" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+        <View android:id="@id/basic_color14" android:background="@drawable/color_rect_shape14" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+        <View android:id="@id/basic_color2" android:background="@drawable/color_rect_shape2" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+        <View android:id="@id/basic_color9" android:background="@drawable/color_rect_shape9" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+        <View android:id="@id/basic_color15" android:background="@drawable/color_rect_shape15" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" />
+        <View android:id="@id/basic_color7" android:background="@drawable/color_rect_shape7" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+        <View android:id="@id/basic_color4" android:background="@drawable/color_rect_shape4" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+        <View android:id="@id/basic_color3" android:background="@drawable/color_rect_shape3" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+        <View android:id="@id/basic_color8" android:background="@drawable/color_rect_shape8" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+        <View android:id="@id/basic_color5" android:background="@drawable/color_rect_shape5" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" />
+        <View android:id="@id/basic_color10" android:background="@drawable/color_rect_shape10" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+        <View android:id="@id/basic_color11" android:background="@drawable/color_rect_shape11" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+        <View android:id="@id/basic_color12" android:background="@drawable/color_rect_shape12" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+        <View android:id="@id/basic_color13" android:background="@drawable/color_rect_shape13" android:layout_width="@dimen/paint_color_Rect_width" android:layout_height="@dimen/paint_color_Rect_width" android:layout_marginLeft="10.0dip" />
+    </LinearLayout>
+</LinearLayout>

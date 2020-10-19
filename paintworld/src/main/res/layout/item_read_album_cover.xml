@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_work" android:layout_width="fill_parent" android:layout_height="480.0dip" android:layout_marginLeft="@dimen/dp_12" android:layout_marginRight="@dimen/dp_12" android:scaleType="centerCrop" />
+    <FrameLayout android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_12" android:layout_marginRight="@dimen/dp_12">
+        <View android:layout_gravity="bottom" android:background="?read_album_bg" android:layout_width="fill_parent" android:layout_height="20.0dip" />
+        <LinearLayout android:orientation="vertical" android:id="@id/info" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:background="@drawable/shape_album_cover_bg" android:paddingLeft="@dimen/margin_double_normal" android:paddingTop="@dimen/dp_120" android:paddingBottom="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:id="@id/iv_head" android:background="@drawable/bg_white_circle" android:padding="@dimen/dp_2" android:layout_width="@dimen/dp_42" android:layout_height="@dimen/dp_42" app:srcCompat="@drawable/small_default_head" />
+                <TextView android:textSize="@dimen/sp_15" android:textColor="#ff39393b" android:layout_gravity="center_vertical" android:id="@id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" />
+            </LinearLayout>
+            <com.ruffian.library.widget.RLinearLayout android:orientation="vertical" android:paddingLeft="@dimen/margin_double_normal" android:paddingBottom="@dimen/margin_double_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" app:background_normal="@color/white" app:corner_radius_bottom_left="@dimen/dp_8" app:corner_radius_bottom_right="@dimen/dp_8">
+                <TextView android:textSize="@dimen/sp_24" android:textStyle="bold" android:textColor="#ff39393b" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_half" />
+                <TextView android:textSize="@dimen/sp_14" android:textColor="#ff39393b" android:ellipsize="end" android:id="@id/tv_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" />
+                <TextView android:textSize="@dimen/sp_11" android:textColor="#ffa6a7ab" android:id="@id/tv_info" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_8" />
+            </com.ruffian.library.widget.RLinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <master.flame.danmaku.ui.widget.DanmakuView android:id="@id/dmkView" android:layout_width="fill_parent" android:layout_height="@dimen/dp_200" android:layout_marginTop="@dimen/margin_double_normal" />
+</FrameLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/topbar_topic_list" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/draw_idea_new" />
+    <include layout="@layout/shadow_bottom" />
+    <net.huanci.hsj.album.ui.DrawIdeaVerticalStepView android:id="@id/vertical_stepView" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

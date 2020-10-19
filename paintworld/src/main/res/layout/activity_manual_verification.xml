@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?item_clor"
+    android:fitsSystemWindows="true">
+
+    <net.huanci.hsj.view.TopBar
+        android:id="@id/rl_top_content"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_height"
+        app:showType="showNone"
+        app:title="人工验证" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_top_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20.0dip"
+            android:paddingRight="20.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/manual_vertification_rule"
+                android:textColor="?name_text_color"
+                android:textSize="15.0sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/manual_vertification_rule_detail"
+                android:textColor="?name_text_color"
+                android:textSize="12.0sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_28"
+                android:lineSpacingExtra="@dimen/dp_3"
+                android:text="@string/manual_vertification_rule_1"
+                android:textColor="?normal_text_color"
+                android:textSize="15.0sp" />
+
+            <net.huanci.hsj.view.MaskImageView
+                android:id="@id/image_view1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_12"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_manualverification_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:lineSpacingExtra="@dimen/dp_3"
+                android:text="@string/manual_vertification_rule_2"
+                android:textColor="?normal_text_color"
+                android:textSize="15.0sp" />
+
+            <net.huanci.hsj.view.MaskImageView
+                android:id="@id/image_view2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_manualverification_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:lineSpacingExtra="@dimen/dp_3"
+                android:text="@string/manual_vertification_rule_3"
+                android:textColor="?normal_text_color"
+                android:textSize="15.0sp" />
+
+            <net.huanci.hsj.view.MaskImageView
+                android:id="@id/image_view3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_manualverification_3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_31"
+                android:text="@string/manual_vertification_upload_imgs"
+                android:textColor="?name_text_color"
+                android:textSize="15.0sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:lineSpacingExtra="@dimen/dp_3"
+                android:text="@string/manual_vertification_introduction"
+                android:textColor="?normal_text_color"
+                android:textSize="15.0sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@id/recyclerView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12" />
+
+            <net.huanci.hsj.view.ZoneView
+                android:id="@id/zone_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_30"
+                android:gravity="center_vertical" />
+
+            <net.huanci.hsj.view.CompatibalTextInputLayut
+                android:id="@id/inputLayout_phone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="60.0dip"
+                android:orientation="horizontal">
+
+                <net.huanci.hsj.view.CompatibalTextInputLayut
+                    android:id="@id/inputLayout_yanzhengma"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@id/button_resend"
+                    android:layout_width="110.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:padding="@dimen/margin_normal_half"
+                    android:text="@string/get_sms1"
+                    android:textColor="?colorAccent" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="@string/manual_vertification_reason_tips"
+                android:textColor="?name_text_color"
+                android:textSize="15.0sp" />
+
+            <RelativeLayout
+                android:id="@id/reason_relativeLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dp_160"
+                android:layout_marginTop="@dimen/dp_12">
+
+                <net.huanci.hsj.view.MyEditText
+                    android:id="@id/reason_editText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_above="@id/reason_count"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginBottom="@dimen/dp_5"
+                    android:background="@null"
+                    android:gravity="center|left|top"
+                    android:maxLength="100"
+                    android:textColor="?name_text_color"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:id="@id/reason_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="@dimen/dp_12"
+                    android:layout_marginBottom="@dimen/dp_9"
+                    android:text="100"
+                    android:textColor="?time_text_color" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@id/submit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_36"
+                android:layout_marginBottom="@dimen/dp_20"
+                android:background="?colorAccent"
+                android:gravity="center"
+                android:minHeight="40.0dip"
+                android:text="@string/draw_idea_submit"
+                android:textColor="@color/white"
+                android:textSize="15.0sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        layout="@layout/shadow_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/shadow_width"
+        android:layout_below="@id/rl_top_content" />
+</RelativeLayout>

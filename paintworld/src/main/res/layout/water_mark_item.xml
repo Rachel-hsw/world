@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.huanci.hsj.view.SameHByWFrameLayout android:id="@id/water_mark_item" android:background="?replied_comment_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/waterMarkIv" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="end|center|top" android:id="@id/waterMarkSel" android:paddingLeft="5.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="?colorAccent" app:srcCompat="@mipmap/ic_sure" />
+    <FrameLayout android:id="@id/waterMarkDel" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="end|center|top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="?colorAccent" app:srcCompat="@mipmap/ic_clear" />
+    </FrameLayout>
+    <TextView android:textSize="14.0sp" android:textColor="?words_text_color" android:layout_gravity="center" android:id="@id/no_waterMark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/no_water_mark" />
+    <net.huanci.hsj.view.MaskImageView android:id="@id/mask" android:layout_width="fill_parent" android:layout_height="fill_parent" app:miv_is_ignore_alpha="false" />
+    <View android:background="?android:selectableItemBackground" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</net.huanci.hsj.view.SameHByWFrameLayout>

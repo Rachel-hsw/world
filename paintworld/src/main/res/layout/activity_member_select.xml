@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <net.huanci.hsj.view.TopBar android:id="@id/toolbar_members" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:imageRight="@drawable/main_search" app:srcCompat="@mipmap/ic_left_arrow" app:title="选择用户" />
+    <include layout="@layout/shadow_bottom" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/search_edittext_bg" android:padding="7.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="5.0dip">
+        <androidx.appcompat.widget.AppCompatImageView android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/main_search" />
+        <EditText android:textColor="?normal_text_color" android:gravity="center_vertical" android:id="@id/et_search" android:background="@null" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:hint="点击搜索" android:singleLine="true" android:layout_weight="1.0" android:imeOptions="actionSearch" style="@style/NormalStyle" />
+    </LinearLayout>
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/swipe_refresh_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/rv_members" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/view_no_data_and_error" />
+</LinearLayout>
