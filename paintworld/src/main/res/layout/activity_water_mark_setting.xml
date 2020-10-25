@@ -1,36 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <net.huanci.hsj.view.TopBar android:id="@id/topbar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showText" app:textRight="@string/save" app:title="@string/water_mark_setting" />
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/topbar">
-        <RelativeLayout android:padding="@dimen/margin_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_half">
-            <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/water_mark_choose" android:layout_centerVertical="true" />
-            <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:id="@id/wm_edit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/edit" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?item_clor"
+    android:fitsSystemWindows="true">
+
+    <net.huanci.hsj.view.TopBar
+        android:id="@id/topbar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_height"
+        app:showType="showText"
+        app:textRight="@string/save"
+        app:title="@string/water_mark_setting" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topbar"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal_half"
+            android:padding="@dimen/margin_normal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/water_mark_choose"
+                android:textColor="?item_text_color"
+                android:textSize="14.0sp" />
+
+            <TextView
+                android:id="@id/wm_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@string/edit"
+                android:textColor="?item_text_color"
+                android:textSize="14.0sp" />
         </RelativeLayout>
-        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerview" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal_half" />
-            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
-                <include android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/loading_layout" />
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@id/recyclerview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_normal_half" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="1.0dip"
+                    android:layout_weight="1.0" />
+
+                <include
+                    layout="@layout/loading_layout"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0" />
             </LinearLayout>
         </FrameLayout>
-        <include android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_margin="@dimen/margin_normal" layout="@layout/horizontal_divider" />
-        <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/margin_normal_half" android:text="@string/opacity_degree" />
-        <RelativeLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <TextView android:textSize="13.0sp" android:textColor="?item_text_color" android:id="@id/opacity_degree" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_double_normal" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-            <include android:id="@id/seekbar_opacity" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_normal_half" android:layout_toLeftOf="@id/opacity_degree" android:layout_centerVertical="true" layout="@layout/seekbar_custom" />
+
+        <include
+            layout="@layout/horizontal_divider"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_margin="@dimen/margin_normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_normal_half"
+            android:padding="@dimen/margin_normal"
+            android:text="@string/opacity_degree"
+            android:textColor="?item_text_color"
+            android:textSize="14.0sp" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@id/opacity_degree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_double_normal"
+                android:textColor="?item_text_color"
+                android:textSize="13.0sp" />
+
+            <include
+                android:id="@id/seekbar_opacity"
+                layout="@layout/seekbar_custom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal_half"
+                android:layout_toLeftOf="@id/opacity_degree" />
         </RelativeLayout>
-        <include android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_margin="@dimen/margin_normal" layout="@layout/horizontal_divider" />
-        <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:id="@id/pos_setting_tv" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/water_mark_pos_setting" />
-        <RelativeLayout android:orientation="horizontal" android:paddingLeft="@dimen/margin_normal" android:paddingRight="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="fill_parent">
-            <RadioGroup android:orientation="vertical" android:id="@id/default_pos_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="16.0sp" android:textColor="?item_text_color" android:id="@id/bottom_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:text="@string/bottom_right" />
-                <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="16.0sp" android:textColor="?item_text_color" android:id="@id/bottom_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:text="@string/bottom_left" />
-                <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="16.0sp" android:textColor="?item_text_color" android:id="@id/bottom_center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:text="@string/bottom_center" />
-                <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="16.0sp" android:textColor="?item_text_color" android:id="@id/img_center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:text="@string/img_center" />
+
+        <include
+            layout="@layout/horizontal_divider"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_margin="@dimen/margin_normal" />
+
+        <TextView
+            android:id="@id/pos_setting_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_normal"
+            android:text="@string/water_mark_pos_setting"
+            android:textColor="?item_text_color"
+            android:textSize="14.0sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/margin_normal"
+            android:paddingRight="@dimen/margin_normal">
+
+            <RadioGroup
+                android:id="@id/default_pos_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@id/bottom_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginBottom="5.0dip"
+                    android:text="@string/bottom_right"
+                    android:textColor="?item_text_color"
+                    android:textSize="16.0sp"
+                    android:theme="?radiobutton_style" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@id/bottom_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginBottom="5.0dip"
+                    android:text="@string/bottom_left"
+                    android:textColor="?item_text_color"
+                    android:textSize="16.0sp"
+                    android:theme="?radiobutton_style" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@id/bottom_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginBottom="5.0dip"
+                    android:text="@string/bottom_center"
+                    android:textColor="?item_text_color"
+                    android:textSize="16.0sp"
+                    android:theme="?radiobutton_style" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@id/img_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginBottom="5.0dip"
+                    android:text="@string/img_center"
+                    android:textColor="?item_text_color"
+                    android:textSize="16.0sp"
+                    android:theme="?radiobutton_style" />
             </RadioGroup>
-            <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginBottom="@dimen/margin_double_normal" android:layout_toRightOf="@id/default_pos_layout" layout="@layout/water_mark_pos_setting_view" />
+
+            <include
+                layout="@layout/water_mark_pos_setting_view"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="@dimen/margin_double_normal"
+                android:layout_marginBottom="@dimen/margin_double_normal"
+                android:layout_toRightOf="@id/default_pos_layout" />
         </RelativeLayout>
     </LinearLayout>
-    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topbar" layout="@layout/shadow_bottom" />
+
+    <include
+        layout="@layout/shadow_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/shadow_width"
+        android:layout_below="@id/topbar" />
 </RelativeLayout>

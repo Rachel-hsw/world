@@ -1,122 +1,425 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/selector_listitem"
-        android:padding="10dp"
-        android:clickable="true"
-        android:onClick="onEnterCommentAreaBtn">
+    <RelativeLayout
+        android:id="@+id/layout_at"
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:background="@color/white">
 
-        <!--头像-->
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/img_chat_comment"/>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="?android:selectableItemBackground" />
 
-
-
-        <!--昵称-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical">
-            <TextView
-
-                style="@style/AvatarText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:text="评论"/>
-
-            <ImageButton
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="5dp"
-                android:background="@drawable/img_detail"/>
-        </RelativeLayout>
-
-        <!--最近一条聊天记录-->
-        <TextView
-
-            style="@style/ContentText"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView_at"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:singleLine="true"
-            android:layout_marginTop="3dp"/>
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20.0dip"
+            app:srcCompat="@drawable/ic_message_at" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/message_tv_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/imageView_at"
+            android:text="@string/at_me"
+            android:textColor="@color/item_text_color"
+            android:textSize="16sp" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/listline"/>
+        <RelativeLayout
+            android:id="@+id/layout_at_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20.0dip"
+            android:minHeight="18dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@drawable/selector_listitem"
-        android:padding="10dp"
-        android:clickable="true"
-        android:onClick="onEnterLikeAreaBtn">
-
-        <!--头像-->
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/img_chat_like"/>
-
-
-
-            <!--昵称-->
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_vertical">
-                <TextView
-                    android:id="@+id/chatlistitem_nickname"
-                    style="@style/AvatarText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
-                    android:text="赞"/>
-
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/img_detail"/>
-            </RelativeLayout>
-
-            <!--最近一条聊天记录-->
             <TextView
-                android:id="@+id/chatlistitem_content"
-                style="@style/ContentText"
+                android:id="@+id/textview_at_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:singleLine="true"
-                android:layout_marginTop="3dp"/>
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </RelativeLayout>
 
-    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/layout_comment"
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="1.0px"
+        android:background="@color/white">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="?android:selectableItemBackground" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20.0dip"
+            app:srcCompat="@drawable/ic_message_comment" />
+
+        <TextView
+            android:id="@+id/message_tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/imageView_comment"
+            android:text="评论"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/layout_comment_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20.0dip"
+            android:minHeight="18dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textview_comment_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="0"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_fans"
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="1.0px"
+        android:background="@color/white">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="?android:selectableItemBackground" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView_fans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20.0dip"
+            
+            app:srcCompat="@drawable/ic_message_fans" />
+
+        <TextView
+            android:id="@+id/message_tv_fans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/imageView_fans"
+            android:text="粉丝"
+            android:textColor="@color/item_text_color"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/layout_focus_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20.0dip"
+            android:minHeight="18dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textview_focus_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="0"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_gift"
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="1.0px"
+        android:background="@color/white">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="?android:selectableItemBackground" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView_gift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20.0dip"
+            
+            app:srcCompat="@drawable/ic_message_gift_big" />
+
+        <TextView
+            android:id="@+id/message_tv_gift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/imageView_gift"
+            android:text="礼物"
+            android:textColor="@color/item_text_color"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/layout_gift_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20.0dip"
+            android:minHeight="18dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textview_gift_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="0"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_praise"
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="1.0px"
+        android:background="@color/white">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="?android:selectableItemBackground" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20.0dip"
+            
+            app:srcCompat="@drawable/ic_message_like" />
+
+        <TextView
+            android:id="@+id/message_tv_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/imageView_praise"
+            android:text="赞"
+            android:textColor="@color/item_text_color"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/layout_priase_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20.0dip"
+            android:minHeight="18dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textview_praise_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="0"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_imGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="1.0px"
+        android:background="@color/white">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="?android:selectableItemBackground" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView_imGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20.0dip"
+            
+            app:srcCompat="@mipmap/im_group_conversation" />
+
+        <TextView
+            android:id="@+id/message_tv_imGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/imageView_imGroup"
+            android:text="群系统"
+            android:textColor="@color/item_text_color"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/layout_imGroup_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20.0dip"
+            android:minHeight="18dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textview_imGroup_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="0"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_sys"
+        android:layout_width="fill_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="1.0px"
+        android:background="@color/white">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="?android:selectableItemBackground" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageView_sys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20.0dip"
+            
+            app:srcCompat="@drawable/ic_message_system" />
+
+        <TextView
+            android:id="@+id/message_tv_sys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@id/imageView_sys"
+            android:text="通知"
+            android:textColor="@color/item_text_color"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/layout_sys_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20.0dip"
+            android:minHeight="18dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textview_sys_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="0"
+                android:textColor="@color/colorPrimary"
+                android:textSize="13sp" />
+        </RelativeLayout>
+    </RelativeLayout>
 </LinearLayout>

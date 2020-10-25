@@ -1,25 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/layout_words" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout android:orientation="horizontal" android:id="@id/btns" android:paddingTop="2.0dip" android:paddingBottom="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/words_input" android:background="?android:selectableItemBackground" android:padding="4.0dip" android:layout_width="@dimen/paint_icon_width_small" android:layout_height="@dimen/paint_icon_width_small" android:layout_marginLeft="10.0dip" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/keyboard" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/words_font" android:background="?android:selectableItemBackground" android:padding="4.0dip" android:layout_width="@dimen/paint_icon_width_small" android:layout_height="@dimen/paint_icon_width_small" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/draw_font" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/words_size" android:background="?android:selectableItemBackground" android:padding="4.0dip" android:layout_width="@dimen/paint_icon_width_small" android:layout_height="@dimen/paint_icon_width_small" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/change_font_size" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/words_rotate" android:background="?android:selectableItemBackground" android:padding="4.0dip" android:layout_width="@dimen/paint_icon_width_small" android:layout_height="@dimen/paint_icon_width_small" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@drawable/selector_word_dir" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/words_color" android:background="?android:selectableItemBackground" android:padding="4.0dip" android:layout_width="@dimen/paint_icon_width_small" android:layout_height="@dimen/paint_icon_width_small" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/choose_color" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/words_cancel" android:background="?android:selectableItemBackground" android:padding="4.0dip" android:layout_width="@dimen/paint_icon_width_small" android:layout_height="@dimen/paint_icon_width_small" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/close" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/words_confirm" android:background="?android:selectableItemBackground" android:padding="4.0dip" android:layout_width="@dimen/paint_icon_width_small" android:layout_height="@dimen/paint_icon_width_small" android:layout_marginRight="10.0dip" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/paint_sure" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/layout_words"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@id/btns"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:paddingTop="2.0dip"
+        android:paddingBottom="2.0dip">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/words_input"
+            android:layout_width="@dimen/paint_icon_width_small"
+            android:layout_height="@dimen/paint_icon_width_small"
+            android:layout_marginLeft="10.0dip"
+            android:background="?android:selectableItemBackground"
+            android:padding="4.0dip"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/keyboard" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/words_font"
+            android:layout_width="@dimen/paint_icon_width_small"
+            android:layout_height="@dimen/paint_icon_width_small"
+            android:background="?android:selectableItemBackground"
+            android:padding="4.0dip"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/draw_font" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/words_size"
+            android:layout_width="@dimen/paint_icon_width_small"
+            android:layout_height="@dimen/paint_icon_width_small"
+            android:background="?android:selectableItemBackground"
+            android:padding="4.0dip"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/change_font_size" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/words_rotate"
+            android:layout_width="@dimen/paint_icon_width_small"
+            android:layout_height="@dimen/paint_icon_width_small"
+            android:background="?android:selectableItemBackground"
+            android:padding="4.0dip"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@drawable/selector_word_dir" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/words_color"
+            android:layout_width="@dimen/paint_icon_width_small"
+            android:layout_height="@dimen/paint_icon_width_small"
+            android:background="?android:selectableItemBackground"
+            android:padding="4.0dip"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/choose_color" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/words_cancel"
+            android:layout_width="@dimen/paint_icon_width_small"
+            android:layout_height="@dimen/paint_icon_width_small"
+            android:background="?android:selectableItemBackground"
+            android:padding="4.0dip"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/close" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/words_confirm"
+            android:layout_width="@dimen/paint_icon_width_small"
+            android:layout_height="@dimen/paint_icon_width_small"
+            android:layout_marginRight="10.0dip"
+            android:background="?android:selectableItemBackground"
+            android:padding="4.0dip"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/paint_sure" />
     </LinearLayout>
-    <LinearLayout android:orientation="vertical" android:id="@id/words_et_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_below="@id/btns" android:layout_alignLeft="@id/btns" android:layout_alignRight="@id/btns">
-        <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:layout_marginTop="8.0dip" android:text="文字" />
-        <EditText android:textSize="12.0sp" android:textColor="?words_text_color" android:textColorHint="?time_text_color" android:gravity="center|left|top" android:id="@id/words_et" android:background="@null" android:layout_width="fill_parent" android:layout_height="@dimen/paint_words_input_height1" android:layout_marginLeft="17.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="17.0dip" android:layout_marginBottom="12.0dip" android:hint="输入文字" android:inputType="textMultiLine" />
+
+    <LinearLayout
+        android:id="@id/words_et_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btns"
+        android:layout_alignLeft="@id/btns"
+        android:layout_alignRight="@id/btns"
+        android:layout_marginTop="3.0dip"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17.0dip"
+            android:layout_marginTop="8.0dip"
+            android:text="文字"
+            android:textColor="?item_text_color"
+            android:textSize="12.0sp" />
+
+        <EditText
+            android:id="@id/words_et"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/paint_words_input_height1"
+            android:layout_marginLeft="17.0dip"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginRight="17.0dip"
+            android:layout_marginBottom="12.0dip"
+            android:background="@null"
+            android:gravity="center|left|top"
+            android:hint="输入文字"
+            android:inputType="textMultiLine"
+            android:textColor="?words_text_color"
+            android:textColorHint="?time_text_color"
+            android:textSize="12.0sp" />
     </LinearLayout>
-    <LinearLayout android:orientation="vertical" android:id="@id/words_font_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_below="@id/btns" android:layout_alignLeft="@id/btns" android:layout_alignRight="@id/btns">
-        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
-            <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:text="字体" android:layout_centerVertical="true" />
-            <androidx.appcompat.widget.AppCompatImageView android:id="@id/add_local_font" android:padding="4.0dip" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_marginRight="10.0dip" android:scaleType="centerInside" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/more" app:tint="?paint_icon_tink" />
+
+    <LinearLayout
+        android:id="@id/words_font_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btns"
+        android:layout_alignLeft="@id/btns"
+        android:layout_alignRight="@id/btns"
+        android:layout_marginTop="3.0dip"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="17.0dip"
+                android:text="字体"
+                android:textColor="?item_text_color"
+                android:textSize="12.0sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/add_local_font"
+                android:layout_width="28.0dip"
+                android:layout_height="28.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10.0dip"
+                android:padding="4.0dip"
+                android:scaleType="centerInside"
+                app:srcCompat="@mipmap/more"
+                app:tint="?paint_icon_tink" />
         </RelativeLayout>
-        <androidx.recyclerview.widget.RecyclerView android:scrollbarThumbVertical="?all_line_gray" android:id="@id/words_font_rv" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/paint_words_input_height" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="12.0dip" android:fadeScrollbars="false" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@id/words_font_rv"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/paint_words_input_height"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginRight="5.0dip"
+            android:layout_marginBottom="12.0dip"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="?all_line_gray"
+            android:scrollbars="vertical" />
     </LinearLayout>
-    <include android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:layout_below="@id/btns" android:layout_alignLeft="@id/btns" android:layout_alignRight="@id/btns" layout="@layout/font_size_layout" />
+
+    <include
+        layout="@layout/font_size_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btns"
+        android:layout_alignLeft="@id/btns"
+        android:layout_alignRight="@id/btns"
+        android:layout_marginTop="3.0dip"
+        android:visibility="invisible" />
 </RelativeLayout>

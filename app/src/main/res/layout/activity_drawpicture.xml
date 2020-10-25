@@ -10,16 +10,16 @@
         android:layout_height="match_parent" />
 
     <LinearLayout
-          android:id="@+id/drawpicture_toptoolbar"
+        android:id="@+id/drawpicture_toptoolbar"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@drawable/bg_processing_title"
+        android:background="@color/white"
         android:orientation="horizontal" >
 
-        <Button
+        <com.noahark.moments.ui.widget.TextButton
              android:id="@+id/drawpicture_refuse"
             style="@style/GraffitiButton3"
-            android:drawableTop="@drawable/btn_refuse_normal"
+            android:drawableTop="@mipmap/close"
             android:onClick="onDrawPictureBackBtn" />
 
         <LinearLayout
@@ -31,15 +31,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="插入图片"
-                android:textColor="@color/white"
+                android:text="贴纸"
+                android:textColor="@color/textcolor"
                 android:textSize="20sp" />
         </LinearLayout>
 
-        <Button
+        <com.noahark.moments.ui.widget.TextButton
              android:id="@+id/drawpicture_sure"
             style="@style/GraffitiButton3"
-            android:drawableTop="@drawable/btn_sure_normal"
+            android:drawableTop="@drawable/ucrop_ic_done"
             android:onClick="onDrawPictureOkBtn" />
     </LinearLayout>
 
@@ -50,13 +50,16 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
 
-        <Button
+        <com.noahark.moments.ui.widget.TextButton
+            android:layout_height="56dp"
             android:id="@+id/drawpicture_select"
             style="@style/DrawPictureButton"
+            android:background="@color/black333"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:drawableLeft="@drawable/btn_picture_normal"
             android:onClick="onSelectPictureBtn"
-            android:text="图库" />
+            android:text="贴纸库" />
     </LinearLayout>
 
 </RelativeLayout>

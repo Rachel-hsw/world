@@ -1,6 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/global_bg</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="no_data_img_tink">@color/no_data_img_tink</item>
+        <item name="selectableItemBackground">@drawable/abc_item_background_holo_dark</item>
+        <item name="android:dropDownListViewStyle">@style/contextMenuStyle</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/contextMenuTextAppranceStyle</item>
+        <item name="android:alertDialogTheme">@style/DialogTheme</item>
+        <item name="add_layer_bg_color">@color/add_layer_bg_color</item>
+        <item name="album_shadow_color">@color/album_shadow_color</item>
+        <item name="album_tag_color">@color/album_tag_color</item>
+        <item name="alertDialogTheme">@style/DialogTheme</item>
+        <item name="all_line_gray">@color/small_divider</item>
+        <item name="at_txt_color">@color/at_txt_color</item>
+        <item name="bg_color">@color/bg_color</item>
+        <item name="bg_draw_top">@color/bg_draw_top</item>
+        <item name="bg_draw_top_sel">@color/bg_draw_top_sel</item>
+        <item name="big_divider">@color/big_divider</item>
+        <item name="bold_text_color">@color/bold_text_color</item>
+        <item name="bottom_btn_bg">@color/bg_item</item>
+        <item name="bottom_btn_txt_clor">@color/colorAccent</item>
+        <item name="chat_bubble_bgcolor">@color/chat_bubble_bgcolor</item>
+        <item name="checkbox_style">@style/CheckBoxStyle</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="comment_dialog_style">@style/CommentDialogStyle</item>
+        <item name="comment_pop_bg">@color/comment_pop_bg</item>
+        <item name="delete_history_icon">@mipmap/delete_history</item>
+        <item name="dialog_bg_color">@color/dialog_bg</item>
+        <item name="dialog_line">@color/dialog_line</item>
+        <item name="found_icon">@mipmap/found_hl</item>
+        <item name="half_trans_bg">@color/half_trans_bg</item>
+        <item name="im_conversation_top_bg_color">@color/im_conversation_top_bg_color</item>
+        <item name="im_group_search_bgcolor">@color/im_group_search_bgcolor</item>
+        <item name="im_group_search_text_color">@color/im_group_search_text_color</item>
+        <item name="item_clor">@color/bg_item</item>
+        <item name="item_text_color">@color/item_text_color</item>
+        <item name="layer_manager_view_bg">@color/layer_manager_view_bg</item>
+        <item name="layer_manager_view_stroke">@color/layer_manager_view_stroke</item>
+        <item name="leave_message_tips_bg_color">@color/leave_message_tips_bg_color</item>
+        <item name="leave_message_tips_text_color">@color/white</item>
+        <item name="level_desc_unselected_color">@color/level_desc_unselected</item>
+        <item name="level_score_selected_color">@color/level_score_selected_color</item>
+        <item name="mask_color">@color/mask_color</item>
+        <item name="menu_btn_bg">@color/menu_btn_bg</item>
+        <item name="mp_players_bg">@color/white</item>
+        <item name="name_text_color">@color/name_text_color</item>
+        <item name="navibar_color">@color/bg_topbar</item>
+        <item name="no_data_icon_color">@color/no_data_icon_color</item>
+        <item name="no_data_img_tink">@color/no_data_img_tink</item>
+        <item name="normal_text_color">@color/normal_text_color</item>
+        <item name="paint_bg">@color/paint_bg</item>
+        <item name="paint_edittv_bg">@color/paint_edittv_bg</item>
+        <item name="paint_icon_tink">@color/paint_half_trans_icon_tink</item>
+        <item name="paint_item_bg">@color/paint_item_bg</item>
+        <item name="progressbar_bg">@color/progressbar_bg_color</item>
+        <item name="radiobutton_activated_color">@color/colorAccent</item>
+        <item name="radiobutton_normal_color">@color/item_text_color</item>
+        <item name="radiobutton_style">@style/RadioButtonStyle</item>
+        <item name="rating_item_bg">@drawable/rating_card_bg</item>
+        <item name="rating_test_btn_bg_color">@color/rating_test_btn_bg_color</item>
+        <item name="read_album_bg">@color/read_album_bg</item>
+        <item name="recovery_icon">@drawable/recovery</item>
+        <item name="replied_comment_bg">@color/replied_comment_bg</item>
+        <item name="setting_arrow_color">@color/setting_arrow_color</item>
+        <item name="shadow_end_color">@color/shadow_end_color</item>
+        <item name="shadow_start_color">@color/shadow_start_color</item>
+        <item name="show_mask">0</item>
+        <item name="switchStyle">@style/SwitchStyle</item>
+        <item name="tabbar_bg_color">@color/tabbar_bg_color</item>
+        <item name="tag_bg_color0">@color/tag_bg_color</item>
+        <item name="tag_bg_color1">@color/tag_bg_color</item>
+        <item name="thumb_activated_color">@color/colorAccent</item>
+        <item name="thumb_normal_color">#fff1f1f1</item>
+        <item name="time_text_color">@color/time_text_color</item>
+        <item name="title_text_color">@color/title_text_color</item>
+        <item name="top_bar_btn_bg">@color/top_bar_btn_bg</item>
+        <item name="top_bar_btn_txt">@color/top_bar_btn_bg1</item>
+        <item name="top_bar_color">@color/bg_topbar</item>
+        <item name="topbar_icon_color">@color/topbar_icon_color</item>
+        <item name="topbar_right_text_color">@color/topbar_right_text_color</item>
+        <item name="topbar_textColor_normal">@color/topbar_textColor_normal</item>
+        <item name="topbar_textColor_sel">@color/topbar_textColor_sel</item>
+        <item name="topbar_underline_color">@color/topbar_underline_color</item>
+        <item name="topbar_words_color">@color/topbar_words_color</item>
+        <item name="topic_creator_color">@color/color_topic_creator</item>
+        <item name="topic_info_words_color">@color/topic_info_words_color</item>
+        <item name="topic_manager_color">@color/color_topic_manager</item>
+        <item name="trace_normal_color">#ff2f2f2f</item>
+        <item name="user_center_name_color">@color/user_center_name_color</item>
+        <item name="words_text_color">@color/words_text_color</item>
+        <item name="work_detail_album_bg">@color/work_detail_album_bg</item>
+    </style>
 
+    <!-- Base application theme. -->
+    <style name="ActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/global_bg</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="no_data_img_tink">@color/no_data_img_tink</item>
+        <item name="selectableItemBackground">@drawable/abc_item_background_holo_dark</item>
+    </style>
+
+    <style name="Widget.SeekBar.Paint" parent="@android:style/Widget.SeekBar">
+        <item name="android:maxHeight">3.0dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:indeterminateDrawable">@android:drawable/progress_indeterminate_horizontal</item>
+        <item name="android:minHeight">3.0dip</item>
+    </style>
     <style name="GraffitiButton">
         <item name="android:textSize">@dimen/mainGraffitiButtonTextSize</item>
         <item name="android:textColor">#FFFFFF</item>
@@ -28,7 +144,7 @@
 
     <style name="CircleNickName">
         <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/circleblue</item>
+        <item name="android:textColor">@color/black333</item>
     </style>
 
     <style name="CircleContent">
@@ -38,7 +154,7 @@
 
     <style name="ContentText">
         <item name="android:textSize">13sp</item>
-        <item name="android:textColor">@color/textcolor</item>
+        <item name="android:textColor">@color/black666</item>
     </style>
 
     <style name="AvatarText">
@@ -54,12 +170,12 @@
     <style name="MeEditText">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textColorHint">@color/textcolor</item>
+        <item name="android:textColorHint">@color/black666</item>
     </style>
 
     <style name="DeleteCircleText">
         <item name="android:textSize">13sp</item>
-        <item name="android:textColor">@color/circleblue</item>
+        <item name="android:textColor">@color/black333</item>
     </style>
 
     <style name="TabButton">
@@ -72,7 +188,7 @@
         <item name="android:layout_width">0.0dip</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1.0</item>
-        <item name="android:paddingBottom">4.0dp</item>
+        <item name="android:paddingBottom">2.0dp</item>
     </style>
 
     <style name="EditText">

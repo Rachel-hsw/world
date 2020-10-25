@@ -6,6 +6,7 @@ import android.widget.Toast;
 import com.baidu.mapapi.BMapManager;
 import com.baidu.mapapi.MKGeneralListener;
 import com.baidu.mapapi.map.MKEvent;
+import com.noahark.moments.GraffitiApplication;
 
 /**
  * Created by chicken on 2016/11/18.

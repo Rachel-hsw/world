@@ -1,10 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:background="?bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="全部订阅" />
-    <com.scwang.smartrefresh.layout.SmartRefreshLayout android:id="@id/smart_refresh_layout" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topBar">
-        <net.huanci.hsj.view.emptyview.EmptyRecyclerView android:id="@id/recyclerView" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_double_normal" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?bg_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <net.huanci.hsj.view.TopBar
+        android:id="@id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_height"
+        app:title="全部订阅" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@id/smart_refresh_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/topBar"
+        android:background="?item_clor">
+
+        <net.huanci.hsj.view.emptyview.EmptyRecyclerView
+            android:id="@id/recyclerView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="@dimen/margin_double_normal"
+            android:layout_marginTop="@dimen/margin_double_normal" />
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
-    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/topBar" layout="@layout/view_no_data_and_error" />
-    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+
+    <include
+        layout="@layout/view_no_data_and_error"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/topBar"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/shadow_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/shadow_width"
+        android:layout_below="@id/topBar" />
 </RelativeLayout>

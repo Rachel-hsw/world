@@ -10,12 +10,47 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        release {
+            storeFile file("../mole_keystore.jks")
+            storePassword "mole\$2019flourish"
+            keyAlias "pcr_series"
+            keyPassword "godlikesoftwaredev"
+        }
+    }
+
     buildTypes {
+
+        debug {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+        }
+
         release {
             minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    applicationVariants.all {
+        def buildType = it.buildType.name
+        def fileName
+        it.outputs.each {
+            //命名规则：项目名_版本名_构建类型.apk
+            if (buildType == "release") {
+                fileName = "友绘_v${defaultConfig.versionName}.apk"
+            } else {
+                fileName = "友绘_v${defaultConfig.versionName}-${buildType}.apk"
+            }
+            println "文件名：-----------------${fileName}"
+            it.outputFileName = fileName
+        }
+    }
+
     compileOptions {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
@@ -30,14 +65,20 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
+
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation files('libs/baidumapapi_v2_4_1.jar')
     implementation 'com.facebook.fresco:fresco:0.14.1'
     implementation 'com.larswerkman:HoloColorPicker:1.5'
     implementation project(path: ':moments')
+    implementation 'com.jakewharton:butterknife:10.2.0' //需要
+
 
 }

@@ -284,9 +284,10 @@
         android:orientation="horizontal" >
 
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/btn_pen_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:background="@drawable/selector_ok" />

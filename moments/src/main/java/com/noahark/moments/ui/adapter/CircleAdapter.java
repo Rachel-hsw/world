@@ -18,7 +18,7 @@ import com.facebook.drawee.generic.GenericDraweeHierarchyBuilder;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.noahark.moments.R;
 import com.noahark.moments.bean.CircleBean;
-import com.noahark.moments.ui.view.MaskableImageView;
+import com.noahark.moments.ui.widget.MaskableImageView;
 import com.rd.PageIndicatorView;
 import com.stfalcon.frescoimageviewer.ImageViewer;
 import com.stfalcon.frescoimageviewer.ImageViewer.Builder;
@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Created by chicken on 2016/11/9.
  */
-public class CircleAdapter extends BaseAdapter{
+public class CircleAdapter extends BaseAdapter {
 
     private Context mContext = null;
     private LayoutInflater mInflater = null;
@@ -41,17 +41,17 @@ public class CircleAdapter extends BaseAdapter{
     private final int mListItemTimeViewId = R.id.circlelistitem_time;
     private final int mListItemContentViewId = R.id.circlelistitem_content;
     private final int mGridLayoutId = R.id.circlegrid_pictures;
-    private final int[] mGridImageViewIds = {R.id.circlegrid_picture_1,R.id.circlegrid_picture_2,
-            R.id.circlegrid_picture_3,R.id.circlegrid_picture_4,R.id.circlegrid_picture_5,
-            R.id.circlegrid_picture_6,R.id.circlegrid_picture_7,R.id.circlegrid_picture_8,
+    private final int[] mGridImageViewIds = {R.id.circlegrid_picture_1, R.id.circlegrid_picture_2,
+            R.id.circlegrid_picture_3, R.id.circlegrid_picture_4, R.id.circlegrid_picture_5,
+            R.id.circlegrid_picture_6, R.id.circlegrid_picture_7, R.id.circlegrid_picture_8,
             R.id.circlegrid_picture_9};
 
-    public CircleAdapter(Context context, List<CircleBean> circleBeanList)
-    {
+    public CircleAdapter(Context context, List<CircleBean> circleBeanList) {
         mContext = context;
         mInflater = LayoutInflater.from(context);
         mCircleBeanList = circleBeanList;
     }
+
 
     @Override
     public int getCount() {
@@ -74,25 +74,23 @@ public class CircleAdapter extends BaseAdapter{
         ViewHolder viewHolder;
 
         //convertView是否存在
-        if(convertView == null) //不存在
+        if (convertView == null) //不存在
         {
             //生成
-            convertView = mInflater.inflate(mListItemLayout,null);
+            convertView = mInflater.inflate(mListItemLayout, null);
 
             //装入ViewHolder
             viewHolder = new ViewHolder();
             viewHolder.avatarImageView = (SimpleDraweeView) convertView.findViewById(mListItemAvatarViewId);
             viewHolder.nicknameTextView = (TextView) convertView.findViewById(mListItemNicknameViewId);
-            viewHolder.contentTextView = (TextView)convertView.findViewById(mListItemContentViewId);
-            viewHolder.timeTextView = (TextView)convertView.findViewById(mListItemTimeViewId);
+            viewHolder.contentTextView = (TextView) convertView.findViewById(mListItemContentViewId);
+            viewHolder.timeTextView = (TextView) convertView.findViewById(mListItemTimeViewId);
             viewHolder.picturesGridLayout = (GridLayout) convertView.findViewById(mGridLayoutId);
-            for(int i=0;i<mGridImageViewIds.length;i++) {
+            for (int i = 0; i < mGridImageViewIds.length; i++) {
                 viewHolder.pictureImageViews[i] = (MaskableImageView) viewHolder.picturesGridLayout.findViewById(mGridImageViewIds[i]);
             }
             convertView.setTag(viewHolder);
-        }
-        else
-        {
+        } else {
             //获取缓存的Views
             viewHolder = (ViewHolder) convertView.getTag();
         }
@@ -106,11 +104,10 @@ public class CircleAdapter extends BaseAdapter{
 
         //九宫格图片
         List<String> pictureList = circleBean.getPictureList();
-        if(pictureList == null || pictureList.isEmpty())
+        if (pictureList == null || pictureList.isEmpty())
             viewHolder.picturesGridLayout.setVisibility(View.GONE); //隐藏
-        else
-        {
-            int i=0;
+        else {
+            int i = 0;
 
             //设置加载进度条
             ProgressBarDrawable progressbar = new ProgressBarDrawable();
@@ -120,11 +117,10 @@ public class CircleAdapter extends BaseAdapter{
 
 
             //点击图片时的动作
-            Builder imageViewer = createImageViewer(mContext,pictureList,hierarchyBuilder);
-            CircleImageViewOnClickListener circleImageViewOnClickListener = new CircleImageViewOnClickListener(imageViewer,pictureList.size());
+            Builder imageViewer = createImageViewer(mContext, pictureList, hierarchyBuilder);
+            CircleImageViewOnClickListener circleImageViewOnClickListener = new CircleImageViewOnClickListener(imageViewer, pictureList.size());
 
-            for(;i<pictureList.size();i++)
-            {
+            for (; i < pictureList.size(); i++) {
                 Uri pictureUri = Uri.parse(pictureList.get(i));
                 ImageView pictureImageView = viewHolder.pictureImageViews[i];
                 pictureImageView.setVisibility(View.VISIBLE);
@@ -137,8 +133,7 @@ public class CircleAdapter extends BaseAdapter{
             }
 
             //把之后的图片都屏蔽掉
-            for(int j=i;j<ViewHolder.pictureNum;j++)
-            {
+            for (int j = i; j < ViewHolder.pictureNum; j++) {
                 ImageView pictureImageView = viewHolder.pictureImageViews[j];
                 pictureImageView.setVisibility(View.GONE);
             }
@@ -148,7 +143,7 @@ public class CircleAdapter extends BaseAdapter{
     }
 
 
-    static final class ViewHolder{
+    static final class ViewHolder {
         private static final int pictureNum = 9;
         private SimpleDraweeView avatarImageView;
         private TextView nicknameTextView;
@@ -159,13 +154,12 @@ public class CircleAdapter extends BaseAdapter{
     }
 
     //点开某个图片后可以进入当前说说的所有图片的查看界面
-    class CircleImageViewOnClickListener implements OnClickListener{
+    class CircleImageViewOnClickListener implements OnClickListener {
 
         private Builder imageViewer;
         private int pictureTotalNum;
 
-        CircleImageViewOnClickListener(Builder imageViewer, int pictureTotalNum)
-        {
+        CircleImageViewOnClickListener(Builder imageViewer, int pictureTotalNum) {
             this.imageViewer = imageViewer;
             this.pictureTotalNum = pictureTotalNum;
         }
@@ -174,10 +168,10 @@ public class CircleAdapter extends BaseAdapter{
         public void onClick(View view) {
 
             //获取当前点击的这个图片页码
-            int curPageIndex = Integer.parseInt((String)view.getTag());
+            int curPageIndex = Integer.parseInt((String) view.getTag());
 
             //设置页码小圆点
-            RelativeLayout overlayLayout = (RelativeLayout)View.inflate(mContext,R.layout.imgoverlay_circle,null);
+            RelativeLayout overlayLayout = (RelativeLayout) View.inflate(mContext, R.layout.imgoverlay_circle, null);
             PageIndicatorView pageIndicatorView = (PageIndicatorView) overlayLayout.findViewById(R.id.page_indicator);
             pageIndicatorView.setCount(pictureTotalNum);
             pageIndicatorView.setSelection(curPageIndex);
@@ -193,12 +187,11 @@ public class CircleAdapter extends BaseAdapter{
         }
     }
 
-    class ImageViewerTurnPageListener implements OnImageChangeListener{
+    class ImageViewerTurnPageListener implements OnImageChangeListener {
 
         private PageIndicatorView pageIndicatorView;
 
-        ImageViewerTurnPageListener(PageIndicatorView pageIndicatorView)
-        {
+        ImageViewerTurnPageListener(PageIndicatorView pageIndicatorView) {
             this.pageIndicatorView = pageIndicatorView;
         }
 
@@ -210,8 +203,7 @@ public class CircleAdapter extends BaseAdapter{
     }
 
     //构造含有pictureList的图片详情查看器ImageViewer
-    private Builder createImageViewer(Context context, List<String> pictureList, GenericDraweeHierarchyBuilder hierarchyBuilder)
-    {
+    private Builder createImageViewer(Context context, List<String> pictureList, GenericDraweeHierarchyBuilder hierarchyBuilder) {
         return new ImageViewer.Builder(context, pictureList)
                 .setCustomDraweeHierarchyBuilder(hierarchyBuilder);
     }

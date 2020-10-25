@@ -1,25 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/ll_root" android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true">
-        <net.huanci.hsj.view.TopBar android:id="@id/topbar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:showType="showText" app:textRight="密码登录" app:title="登录" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/ll_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?item_clor"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <net.huanci.hsj.view.TopBar
+            android:id="@id/topbar"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/top_bar_height"
+            app:showType="showText"
+            app:textRight="密码登录"
+            app:title="登录" />
+
         <include layout="@layout/shadow_bottom" />
-        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_horizontal" android:id="@id/iv_logo" android:layout_width="@dimen/dp_90" android:layout_height="@dimen/dp_90" android:layout_marginTop="@dimen/dp_30" app:srcCompat="@drawable/hsj_logo" />
-        <net.huanci.hsj.view.ZoneView android:gravity="center_vertical" android:id="@id/zone_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_30" android:minHeight="@dimen/dp_20" android:layout_marginStart="@dimen/dp_24" />
-        <net.huanci.hsj.view.CompatibalTextInputLayut android:id="@id/inputLayout_phone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_double_normal" />
-        <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginRight="@dimen/margin_double_normal">
-            <net.huanci.hsj.view.CompatibalTextInputLayut android:id="@id/inputLayout_yanzhengma" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-            <TextView android:textColor="?colorAccent" android:gravity="center" android:id="@id/button_resend" android:padding="@dimen/margin_normal_half" android:layout_width="100.0dip" android:layout_height="wrap_content" android:text="@string/get_sms1" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/iv_logo"
+            android:layout_width="@dimen/dp_90"
+            android:layout_height="@dimen/dp_90"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_30"
+            app:srcCompat="@drawable/hsj_logo" />
+
+        <net.huanci.hsj.view.ZoneView
+            android:id="@id/zone_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_24"
+            android:layout_marginTop="@dimen/dp_30"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/dp_20" />
+
+        <net.huanci.hsj.view.CompatibalTextInputLayut
+            android:id="@id/inputLayout_phone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_double_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_double_normal" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="60.0dip"
+            android:layout_marginLeft="@dimen/margin_double_normal"
+            android:layout_marginRight="@dimen/margin_double_normal"
+            android:orientation="horizontal">
+
+            <net.huanci.hsj.view.CompatibalTextInputLayut
+                android:id="@id/inputLayout_yanzhengma"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@id/button_resend"
+                android:layout_width="100.0dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:padding="@dimen/margin_normal_half"
+                android:text="@string/get_sms1"
+                android:textColor="?colorAccent" />
         </RelativeLayout>
-        <Button android:textSize="@dimen/title_font_size" android:textColor="@color/colorPrimary" android:id="@id/button_login" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_double_normal" android:minHeight="@dimen/dp_40" android:text="登录" />
-        <TextView android:textColor="@drawable/selector_text_color" android:gravity="center" android:layout_gravity="right" android:id="@id/button_feedback" android:padding="@dimen/margin_normal_half" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal" android:layout_marginRight="@dimen/margin_double_normal" android:text="@string/cannot_get_sms" />
-        <RelativeLayout android:id="@id/layout_register" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginLeft="@dimen/margin_double_normal" android:layout_marginTop="@dimen/margin_normal_plus" android:layout_marginRight="@dimen/margin_double_normal">
-            <TextView android:textSize="@dimen/small_font_size" android:textColor="?item_text_color" android:id="@id/textView_register" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="注册" android:layout_centerVertical="true" />
-            <TextView android:textSize="@dimen/small_font_size" android:textColor="?item_text_color" android:id="@id/textView_reset_password" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="找回密码" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+        <Button
+            android:id="@id/button_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_double_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_double_normal"
+            android:minHeight="@dimen/dp_40"
+            android:text="登录"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/title_font_size" />
+
+        <TextView
+            android:id="@id/button_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/margin_double_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_double_normal"
+            android:gravity="center"
+            android:padding="@dimen/margin_normal_half"
+            android:text="@string/cannot_get_sms"
+            android:textColor="@drawable/selector_text_color"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@id/layout_register"
+            android:layout_width="fill_parent"
+            android:layout_height="30.0dip"
+            android:layout_marginLeft="@dimen/margin_double_normal"
+            android:layout_marginTop="@dimen/margin_normal_plus"
+            android:layout_marginRight="@dimen/margin_double_normal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@id/textView_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="注册"
+                android:textColor="?item_text_color"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@id/textView_reset_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="找回密码"
+                android:textColor="?item_text_color"
+                android:textSize="@dimen/small_font_size" />
         </RelativeLayout>
     </LinearLayout>
-    <LinearLayout android:orientation="vertical" android:id="@id/wechat_login" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp_38" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
-        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_horizontal" android:layout_width="@dimen/dp_28" android:layout_height="@dimen/dp_24" app:srcCompat="@drawable/login_wechat" />
-        <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_half" android:text="微信登录" />
+
+    <LinearLayout
+        android:id="@id/wechat_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_38"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_24"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/login_wechat" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_normal_half"
+            android:text="微信登录"
+            android:textColor="?time_text_color"
+            android:textSize="@dimen/sp_12" />
     </LinearLayout>
 </RelativeLayout>

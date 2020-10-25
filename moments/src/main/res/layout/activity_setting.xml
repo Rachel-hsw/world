@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/rl_top_content"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_height"
+        app:title="@string/setting" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/rl_top_content">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/layout_profile"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="8dp"
+                android:background="@color/item_clor"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/profile_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="个人资料"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/profile_iv"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_change_account"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/change_account_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="@string/setting_change_account"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/change_account_iv"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_account"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/account_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="@string/setting_account_safe"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/account_iv"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_private"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true"
+                android:focusable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/private_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="@string/private_setting"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/private_iv"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/app_theme"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/item_clor"
+                android:clickable="true"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/item_height">
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="?android:selectableItemBackground" />
+
+                    <TextView
+                        android:id="@+id/app_theme_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/margin_double_normal"
+                        android:text="@string/app_theme"
+                        android:textColor="@color/item_text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/theme_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/margin_double_normal"
+                        android:theme="?switchStyle" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/pic_and_canvas_light_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/pic_and_canvas_light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="22.0dip"
+                        android:text="@string/pic_and_canvas_light"
+                        android:textColor="@color/words_text_color"
+                        android:textSize="13.0sp" />
+
+                    <include
+                        android:id="@+id/pic_and_canvas_lignt_sb"
+                        layout="@layout/seekbar_custom"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_normal_plus"
+                        android:layout_marginTop="@dimen/margin_normal"
+                        android:layout_marginRight="@dimen/margin_normal_plus"
+                        android:layout_marginBottom="@dimen/margin_normal" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/nav_themeSetting"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/textView_theme_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="@string/theme_setting"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView_theme_setting"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nav_paintSetting"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/textView_120"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="@string/paint_setting"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView20"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/language_setting"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/textView_131"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="@string/language_setting"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView31"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+
+                <TextView
+                    android:id="@+id/textView_132"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8.0dip"
+                    android:layout_toLeftOf="@id/imageView31"
+                    android:textColor="@color/words_text_color"
+                    android:textSize="12.0sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nav_draftSetting"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/textView_130"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="@string/draft_setting"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView30"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/push_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/textView_111"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="消息推送"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch_push"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:theme="?switchStyle" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/clear_cacheParent"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/textView_112"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="@string/storage_space"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <TextView
+                    android:id="@+id/textView_clear_cache"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:text="@string/storage_space_title"
+                    android:textColor="@color/time_text_color"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nav_communicate"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/textView_113"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="联系客服"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nav_rate"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/textView_114"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="给我打分"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sharetofriend"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/textView_115"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="分享好友"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/about"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="1.0dip"
+                android:background="@color/item_clor"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/textView_116"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="关于"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/about_iv"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/factory"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="8dp"
+                android:background="@color/item_clor"
+                android:clickable="true"
+                android:visibility="gone">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/textView_117"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_double_normal"
+                    android:text="@string/factory"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="@dimen/normal_text_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/factory_iv"
+                    android:layout_width="15.0dip"
+                    android:layout_height="15.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_double_normal"
+                    android:tint="@color/setting_arrow_color"
+                    app:srcCompat="@mipmap/right" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_logout"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/item_height"
+                android:layout_marginTop="8dp"
+                android:background="@color/item_clor">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <TextView
+                    android:id="@+id/logout_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="退出登录"
+                    android:textColor="@color/item_text_color" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        layout="@layout/shadow_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/shadow_width"
+        android:layout_below="@id/rl_top_content" />
+</RelativeLayout>

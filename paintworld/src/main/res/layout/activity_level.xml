@@ -1,46 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="?bg_color" android:addStatesFromChildren="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <RelativeLayout android:id="@id/header_relativelayout" android:background="@drawable/bg_level_header" android:layout_width="fill_parent" android:layout_height="@dimen/dp_245">
-                <androidx.appcompat.widget.AppCompatImageView android:id="@id/ivHead" android:background="@drawable/bg_white_circle" android:padding="@dimen/dp_2" android:layout_width="@dimen/dp_62" android:layout_height="@dimen/dp_62" android:layout_marginTop="@dimen/dp_68" android:layout_centerHorizontal="true" app:srcCompat="@drawable/small_default_head" />
-                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/name_linearlayout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" android:layout_below="@id/ivHead" android:layout_centerHorizontal="true">
-                    <TextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="?name_text_color" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/name_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="name" />
-                    <androidx.appcompat.widget.AppCompatImageView android:id="@id/level_iv" android:layout_width="@dimen/dp_22" android:layout_height="@dimen/dp_12" android:layout_marginLeft="@dimen/dp_4" android:src="@mipmap/ic_level_0" android:scaleType="centerCrop" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:addStatesFromChildren="true"
+    android:background="#FFFFFF">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@id/header_relativelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dp_245"
+                android:background="@drawable/bg_level_header">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@id/ivHead"
+                    android:layout_width="@dimen/dp_62"
+                    android:layout_height="@dimen/dp_62"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_68"
+                    android:background="@drawable/bg_white_circle"
+                    android:padding="@dimen/dp_2"
+                    app:srcCompat="@drawable/small_default_head" />
+
+                <LinearLayout
+                    android:id="@id/name_linearlayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivHead"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@id/name_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="name"
+                        android:textColor="?name_text_color"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@id/level_iv"
+                        android:layout_width="@dimen/dp_22"
+                        android:layout_height="@dimen/dp_12"
+                        android:layout_marginLeft="@dimen/dp_4"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/ic_level_0" />
                 </LinearLayout>
-                <ProgressBar android:id="@id/progressBar" android:layout_width="fill_parent" android:layout_height="@dimen/dp_6" android:layout_marginLeft="@dimen/dp_54" android:layout_marginTop="@dimen/dp_10" android:layout_marginRight="@dimen/dp_54" android:max="100" android:progress="0" android:progressDrawable="@drawable/level_progressbar" android:layout_below="@id/name_linearlayout" android:layout_centerHorizontal="true" style="?android:progressBarStyleHorizontal" />
-                <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:id="@id/exp_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" android:text="经验值：50/100" android:layout_below="@id/progressBar" android:layout_centerHorizontal="true" />
+
+                <ProgressBar
+                    android:id="@id/progressBar"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/dp_6"
+                    android:layout_below="@id/name_linearlayout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/dp_54"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_54"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/level_progressbar" />
+
+                <TextView
+                    android:id="@id/exp_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/progressBar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="经验值：50/100"
+                    android:textColor="?time_text_color"
+                    android:textSize="@dimen/sp_12" />
             </RelativeLayout>
-            <RelativeLayout android:orientation="vertical" android:id="@id/task_relativelayout" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_16" android:layout_marginRight="@dimen/dp_16" android:layout_below="@id/header_relativelayout">
-                <TextView android:textSize="@dimen/sp_14" android:textStyle="bold" android:textColor="?name_text_color" android:id="@id/task_title_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/everyday_task" />
-                <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:gravity="center_vertical" android:id="@id/task_title_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/update_strategy" android:layout_alignParentRight="true" />
-                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_18" android:layout_below="@id/task_title_1">
-                    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/dp_5" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-                        <TextView android:textSize="@dimen/sp_16" android:textStyle="bold" android:textColor="?name_text_color" android:id="@id/score_login_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+5" />
-                        <TextView android:textSize="@dimen/sp_12" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_5" android:text="登录" />
+
+            <RelativeLayout
+                android:id="@id/task_relativelayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/header_relativelayout"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@id/task_title_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/everyday_task"
+                    android:textColor="?name_text_color"
+                    android:textSize="@dimen/sp_14"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@id/task_title_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="@string/update_strategy"
+                    android:textColor="?time_text_color"
+                    android:textSize="@dimen/sp_12" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/task_title_1"
+                    android:layout_marginTop="@dimen/dp_18"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/dp_5">
+
+                        <TextView
+                            android:id="@id/score_login_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+5"
+                            android:textColor="?name_text_color"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="登录"
+                            android:textColor="?name_text_color"
+                            android:textSize="@dimen/sp_12" />
                     </LinearLayout>
-                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-                        <TextView android:textSize="@dimen/sp_16" android:textStyle="bold" android:textColor="?name_text_color" android:id="@id/score_share_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+5" />
-                        <TextView android:textSize="@dimen/sp_12" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_5" android:text="分享" />
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/score_share_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+5"
+                            android:textColor="?name_text_color"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="分享"
+                            android:textColor="?name_text_color"
+                            android:textSize="@dimen/sp_12" />
                     </LinearLayout>
-                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-                        <TextView android:textSize="@dimen/sp_16" android:textStyle="bold" android:textColor="?name_text_color" android:id="@id/score_gift_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+5" />
-                        <TextView android:textSize="@dimen/sp_12" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_5" android:text="送礼物" />
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/score_gift_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+5"
+                            android:textColor="?name_text_color"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="送礼物"
+                            android:textColor="?name_text_color"
+                            android:textSize="@dimen/sp_12" />
                     </LinearLayout>
-                    <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-                        <TextView android:textSize="@dimen/sp_16" android:textStyle="bold" android:textColor="?name_text_color" android:id="@id/score_publish_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+10" />
-                        <TextView android:textSize="@dimen/sp_12" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_5" android:text="发布作品" />
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@id/score_publish_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+10"
+                            android:textColor="?name_text_color"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="发布作品"
+                            android:textColor="?name_text_color"
+                            android:textSize="@dimen/sp_12" />
                     </LinearLayout>
-                    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/dp_10" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
-                        <TextView android:textSize="@dimen/sp_16" android:textStyle="bold" android:textColor="?name_text_color" android:id="@id/score_area_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+50" />
-                        <TextView android:textSize="@dimen/sp_12" android:textColor="?name_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_5" android:text="入选专区" />
+
+                    <LinearLayout
+                        android:layout_width="0.0dip"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.0"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/dp_10">
+
+                        <TextView
+                            android:id="@id/score_area_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+50"
+                            android:textColor="?name_text_color"
+                            android:textSize="@dimen/sp_16"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="入选专区"
+                            android:textColor="?name_text_color"
+                            android:textSize="@dimen/sp_12" />
                     </LinearLayout>
                 </LinearLayout>
             </RelativeLayout>
-            <net.huanci.hsj.view.WrapContentViewPager android:layout_gravity="center_horizontal" android:id="@id/viewPager" android:background="?bg_color" android:paddingLeft="@dimen/dp_17" android:paddingRight="@dimen/dp_17" android:clipChildren="false" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_25" android:layout_below="@id/task_relativelayout" />
-            <TextView android:textSize="@dimen/sp_12" android:textColor="@color/time_text_color" android:paddingBottom="@dimen/dp_40" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_20" android:text="更多特权敬请期待" android:layout_below="@id/viewPager" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+
+            <net.huanci.hsj.view.WrapContentViewPager
+                android:id="@id/viewPager"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/task_relativelayout"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_25"
+                android:background="?bg_color"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingLeft="@dimen/dp_17"
+                android:paddingRight="@dimen/dp_17" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewPager"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_20"
+                android:paddingBottom="@dimen/dp_40"
+                android:text="更多特权敬请期待"
+                android:textColor="@color/time_text_color"
+                android:textSize="@dimen/sp_12" />
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
-    <net.huanci.hsj.view.TopBar android:id="@id/topbar" android:background="#00000000" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:imageRight="@mipmap/ic_convert_level" />
+
+    <net.huanci.hsj.view.TopBar
+        android:id="@id/topbar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_height"
+        android:background="#00000000"
+        app:imageRight="@mipmap/ic_convert_level" />
 </RelativeLayout>

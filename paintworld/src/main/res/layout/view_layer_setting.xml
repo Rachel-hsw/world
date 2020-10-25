@@ -1,74 +1,493 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="?item_clor" android:layout_width="260.0dip" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/paint_selburhs_title_height">
-        <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="?bold_text_color" android:id="@id/layout_setting_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/layer_setting" android:layout_centerInParent="true" />
-        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:id="@id/back" android:padding="@dimen/icon_padding" android:visibility="invisible" android:layout_width="@dimen/paint_brush_icon_width" android:layout_height="@dimen/paint_brush_icon_width" android:layout_marginLeft="7.0dip" android:scaleType="centerInside" android:tint="?paint_icon_tink" android:layout_centerVertical="true" app:srcCompat="@drawable/back" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="260.0dip"
+    android:layout_height="wrap_content"
+    android:background="?item_clor"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/paint_selburhs_title_height">
+
+        <TextView
+            android:id="@id/layout_setting_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/layer_setting"
+            android:textColor="?bold_text_color"
+            android:textSize="15.0sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/back"
+            android:layout_width="@dimen/paint_brush_icon_width"
+            android:layout_height="@dimen/paint_brush_icon_width"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="7.0dip"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/back" />
     </RelativeLayout>
-    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="14.0dip" android:layout_marginRight="14.0dip">
-        <LinearLayout android:orientation="vertical" android:id="@id/setting_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <LinearLayout android:gravity="top" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p_dp_7">
-                <LinearLayout android:gravity="center" android:layout_gravity="center|top" android:orientation="vertical" android:id="@id/copy_layer" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
-                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/copy_layer" />
-                    <TextView android:textSize="@dimen/tiny_font_size" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/copy" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14.0dip"
+        android:layout_marginRight="14.0dip">
+
+        <LinearLayout
+            android:id="@id/setting_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/p_dp_7"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@id/copy_layer"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/layer_setting_icon_width"
+                        android:layout_height="@dimen/layer_setting_icon_width"
+                        android:layout_gravity="center"
+                        android:tint="?paint_icon_tink"
+                        app:srcCompat="@mipmap/copy_layer" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4.0dip"
+                        android:gravity="center_horizontal"
+                        android:text="@string/copy"
+                        android:textColor="?item_text_color"
+                        android:textSize="@dimen/tiny_font_size" />
                 </LinearLayout>
-                <LinearLayout android:gravity="center" android:layout_gravity="center|top" android:orientation="vertical" android:id="@id/clear_layer" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
-                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/clear_layer" />
-                    <TextView android:textSize="@dimen/tiny_font_size" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/layer_clear" />
+
+                <LinearLayout
+                    android:id="@id/clear_layer"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/layer_setting_icon_width"
+                        android:layout_height="@dimen/layer_setting_icon_width"
+                        android:layout_gravity="center"
+                        android:tint="?paint_icon_tink"
+                        app:srcCompat="@mipmap/clear_layer" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4.0dip"
+                        android:gravity="center_horizontal"
+                        android:text="@string/layer_clear"
+                        android:textColor="?item_text_color"
+                        android:textSize="@dimen/tiny_font_size" />
                 </LinearLayout>
-                <LinearLayout android:gravity="center" android:layout_gravity="center|top" android:orientation="vertical" android:id="@id/delete_layer" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
-                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/delete_layer_iv" android:duplicateParentState="true" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" />
-                    <TextView android:textSize="@dimen/tiny_font_size" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/delete_layer_tv" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/delete" />
+
+                <LinearLayout
+                    android:id="@id/delete_layer"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@id/delete_layer_iv"
+                        android:layout_width="@dimen/layer_setting_icon_width"
+                        android:layout_height="@dimen/layer_setting_icon_width"
+                        android:layout_gravity="center"
+                        android:duplicateParentState="true" />
+
+                    <TextView
+                        android:id="@id/delete_layer_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4.0dip"
+                        android:duplicateParentState="true"
+                        android:gravity="center_horizontal"
+                        android:text="@string/delete"
+                        android:textSize="@dimen/tiny_font_size" />
                 </LinearLayout>
-                <LinearLayout android:gravity="center" android:layout_gravity="center|top" android:orientation="vertical" android:id="@id/merge_layer" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_weight="1.0">
-                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/merge_layer_icon" android:duplicateParentState="true" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" />
-                    <TextView android:textSize="@dimen/tiny_font_size" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/merge_layer_tv" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/layer_merge_down" />
+
+                <LinearLayout
+                    android:id="@id/merge_layer"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@id/merge_layer_icon"
+                        android:layout_width="@dimen/layer_setting_icon_width"
+                        android:layout_height="@dimen/layer_setting_icon_width"
+                        android:layout_gravity="center"
+                        android:duplicateParentState="true" />
+
+                    <TextView
+                        android:id="@id/merge_layer_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4.0dip"
+                        android:duplicateParentState="true"
+                        android:gravity="center_horizontal"
+                        android:text="@string/layer_merge_down"
+                        android:textSize="@dimen/tiny_font_size" />
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout android:gravity="top" android:orientation="horizontal" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p_dp_21">
-                <LinearLayout android:gravity="center" android:layout_gravity="center|top" android:orientation="vertical" android:id="@id/lock_layer" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
-                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/lock_layer_iv" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/lock" />
-                    <TextView android:textSize="@dimen/tiny_font_size" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/lock_layer_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/lock_layer" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/p_dp_21"
+                android:gravity="top"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@id/lock_layer"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@id/lock_layer_iv"
+                        android:layout_width="@dimen/layer_setting_icon_width"
+                        android:layout_height="@dimen/layer_setting_icon_width"
+                        android:layout_gravity="center"
+                        android:tint="?paint_icon_tink"
+                        app:srcCompat="@mipmap/lock" />
+
+                    <TextView
+                        android:id="@id/lock_layer_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4.0dip"
+                        android:gravity="center_horizontal"
+                        android:text="@string/lock_layer"
+                        android:textColor="?item_text_color"
+                        android:textSize="@dimen/tiny_font_size" />
                 </LinearLayout>
-                <LinearLayout android:gravity="center" android:layout_gravity="center|top" android:orientation="vertical" android:id="@id/horizontal_flip" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
-                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/horizontal_flip_iv" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/flip_layer" />
-                    <TextView android:textSize="@dimen/tiny_font_size" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/horizontal_flip_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/layer_flip_horizontal" />
+
+                <LinearLayout
+                    android:id="@id/horizontal_flip"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@id/horizontal_flip_iv"
+                        android:layout_width="@dimen/layer_setting_icon_width"
+                        android:layout_height="@dimen/layer_setting_icon_width"
+                        android:layout_gravity="center"
+                        android:tint="?paint_icon_tink"
+                        app:srcCompat="@mipmap/flip_layer" />
+
+                    <TextView
+                        android:id="@id/horizontal_flip_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4.0dip"
+                        android:gravity="center_horizontal"
+                        android:text="@string/layer_flip_horizontal"
+                        android:textColor="?item_text_color"
+                        android:textSize="@dimen/tiny_font_size" />
                 </LinearLayout>
-                <LinearLayout android:gravity="center" android:layout_gravity="center|top" android:orientation="vertical" android:id="@id/rename_layer" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
-                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/rename" />
-                    <TextView android:textSize="@dimen/tiny_font_size" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/rename" />
+
+                <LinearLayout
+                    android:id="@id/rename_layer"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/layer_setting_icon_width"
+                        android:layout_height="@dimen/layer_setting_icon_width"
+                        android:layout_gravity="center"
+                        android:tint="?paint_icon_tink"
+                        app:srcCompat="@mipmap/rename" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4.0dip"
+                        android:gravity="center_horizontal"
+                        android:text="@string/rename"
+                        android:textColor="?item_text_color"
+                        android:textSize="@dimen/tiny_font_size" />
                 </LinearLayout>
-                <LinearLayout android:gravity="center" android:layout_gravity="center|top" android:orientation="vertical" android:id="@id/image_filter" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_weight="1.0">
-                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/filter" />
-                    <TextView android:textSize="@dimen/tiny_font_size" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/img_filters" />
+
+                <LinearLayout
+                    android:id="@id/image_filter"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/layer_setting_icon_width"
+                        android:layout_height="@dimen/layer_setting_icon_width"
+                        android:layout_gravity="center"
+                        android:tint="?paint_icon_tink"
+                        app:srcCompat="@mipmap/filter" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4.0dip"
+                        android:gravity="center_horizontal"
+                        android:text="@string/img_filters"
+                        android:textColor="?item_text_color"
+                        android:textSize="@dimen/tiny_font_size" />
                 </LinearLayout>
             </LinearLayout>
-            <LinearLayout android:gravity="top" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/p_dp_21" android:layout_marginBottom="21.0dip">
-                <LinearLayout android:gravity="center" android:layout_gravity="center|top" android:orientation="vertical" android:id="@id/lock_layer_alpha" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
-                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/lock_alpha_iv" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/lock_alpha0" />
-                    <TextView android:textSize="@dimen/tiny_font_size" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/lock_alpha_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/lock_alpha0" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/p_dp_21"
+                android:layout_marginBottom="21.0dip"
+                android:gravity="top"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@id/lock_layer_alpha"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@id/lock_alpha_iv"
+                        android:layout_width="@dimen/layer_setting_icon_width"
+                        android:layout_height="@dimen/layer_setting_icon_width"
+                        android:layout_gravity="center"
+                        android:tint="?paint_icon_tink"
+                        app:srcCompat="@mipmap/lock_alpha0" />
+
+                    <TextView
+                        android:id="@id/lock_alpha_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4.0dip"
+                        android:gravity="center_horizontal"
+                        android:text="@string/lock_alpha0"
+                        android:textColor="?item_text_color"
+                        android:textSize="@dimen/tiny_font_size" />
                 </LinearLayout>
-                <LinearLayout android:gravity="center" android:layout_gravity="center|top" android:orientation="vertical" android:id="@id/clip_mask" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
-                    <FrameLayout android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                        <View android:id="@id/clip_mask_mask" android:background="?layer_manager_view_stroke" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" />
-                        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/clip_mask_iv" android:duplicateParentState="true" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" />
+
+                <LinearLayout
+                    android:id="@id/clip_mask"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:duplicateParentState="true">
+
+                        <View
+                            android:id="@id/clip_mask_mask"
+                            android:layout_width="@dimen/layer_setting_icon_width"
+                            android:layout_height="@dimen/layer_setting_icon_width"
+                            android:background="?layer_manager_view_stroke" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@id/clip_mask_iv"
+                            android:layout_width="@dimen/layer_setting_icon_width"
+                            android:layout_height="@dimen/layer_setting_icon_width"
+                            android:layout_gravity="center"
+                            android:duplicateParentState="true" />
                     </FrameLayout>
-                    <TextView android:textSize="@dimen/tiny_font_size" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/clip_mask_tv" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/clip_mask" />
+
+                    <TextView
+                        android:id="@id/clip_mask_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4.0dip"
+                        android:duplicateParentState="true"
+                        android:gravity="center_horizontal"
+                        android:text="@string/clip_mask"
+                        android:textSize="@dimen/tiny_font_size" />
                 </LinearLayout>
-                <LinearLayout android:gravity="center" android:layout_gravity="center|top" android:orientation="vertical" android:id="@id/frames_visible" android:background="?android:selectableItemBackground" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_weight="1.0">
-                    <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center" android:id="@id/frames_visible_iv" android:duplicateParentState="true" android:layout_width="@dimen/layer_setting_icon_width" android:layout_height="@dimen/layer_setting_icon_width" android:tint="?paint_icon_tink" />
-                    <TextView android:textSize="@dimen/tiny_font_size" android:textColor="?item_text_color" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/frames_visible_tv" android:duplicateParentState="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/frames_visible" />
+
+                <LinearLayout
+                    android:id="@id/frames_visible"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_weight="1.0"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@id/frames_visible_iv"
+                        android:layout_width="@dimen/layer_setting_icon_width"
+                        android:layout_height="@dimen/layer_setting_icon_width"
+                        android:layout_gravity="center"
+                        android:duplicateParentState="true"
+                        android:tint="?paint_icon_tink" />
+
+                    <TextView
+                        android:id="@id/frames_visible_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="4.0dip"
+                        android:duplicateParentState="true"
+                        android:gravity="center_horizontal"
+                        android:text="@string/frames_visible"
+                        android:textColor="?item_text_color"
+                        android:textSize="@dimen/tiny_font_size" />
                 </LinearLayout>
-                <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_marginLeft="5.0dip" android:layout_weight="1.0" />
+
+                <View
+                    android:layout_width="0.0dip"
+                    android:layout_height="1.0dip"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_weight="1.0" />
             </LinearLayout>
-            <RelativeLayout android:orientation="vertical" android:id="@id/blend_mode_Layout" android:layout_width="fill_parent" android:layout_height="42.0dip">
-                <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:text="@string/layer_blend_mode" android:layout_centerVertical="true" />
-                <androidx.appcompat.widget.AppCompatImageView android:id="@id/blend_right_arrow" android:layout_width="wrap_content" android:layout_height="11.0dip" android:layout_marginRight="14.0dip" android:tint="?paint_icon_tink" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/right" />
-                <TextView android:textSize="12.0sp" android:textColor="?item_text_color" android:id="@id/blend_mode_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_toLeftOf="@id/blend_right_arrow" android:layout_centerVertical="true" />
+
+            <RelativeLayout
+                android:id="@id/blend_mode_Layout"
+                android:layout_width="fill_parent"
+                android:layout_height="42.0dip"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="13.0dip"
+                    android:text="@string/layer_blend_mode"
+                    android:textColor="?item_text_color"
+                    android:textSize="12.0sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@id/blend_right_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="11.0dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="14.0dip"
+                    android:tint="?paint_icon_tink"
+                    app:srcCompat="@mipmap/right" />
+
+                <TextView
+                    android:id="@id/blend_mode_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_toLeftOf="@id/blend_right_arrow"
+                    android:textColor="?item_text_color"
+                    android:textSize="12.0sp" />
             </RelativeLayout>
-            <include android:id="@id/opacity_seekbar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="@dimen/p_dp_15" android:layout_marginRight="5.0dip" android:layout_marginBottom="@dimen/p_dp_17" layout="@layout/view_brush_setting" />
+
+            <include
+                android:id="@id/opacity_seekbar"
+                layout="@layout/view_brush_setting"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginTop="@dimen/p_dp_15"
+                android:layout_marginRight="5.0dip"
+                android:layout_marginBottom="@dimen/p_dp_17" />
         </LinearLayout>
-        <androidx.recyclerview.widget.RecyclerView android:id="@id/blend_mode_rv" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignBottom="@id/setting_layout" />
-        <androidx.recyclerview.widget.RecyclerView android:scrollbarThumbVertical="?all_line_gray" android:id="@id/filter_type_rv" android:visibility="invisible" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignBottom="@id/setting_layout" android:fadeScrollbars="false" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@id/blend_mode_rv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignBottom="@id/setting_layout"
+            android:visibility="invisible" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@id/filter_type_rv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignBottom="@id/setting_layout"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="?all_line_gray"
+            android:scrollbars="vertical"
+            android:visibility="invisible" />
     </RelativeLayout>
 </LinearLayout>

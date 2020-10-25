@@ -1,37 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TabHost
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <FrameLayout
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/rg"
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:layout_height="0dp" />
 
             <TabWidget
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.0"
-                android:visibility="gone"/>
+                android:visibility="gone" />
 
             <View
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/rg"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:background="@color/lightgrey"/>
+                android:background="@color/lightgrey" />
 
             <RadioGroup
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/rg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
@@ -42,32 +51,44 @@
                     style="@style/TabButton"
                     android:checked="true"
                     android:drawableTop="@drawable/selector_tab_chat"
-                    android:text="消息"
-                    android:onClick="onChatBtn"/>
+                    android:onClick="onHomeBtn"
+                    android:text="首页" />
 
                 <RadioButton
                     android:id="@+id/community_radiobtn_relation"
                     style="@style/TabButton"
                     android:drawableTop="@drawable/selector_tab_relation"
-                    android:text="关系"
-                    android:onClick="onRelationBtn"/>
+                    android:onClick="onFindBtn"
+                    android:text="发现" />
+
+                <RadioButton
+                    style="@style/TabButton" />
 
                 <RadioButton
                     android:id="@+id/community_radiobtn_circle"
                     style="@style/TabButton"
                     android:drawableTop="@drawable/selector_tab_circle"
-                    android:text="动态"
-                    android:onClick="onCircleBtn"/>
+                    android:onClick="onMessageBtn"
+                    android:text="消息" />
 
                 <RadioButton
                     android:id="@+id/community_radiobtn_find"
                     style="@style/TabButton"
                     android:drawableTop="@drawable/selector_tab_find"
-                    android:text="发现"
-                    android:onClick="onFindBtn"/>
+                    android:onClick="onMeBtn"
+                    android:text="我的" />
             </RadioGroup>
 
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/onDrawBtn"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:background="@drawable/middle_blue"
+                android:onClick="onDrawBtn"
+                android:layout_height="wrap_content" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </TabHost>
 </LinearLayout>

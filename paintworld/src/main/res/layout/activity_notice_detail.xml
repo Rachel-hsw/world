@@ -1,12 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/topic_notice" />
-    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
-    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/margin_double_normal" android:paddingRight="@dimen/margin_double_normal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_double_normal" android:layout_above="@id/tv_edit" android:layout_below="@id/topBar">
-        <TextView android:textSize="@dimen/sp_22" android:textStyle="bold" android:textColor="?item_text_color" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-        <TextView android:textSize="@dimen/sp_12" android:textColor="?time_text_color" android:id="@id/tv_time" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal_half" />
-        <net.huanci.hsj.view.AtTextView android:textSize="@dimen/sp_15" android:textColor="?normal_text_color" android:id="@id/tv_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_double_normal" android:textIsSelectable="true" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?item_clor"
+    android:fitsSystemWindows="true">
+
+    <net.huanci.hsj.view.TopBar
+        android:id="@id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_height"
+        app:title="@string/topic_notice" />
+
+    <include
+        layout="@layout/shadow_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/shadow_width"
+        android:layout_below="@id/topBar" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_edit"
+        android:layout_below="@id/topBar"
+        android:layout_marginTop="@dimen/margin_double_normal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/margin_double_normal"
+        android:paddingRight="@dimen/margin_double_normal">
+
+        <TextView
+            android:id="@id/tv_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="?item_text_color"
+            android:textSize="@dimen/sp_22"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@id/tv_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_normal_half"
+            android:textColor="?time_text_color"
+            android:textSize="@dimen/sp_12" />
+
+        <net.huanci.hsj.view.AtTextView
+            android:id="@id/tv_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_double_normal"
+            android:textColor="?normal_text_color"
+            android:textIsSelectable="true"
+            android:textSize="@dimen/sp_15" />
     </LinearLayout>
-    <com.ruffian.library.widget.RTextView android:textSize="@dimen/sp_15" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_edit" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dp_40" android:layout_margin="@dimen/margin_double_normal" android:text="@string/topic_edit_notice" android:layout_alignParentBottom="true" app:background_normal="?colorAccent" app:corner_radius="@dimen/dp_8" />
+
+    <com.ruffian.library.widget.RTextView
+        android:id="@id/tv_edit"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/margin_double_normal"
+        android:gravity="center"
+        android:text="@string/topic_edit_notice"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_15"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:background_normal="?colorAccent"
+        app:corner_radius="@dimen/dp_8" />
 </RelativeLayout>

@@ -1,369 +1,341 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/alphapurple"
-    android:orientation="vertical">
-
-    <RelativeLayout
-        style="@style/GraffitiButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_weight="0">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_vertical"
-            android:onClick="onCloseMeBtn">
+    <include layout="@layout/title_layout"
+        android:id="@+id/topBar"/>
 
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/img_back" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/topBar"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:onClick="onEnterMeAvatarBtn"
+            android:id="@+id/layout_head"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/item_height"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:background="@color/white"
+            android:clickable="true">
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="?android:selectableItemBackground" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="返回"
-                android:textColor="@color/white"
-                android:textSize="15sp" />
-        </LinearLayout>
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_double_normal"
+                android:text="头像"
+                android:textColor="@color/item_text_color"
+                android:textSize="@dimen/normal_text_size" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="我"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView_right11"
+                android:layout_width="15.0dip"
+                android:layout_height="15.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
 
-    </RelativeLayout>
+                app:srcCompat="@mipmap/right" />
+            <com.facebook.drawee.view.SimpleDraweeView
+                xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:layout_toLeftOf="@id/imageView_right11"
+                fresco:failureImage="@drawable/img_defaultavatar"
+                fresco:placeholderImage="@drawable/img_defaultavatar"
+                fresco:roundedCornerRadius="3dp" />
+        </RelativeLayout>
 
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <RelativeLayout
+            android:onClick="onEnterMeNicknameBtn"
+            android:id="@+id/layout_nick"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/item_height"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:background="@color/item_clor"
+            android:clickable="true">
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/line" />
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="?android:selectableItemBackground" />
 
-            <!--头像-->
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_listitem"
-                android:clickable="true"
-                android:onClick="onEnterMeAvatarBtn"
-                android:padding="15dp">
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_double_normal"
+                android:text="昵称"
+                android:textColor="@color/item_text_color"
+                android:textSize="@dimen/normal_text_size" />
 
-                <TextView
-                    android:id="@+id/textView2"
-                    style="@style/MeText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="头像" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView_right"
+                android:layout_width="15.0dip"
+                android:layout_height="15.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:tint="@color/setting_arrow_color"
+                app:srcCompat="@mipmap/right" />
 
-                <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/imageButton2"
-                    fresco:failureImage="@drawable/img_defaultavatar"
-                    fresco:placeholderImage="@drawable/img_defaultavatar"
-                    fresco:roundedCornerRadius="3dp" />
-
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/textView2"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/img_detail" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/line" />
-            <!--昵称-->
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:text="陈十一"
+                android:id="@+id/textView_nick"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_listitem"
-                android:clickable="true"
-                android:onClick="onEnterMeNicknameBtn"
-                android:padding="15dp">
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:layout_toLeftOf="@id/imageView_right"
+                android:textColor="@color/black333"
+                android:textSize="@dimen/small_font_size" />
+        </RelativeLayout>
 
-                <TextView
-                    style="@style/MeText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:text="昵称" />
-
-                <TextView
-                    style="@style/ContentText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/imageButton3"
-                    android:text="陈十一" />
-
-                <ImageButton
-                    android:id="@+id/imageButton3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/img_detail" />
-            </RelativeLayout>
-
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="@color/all_line_gray" />
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/item_height"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:background="@color/item_clor"
+            android:clickable="true">
             <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/line" />
-            <!--帐号-->
-            <RelativeLayout
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="?android:selectableItemBackground" />
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_listitem"
-                android:clickable="true"
-                android:padding="15dp">
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_double_normal"
+                android:text="账号"
+                android:textColor="@color/item_text_color"
+                android:textSize="@dimen/normal_text_size" />
 
-                <TextView
-                    style="@style/MeText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="帐号" />
 
-                <TextView
-                    style="@style/ContentText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="5dp"
-                    android:text="ken19931108" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/line" />
-            <!--我的二维码-->
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:text="ken19931108"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_listitem"
-                android:clickable="true"
-                android:onClick="onEnterMeQRCodeBtn"
-                android:padding="15dp">
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/black333"
+                android:textSize="@dimen/small_font_size" />
+        </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/textView"
-                    style="@style/MeText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="我的二维码" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/textView"
-                    android:layout_toLeftOf="@+id/imageButton"
-                    android:background="@drawable/img_qrcode" />
-
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/img_detail" />
-            </RelativeLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="@color/all_line_gray" />
+        <RelativeLayout
+            android:onClick="onEnterMeQRCodeBtn"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/item_height"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:background="@color/item_clor"
+            android:clickable="true">
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/line" />
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="?android:selectableItemBackground" />
 
-            <!--性别-->
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_listitem"
-                android:clickable="true"
-                android:onClick="onEnterMeSexBtn"
-                android:padding="15dp">
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_double_normal"
+                android:text="二维码名片"
+                android:textColor="@color/item_text_color"
+                android:textSize="@dimen/normal_text_size" />
 
-                <TextView
-                    style="@style/MeText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="性别" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView_right"
+                android:layout_width="15.0dip"
+                android:layout_height="15.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:tint="@color/setting_arrow_color"
+                app:srcCompat="@mipmap/right" />
 
-                <TextView
-                    style="@style/ContentText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/imageButton5"
-                    android:text="男" />
 
-                <ImageButton
-                    android:id="@+id/imageButton5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/img_detail" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/line" />
-            <!--地区-->
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_listitem"
-                android:clickable="true"
-                android:onClick="onEnterMeDistrictBtn"
-                android:padding="15dp">
+                android:layout_marginRight="@dimen/margin_normal"
+                android:layout_toLeftOf="@id/imageView_right"
+                android:background="@drawable/img_qrcode" />
+        </RelativeLayout>
 
-                <TextView
-                    style="@style/MeText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:text="地区" />
-
-                <TextView
-                    style="@style/ContentText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/imageButton6"
-                    android:text="四川  成都" />
-
-                <ImageButton
-                    android:id="@+id/imageButton6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/img_detail" />
-            </RelativeLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="@color/all_line_gray" />
+        <RelativeLayout
+            android:id="@+id/layout_sex"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/item_height"
+            android:onClick="onEnterMeSexBtn"
+            android:background="@color/item_clor"
+            android:clickable="true">
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/line" />
-            <!--个性签名-->
-            <RelativeLayout
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="?android:selectableItemBackground" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_listitem"
-                android:clickable="true"
-                android:onClick="onEnterMeMottoBtn"
-                android:padding="15dp">
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_double_normal"
+                android:text="性别"
+                android:textColor="@color/item_text_color"
+                android:textSize="@dimen/normal_text_size" />
 
-                <TextView
-                    android:id="@+id/textView3"
-                    style="@style/MeText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerVertical="true"
-                    android:text="个性签名" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView_right2"
+                android:layout_width="15.0dip"
+                android:layout_height="15.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
 
-                <ImageButton
-                    android:id="@+id/imageButton7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/img_detail" />
+                app:srcCompat="@mipmap/right" />
 
-                <TextView
-                    style="@style/ContentText"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/imageButton7"
-                    android:gravity="right"
-                    android:text="心善则美，心诚则灵" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginBottom="20dp"
-                android:background="@color/line" />
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/line" />
-            <!--退出登录-->
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView_sex"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/selector_listitem"
-                android:clickable="true"
-                android:gravity="center"
-                android:onClick="onLogoutBtn"
-                android:padding="15dp">
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:layout_toLeftOf="@id/imageView_right2"
+                android:text="女"
+                android:textColor="@color/black333"
+                android:textSize="@dimen/small_font_size" />
+        </RelativeLayout>
 
-                <TextView
-                    style="@style/MeText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerVertical="true"
-                    android:text="退出登录" />
-            </RelativeLayout>
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="@color/all_line_gray" />
+
+        <RelativeLayout
+            android:id="@+id/layout_area"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/item_height"
+            android:background="@color/item_clor"
+            android:onClick="onEnterMeDistrictBtn"
+            android:clickable="true">
 
             <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/line" />
-        </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="?android:selectableItemBackground" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_double_normal"
+                android:text="地区"
+                android:textColor="@color/item_text_color"
+                android:textSize="@dimen/normal_text_size" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView_right3"
+                android:layout_width="15.0dip"
+                android:layout_height="15.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
+
+                app:srcCompat="@mipmap/right" />
+
+            <TextView
+                android:id="@+id/textView_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:layout_toLeftOf="@id/imageView_right3"
+                android:text="苏州"
+                android:textColor="@color/black333"
+                android:textSize="@dimen/small_font_size" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0px"
+            android:background="@color/all_line_gray" />
+
+        <RelativeLayout
+            android:id="@+id/layout_sig"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/item_height"
+            android:onClick="onEnterMeMottoBtn"
+            android:background="@color/item_clor"
+            android:clickable="true">
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="?android:selectableItemBackground" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_double_normal"
+                android:text="签名"
+                android:textColor="@color/item_text_color"
+                android:textSize="@dimen/normal_text_size" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView_right4"
+                android:layout_width="15.0dip"
+                android:layout_height="15.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
+
+                app:srcCompat="@mipmap/right" />
+
+            <TextView
+                android:id="@+id/textView_sig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin_normal"
+                android:layout_toLeftOf="@id/imageView_right4"
+                android:text="醉后不知天在水，满船清梦压星河"
+                android:textColor="@color/black333"
+                android:textSize="@dimen/small_font_size" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include
+        layout="@layout/shadow_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/shadow_width"
+        android:layout_below="@id/topBar" />
+</RelativeLayout>

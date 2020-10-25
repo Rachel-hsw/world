@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/layout_loading"
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:background="@color/bg_topbar"
+                android:gravity="center">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView_loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20.0dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp" />
+
+                <TextView
+                    android:id="@+id/textView_loading_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/imageView_loading"
+                    android:text="个人中心"
+                    android:textColor="@color/topbar_words_color"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="30dp"
+                android:onClick="onEnterMeBtn"
+                android:id="@+id/layout_user"
+                android:layout_width="fill_parent"
+                android:layout_height="120.0dip"
+                android:background="@color/bg_topbar"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/layout_head"
+                    android:layout_width="83dp"
+                    android:layout_height="83dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp">
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image"
+                        android:layout_width="83dp"
+                        android:layout_height="83dp"
+                        fresco:failureImage="@drawable/img_defaultavatar"
+                        fresco:placeholderImage="@drawable/img_defaultavatar"
+                        fresco:roundAsCircle="true"
+                        fresco:roundingBorderColor="#FCFCFC"
+                        fresco:roundingBorderWidth="6dp" />
+
+                    <ImageView
+                        android:id="@+id/imageView_vip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        app:srcCompat="@drawable/bg_vip" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_name"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.0"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:textColor="@color/title_text_color"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageView_sex"
+                            android:layout_width="19dp"
+                            android:layout_height="19dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            app:srcCompat="@drawable/selector_sex" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_paid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="19dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="6dp"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/selector_paid_user" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/imageView_real_level"
+                            android:layout_width="wrap_content"
+                            android:layout_height="13dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="2dp"
+                            android:adjustViewBounds="true"
+                            android:paddingLeft="3dp"
+                            android:paddingRight="3dp"
+                            app:srcCompat="@mipmap/ic_level_1" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:text="陈十一"
+                        android:id="@+id/textView_intro"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5.0dip"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:textColor="@color/topbar_words_color"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView_goto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8.0dip"
+                    android:tint="@color/topbar_icon_color"
+                    app:srcCompat="@drawable/ic_mine_right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_num_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_topbar"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/focus_layout"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8.0dip">
+
+                    <TextView
+                        android:id="@+id/focus_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/topbar_words_color"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/focus_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2.0dip"
+                        android:alpha="0.7"
+                        android:text="关注"
+                        android:textColor="@color/topbar_words_color"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fans_layout"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8.0dip">
+
+                    <TextView
+                        android:id="@+id/fans_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/topbar_words_color"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/fans_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2.0dip"
+                        android:alpha="0.7"
+                        android:text="粉丝"
+                        android:textColor="@color/topbar_words_color"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/work_layout"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8.0dip">
+
+                    <TextView
+                        android:id="@+id/work_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/topbar_words_color"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/work_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.7"
+                        android:paddingTop="2.0dip"
+                        android:text="创作"
+                        android:textColor="@color/topbar_words_color"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:onClick="onOpenGalleryBtn"
+                    android:id="@+id/album_layout"
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.0"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="8.0dip">
+
+                    <TextView
+                        android:id="@+id/album_num_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/topbar_words_color"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/album_num_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.7"
+                        android:paddingTop="2.0dip"
+                        android:text="画集"
+                        android:textColor="@color/topbar_words_color"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_draft"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?selectableItemBackground" />
+                <!--
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/imageView5"
+                                    android:layout_width="21dp"
+                                    android:layout_height="21dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_marginStart="20dp"
+
+                                    app:srcCompat="@mipmap/ic_mine_draft" />-->
+
+                <TextView
+                    android:id="@+id/textview5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:text="我的草稿"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_collection"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1.0px"
+                android:background="#FFFFFF">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?selectableItemBackground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    app:srcCompat="@mipmap/ic_mine_collection" />
+
+                <TextView
+                    android:id="@+id/textview8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/imageView8"
+                    android:text="我的收藏"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_mark"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:tint="?no_data_img_tink"
+                    android:id="@+id/imageView_mark"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+
+                    app:srcCompat="@mipmap/shopping_mark" />
+
+                <TextView
+                    android:id="@+id/textview_mark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/imageView_mark"
+                    android:text="集市"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textview_mark2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:text="模板/素材/笔刷交易"
+                    android:textColor="@color/time_text_color"
+                    android:textSize="12.0sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_shop"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1.0px"
+                android:background="#FFFFFF">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+
+                    android:id="@+id/imageView4"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    app:srcCompat="@mipmap/ic_mine_wallet" />
+
+                <TextView
+                    android:id="@+id/textview4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/imageView4"
+                    android:text="我的钱包"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/vip_center"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1.0px"
+                android:background="#FFFFFF"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+
+
+                    android:id="@+id/imageView9"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    app:srcCompat="@mipmap/ic_mine_vip" />
+
+                <TextView
+                    android:id="@+id/textview9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/imageView9"
+                    android:text="会员中心"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/recovery_community_Layout"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1.0px"
+                android:background="#FFFFFF"
+                android:visibility="visible">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/community_workIv"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+
+                    app:srcCompat="@drawable/ic_mine_recovery" />
+
+                <TextView
+                    android:id="@+id/community_workTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/community_workIv"
+                    android:text="社区中心"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rating_workLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1.0px"
+                android:background="#FFFFFF">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/rating_workIv"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+
+                    app:srcCompat="@mipmap/ic_mine_rating" />
+
+                <TextView
+                    android:id="@+id/rating_workTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/rating_workIv"
+                    android:text="作品打分"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/rating_new"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="3.0dip"
+                    android:layout_toEndOf="@id/rating_workTv"
+                    app:srcCompat="@drawable/new_flag" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/draw_idea_workLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1.0px"
+                android:background="#FFFFFF">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/draw_idea_workIv"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+
+                    app:srcCompat="@mipmap/mine_draw_idea" />
+
+                <TextView
+                    android:id="@+id/draw_idea_workTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/draw_idea_workIv"
+                    android:text="创作点子"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/little_black_house"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1.0px"
+                android:background="#FFFFFF">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/little_black_houseIv"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+
+                    app:srcCompat="@mipmap/little_black_house" />
+
+                <TextView
+                    android:id="@+id/little_black_houseTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/little_black_houseIv"
+                    android:text="小黑屋"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_youth"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1.0px"
+                android:background="#FFFFFF">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView_youth"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+
+                    app:srcCompat="@mipmap/youth_mode" />
+
+                <TextView
+                    android:id="@+id/textview_youth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/imageView_youth"
+                    android:text="青少年模式"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textview_youth2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:text="未开启"
+                    android:textColor="@color/time_text_color"
+                    android:textSize="12.0sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_advice"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+
+                    app:srcCompat="@mipmap/ic_mine_help" />
+
+                <TextView
+                    android:id="@+id/textview6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/imageView6"
+                    android:text="使用教程"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_setting"
+                android:layout_width="fill_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="10dp"
+                android:background="#FFFFFF"
+                android:clickable="true">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="?android:selectableItemBackground" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:tint="?no_data_img_tink"
+                    android:id="@+id/imageView7"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    app:srcCompat="@mipmap/ic_mine_setting" />
+
+                <TextView
+                    android:id="@+id/textview7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_toEndOf="@id/imageView7"
+                    android:text="设置中心"
+                    android:textColor="@color/item_text_color"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

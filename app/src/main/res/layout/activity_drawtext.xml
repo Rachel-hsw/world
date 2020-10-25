@@ -13,13 +13,13 @@
         android:id="@+id/drawtext_toptoolbar"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@drawable/bg_processing_title"
+        android:background="@color/white"
         android:orientation="horizontal" >
 
-        <Button
+        <com.noahark.moments.ui.widget.TextButton
             android:id="@+id/drawtext_refuse"
             style="@style/GraffitiButton3"
-            android:drawableTop="@drawable/btn_refuse_normal"
+            android:drawableTop="@mipmap/close"
             android:onClick="onDrawtextBackBtn" />
 
         <LinearLayout
@@ -29,29 +29,34 @@
             android:gravity="center" >
 
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="插入文字"
-                android:textColor="@color/white"
+                android:textColor="@color/textcolor"
                 android:textSize="20sp" />
         </LinearLayout>
 
-        <Button
+        <com.noahark.moments.ui.widget.TextButton
             android:id="@+id/drawtext_sure"
             style="@style/GraffitiButton3"
-            android:drawableTop="@drawable/btn_sure_normal"
+            android:drawableTop="@drawable/ucrop_ic_done"
             android:onClick="onDrawtextOkBtn" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/drawtext_downtoolbar"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
         android:weightSum="2" >
 
-        <Button
+        <com.noahark.moments.ui.widget.TextButton
+            android:gravity="center"
+            android:layout_height="56dp"
+            android:background="@color/black333"
             android:id="@+id/drawtext_content"
             style="@style/DrawTextButton"
             android:layout_weight="1"
@@ -59,7 +64,10 @@
             android:onClick="onChangeContentBtn"
             android:text="内容" />
 
-        <Button
+        <com.noahark.moments.ui.widget.TextButton
+            android:gravity="center"
+            android:layout_height="56dp"
+            android:background="@color/black333"
             android:id="@+id/drawtext_color"
             style="@style/DrawTextButton"
             android:layout_weight="1"

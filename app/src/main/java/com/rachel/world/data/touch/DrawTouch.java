@@ -23,10 +23,10 @@ public class DrawTouch extends Touch
 	{
 		// 第一个对象创建时构造初始画笔
 		paint = new Paint(Paint.DITHER_FLAG);
-		paint.setColor(Color.parseColor("#ff298ecb"));
+		paint.setColor(Color.parseColor("#FF000000"));
 		paint.setStyle(Paint.Style.STROKE);
 		paint.setStrokeCap(Paint.Cap.ROUND);
-		paint.setStrokeWidth(1);
+		paint.setStrokeWidth(3);
 		paint.setAntiAlias(true);
 		paint.setDither(true);
 		paint.setStrokeJoin(Paint.Join.ROUND);

@@ -30,7 +30,9 @@ import com.chanven.lib.cptr.PtrClassicFrameLayout;
 import com.chanven.lib.cptr.PtrDefaultHandler;
 import com.chanven.lib.cptr.PtrFrameLayout;
 import com.noahark.moments.R;
+import com.noahark.moments.bean.ChatBean;
 import com.noahark.moments.bean.FanBean;
+import com.noahark.moments.ui.adapter.ChatAdapter;
 import com.noahark.moments.ui.adapter.FansAdapter;
 
 import java.util.ArrayList;
@@ -41,14 +43,10 @@ public class FansFragment extends Fragment {
 	private static final String ARG_POSITION = "position";
 
 	private ListView mFanListView;
-	private List<FanBean> mFanBeanList;
-	private FansAdapter mFanListAdapter;
 	private PtrClassicFrameLayout refreshLayout;
-	//	private ListView mFanSelectListView;
-//	private EditText mFanSelectEditText;
-//	private TextView mFanSelectCancelBtn;
+
 	Handler handler = new Handler();
-	private int position;
+
 
 	public static FansFragment newInstance(int position) {
 		FansFragment FanFragment = new FansFragment();
@@ -61,7 +59,7 @@ public class FansFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		position = getArguments().getInt(ARG_POSITION);
+
 	}
 
 	@Override
@@ -69,41 +67,36 @@ public class FansFragment extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragment_fans,container,false);
 		mFanListView = (ListView) rootView.findViewById(R.id.fanlist);
 
-//		mFanSelectListView = (ListView)findViewById(R.id.Fanlist_select);
-//
-//        mFanSelectEditText = (EditText)findViewById(R.id.edittext_Fan_select);
-//        mFanSelectEditText.setOnFocusChangeListener(new SelectEditTextFocuser());
-//        mFanSelectEditText.addTextChangedListener(new SelectEditTextWatcher());
-//
-//        mFanSelectCancelBtn = (TextView)findViewById(R.id.btn_Fan_selectcancel);
-
-
-		mFanBeanList = new ArrayList<FanBean>();
+		//读取本地存放的，头像、昵称、时间、最近一条聊天记录！！！！！！！！！！
+		List<ChatBean> chatBeanList = new ArrayList<ChatBean>();
 
 		//用户数据
-		FanBean FanBean = new FanBean();
-		FanBean.setAvatar("http://img3.imgtn.bdimg.com/it/u=4151049131,570330146&fm=23&gp=0.jpg");
-		FanBean.setNickname("xuejian");
+		ChatBean chatBean = new ChatBean();
+		chatBean.setAvatar("http://imgsrc.baidu.com/forum/w%3D580/sign=537a10b1b899a9013b355b3e2d940a58/00bacbef76094b36e0e5d748a3cc7cd98d109d33.jpg");
+		chatBean.setNickname("陈十一");
+		chatBean.setDate("2019/09/28");
+		chatBean.setContent("我想变成一棵树，开心时，在秋天开花。伤心时，在春天落叶。");
 
 		//加入
-		mFanBeanList.add(FanBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
+		chatBeanList.add(chatBean);
 
-		FanBean FanBean1 = new FanBean();
-		FanBean1.setAvatar("http://e.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=9e359aa2748b4710ce7af5c8f6feefcb/b90e7bec54e736d10bbaee8b9d504fc2d4626983.jpg");
-		FanBean1.setNickname("Daniel");
-
-		mFanBeanList.add(FanBean1);
-		mFanBeanList.add(FanBean);
-		mFanBeanList.add(FanBean1);
-		mFanBeanList.add(FanBean);
-		mFanBeanList.add(FanBean1);
-		mFanBeanList.add(FanBean);
-		mFanBeanList.add(FanBean1);
-		mFanBeanList.add(FanBean);
-
-
-		mFanListAdapter = new FansAdapter(getContext(),mFanBeanList);
-		mFanListView.setAdapter(mFanListAdapter);
+		//表项
+		ChatAdapter adapter = new ChatAdapter(getContext(),chatBeanList);
+		mFanListView.setAdapter(adapter);
 
 		refreshLayout = (PtrClassicFrameLayout)rootView.findViewById(R.id.refresh_layout_fan);
 
@@ -133,10 +126,4 @@ public class FansFragment extends Fragment {
 		return rootView;
 	}
 
-
-	public void addListItem(FanBean FanBean)
-	{
-		mFanBeanList.add(FanBean);
-		mFanListAdapter.notifyDataSetChanged(); //通知更新列表
-	}
 }

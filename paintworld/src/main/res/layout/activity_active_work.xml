@@ -1,16 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <net.huanci.hsj.view.TopBar android:id="@id/rl_top_content" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="活动作品" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_color"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <net.huanci.hsj.view.TopBar
+        android:id="@id/rl_top_content"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_height"
+        app:title="活动作品" />
+
     <include layout="@layout/shadow_bottom" />
-    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <TextView android:id="@id/active_work_count" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" style="@style/TimeStyle" />
-        <TextView android:textColor="@color/text_color_selector" android:id="@id/active_work_hotest" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="最热" android:layout_alignParentRight="true" style="@style/TimeStyle" />
-        <View android:id="@id/active_work_divider" android:background="@color/divider" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:layout_toLeftOf="@id/active_work_hotest" android:layout_alignBottom="@id/active_work_hotest" />
-        <TextView android:textColor="@color/text_color_selector" android:id="@id/active_work_newest" android:padding="@dimen/margin_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="最新" android:layout_toLeftOf="@id/active_work_divider" style="@style/TimeStyle" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@id/active_work_count"
+            style="@style/TimeStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_normal"
+            android:text="" />
+
+        <TextView
+            android:id="@id/active_work_hotest"
+            style="@style/TimeStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/margin_normal"
+            android:text="最热"
+            android:textColor="@color/text_color_selector" />
+
+        <View
+            android:id="@id/active_work_divider"
+            android:layout_width="1.0dip"
+            android:layout_height="fill_parent"
+            android:layout_alignBottom="@id/active_work_hotest"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginBottom="5.0dip"
+            android:layout_toLeftOf="@id/active_work_hotest"
+            android:background="@color/divider" />
+
+        <TextView
+            android:id="@id/active_work_newest"
+            style="@style/TimeStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/active_work_divider"
+            android:padding="@dimen/margin_normal"
+            android:text="最新"
+            android:textColor="@color/text_color_selector" />
     </RelativeLayout>
+
     <include layout="@layout/horizontal_divider_small" />
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <androidx.viewpager.widget.ViewPager android:id="@id/active_work_viewpager" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@id/active_work_viewpager"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
     </FrameLayout>
 </LinearLayout>

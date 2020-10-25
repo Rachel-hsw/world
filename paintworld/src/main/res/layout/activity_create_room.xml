@@ -1,28 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="vertical" android:background="?item_clor" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <net.huanci.hsj.view.TopBar android:id="@id/topBar" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height" app:title="@string/create_room" />
-    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_below="@id/topBar">
-        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height">
-            <EditText android:textSize="14.0sp" android:textColor="?item_text_color" android:textColorHint="?time_text_color" android:layout_gravity="center_vertical" android:id="@id/room_name" android:background="@null" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:hint="@string/mp_room_name" android:singleLine="true" android:layout_weight="1.0" android:inputType="text" />
-            <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:layout_gravity="center_vertical" android:id="@id/text_words_count" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?item_clor"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <net.huanci.hsj.view.TopBar
+        android:id="@id/topBar"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_bar_height"
+        app:title="@string/create_room" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topBar"
+        android:layout_marginLeft="20.0dip"
+        android:layout_marginRight="20.0dip"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/top_bar_height"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@id/room_name"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5.0dip"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:hint="@string/mp_room_name"
+                android:inputType="text"
+                android:singleLine="true"
+                android:textColor="?item_text_color"
+                android:textColorHint="?time_text_color"
+                android:textSize="14.0sp" />
+
+            <TextView
+                android:id="@id/text_words_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="?time_text_color"
+                android:textSize="14.0sp" />
         </LinearLayout>
-        <include android:layout_width="fill_parent" android:layout_height="1.0dip" layout="@layout/horizontal_divider" />
-        <RelativeLayout android:id="@id/player_count" android:layout_width="fill_parent" android:layout_height="36.0dip" android:layout_marginTop="20.0dip">
-            <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:id="@id/player_count_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:text="4人" android:layout_centerVertical="true" />
-            <androidx.appcompat.widget.AppCompatImageView android:id="@id/player_count_iv" android:paddingLeft="14.0dip" android:paddingRight="14.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="centerInside" android:tint="?item_text_color" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/back_under" />
+
+        <include
+            layout="@layout/horizontal_divider"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip" />
+
+        <RelativeLayout
+            android:id="@id/player_count"
+            android:layout_width="fill_parent"
+            android:layout_height="36.0dip"
+            android:layout_marginTop="20.0dip">
+
+            <TextView
+                android:id="@id/player_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="17.0dip"
+                android:text="4人"
+                android:textColor="?time_text_color"
+                android:textSize="14.0sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/player_count_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingLeft="14.0dip"
+                android:paddingRight="14.0dip"
+                android:scaleType="centerInside"
+                android:tint="?item_text_color"
+                app:srcCompat="@mipmap/back_under" />
         </RelativeLayout>
-        <TextView android:textSize="14.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:text="@string/mp_room_type" />
-        <RadioGroup android:orientation="horizontal" android:id="@id/type_rg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-6.0dip" android:layout_marginTop="10.0dip">
-            <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="14.0sp" android:textColor="?item_text_color" android:id="@id/type_public" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:text="@string/if_public" />
-            <androidx.appcompat.widget.AppCompatRadioButton android:theme="?radiobutton_style" android:textSize="14.0sp" android:textColor="?item_text_color" android:id="@id/type_jiami" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="27.0dip" android:text="@string/jia_mi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25.0dip"
+            android:text="@string/mp_room_type"
+            android:textColor="?item_text_color"
+            android:textSize="14.0sp" />
+
+        <RadioGroup
+            android:id="@id/type_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-6.0dip"
+            android:layout_marginTop="10.0dip"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@id/type_public"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/if_public"
+                android:textColor="?item_text_color"
+                android:textSize="14.0sp"
+                android:theme="?radiobutton_style" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@id/type_jiami"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="27.0dip"
+                android:text="@string/jia_mi"
+                android:textColor="?item_text_color"
+                android:textSize="14.0sp"
+                android:theme="?radiobutton_style" />
         </RadioGroup>
-        <LinearLayout android:orientation="horizontal" android:id="@id/password_layout" android:layout_width="fill_parent" android:layout_height="@dimen/top_bar_height">
-            <EditText android:textSize="14.0sp" android:textColor="?item_text_color" android:textColorHint="?time_text_color" android:layout_gravity="center_vertical" android:id="@id/password" android:background="@null" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:hint="@string/mp_setting_password" android:singleLine="true" android:layout_weight="1.0" android:inputType="number" />
-            <TextView android:textSize="14.0sp" android:textColor="?time_text_color" android:layout_gravity="center_vertical" android:id="@id/text_password_count" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@id/password_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/top_bar_height"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@id/password"
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5.0dip"
+                android:layout_weight="1.0"
+                android:background="@null"
+                android:hint="@string/mp_setting_password"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textColor="?item_text_color"
+                android:textColorHint="?time_text_color"
+                android:textSize="14.0sp" />
+
+            <TextView
+                android:id="@id/text_password_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="?time_text_color"
+                android:textSize="14.0sp" />
         </LinearLayout>
-        <include android:id="@id/divider_line2" android:layout_width="fill_parent" android:layout_height="1.0dip" layout="@layout/horizontal_divider" />
-        <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/create_room" android:padding="1.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="38.0dip" android:text="@string/create_room" />
+
+        <include
+            android:id="@id/divider_line2"
+            layout="@layout/horizontal_divider"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip" />
+
+        <Button
+            android:id="@id/create_room"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:layout_marginTop="38.0dip"
+            android:gravity="center"
+            android:padding="1.0dip"
+            android:text="@string/create_room"
+            android:textColor="@color/white"
+            android:textSize="15.0sp"
+            android:textStyle="bold" />
     </LinearLayout>
-    <include android:layout_width="fill_parent" android:layout_height="@dimen/shadow_width" android:layout_below="@id/topBar" layout="@layout/shadow_bottom" />
+
+    <include
+        layout="@layout/shadow_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/shadow_width"
+        android:layout_below="@id/topBar" />
 </RelativeLayout>

@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/global_bg</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="no_data_img_tink">@color/no_data_img_tink</item>
+        <item name="selectableItemBackground">@drawable/abc_item_background_holo_dark</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="ActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="no_data_img_tink">@color/no_data_img_tink</item>
+        <item name="selectableItemBackground">@drawable/abc_item_background_holo_dark</item>
     </style>
     <style name="GraffitiButton">
         <item name="android:textSize">@dimen/mainGraffitiButtonTextSize</item>
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:background">@drawable/selector_graffitibutton</item>
         <item name="android:paddingTop">@dimen/mainGraffitiButtonPaddingTop</item>
         <item name="android:layout_width">0.0dip</item>
         <item name="android:layout_height">wrap_content</item>
@@ -33,7 +42,6 @@
     </style>
 
     <style name="GraffitiButton3">
-        <item name="android:background">@drawable/selector_graffitibutton</item>
         <item name="android:paddingTop">14dp</item>
         <item name="android:layout_width">55dip</item>
         <item name="android:layout_height">55dip</item>
@@ -50,7 +58,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:drawablePadding">5dp</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:textColor">@color/textcolor</item>
+        <item name="android:textColor">@color/black666</item>
         <item name="android:gravity">center</item>
     </style>
 
@@ -58,7 +66,6 @@
         <item name="android:textSize">@dimen/mainGraffitiButtonTextSize</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:paddingLeft">40dp</item>
-        <item name="android:background">@drawable/selector_graffitibutton</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:shadowColor">#ff181e2a</item>
@@ -71,7 +78,7 @@
         <item name="android:textSize">@dimen/mainGraffitiButtonTextSize</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:paddingLeft">100dp</item>
-        <item name="android:background">@drawable/selector_graffitibutton</item>
+        <item name="android:background">@color/color_1897F2</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:shadowColor">#ff181e2a</item>
@@ -88,7 +95,7 @@
 
     <style name="NormalText">
         <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/textcolor</item>
+        <item name="android:textColor">@color/black666</item>
     </style>
 
     <style name="AccountText">
@@ -108,7 +115,7 @@
 
     <style name="CircleNickName">
         <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/circleblue</item>
+        <item name="android:textColor">@color/black333</item>
     </style>
 
     <style name="CircleContent">
@@ -118,24 +125,24 @@
 
     <style name="ContentText">
         <item name="android:textSize">13sp</item>
-        <item name="android:textColor">@color/textcolor</item>
+        <item name="android:textColor">@color/black666</item>
     </style>
 
     <style name="MeEditText">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textColorHint">@color/textcolor</item>
+        <item name="android:textColorHint">@color/black666</item>
     </style>
 
     <style name="DeleteCircleText">
         <item name="android:textSize">13sp</item>
-        <item name="android:textColor">@color/circleblue</item>
+        <item name="android:textColor">@color/black333</item>
     </style>
 
     <style name="PenButton">
         <item name="android:background">@color/transparent</item>
         <item name="android:textSize">10sp</item>
-        <item name="android:textColor">@color/textcolor</item>
+        <item name="android:textColor">@color/black666</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>

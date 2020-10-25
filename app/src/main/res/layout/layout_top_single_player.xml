@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_alignParentStart="true"
+        android:id="@+id/back"
+        android:layout_width="@dimen/paint_icon_width"
+        android:layout_height="@dimen/paint_icon_width"
+        android:background="@drawable/retangle_mask_selector"
+        android:padding="@dimen/icon_padding"
+        android:scaleType="centerInside"
+        app:srcCompat="@mipmap/close" />
+
+    <LinearLayout
+        android:id="@+id/top_ll"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_opencanvasbgbar"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:background="@drawable/retangle_mask_selector"
+            android:onClick="onOpenCanvasbgbarBtn"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            android:tint="?no_data_img_tink"
+            app:srcCompat="@drawable/picture" />
+
+        <!--插入小图片-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_opendrawpicture"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:layout_marginLeft="@dimen/margin_normal_half"
+            android:background="@drawable/retangle_mask_selector"
+            android:onClick="onOpenDrawpictureBtn"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            app:srcCompat="@mipmap/gif_more" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_openprocessingbar"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:layout_marginLeft="5.0dip"
+            android:background="@drawable/retangle_mask_selector"
+            android:onClick="onOpenProcessingbarBtn"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+
+            app:srcCompat="@mipmap/filter" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_clear"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:layout_marginLeft="5.0dip"
+            android:background="@drawable/retangle_mask_selector"
+            android:onClick="onClearBtn"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+
+            app:srcCompat="@mipmap/clear_layer" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_save"
+        android:layout_alignParentEnd="true"
+        android:layout_width="@dimen/paint_icon_width"
+        android:layout_height="@dimen/paint_icon_width"
+        android:background="@drawable/retangle_mask_selector"
+        android:onClick="onSaveBtn"
+        android:padding="@dimen/icon_padding"
+        android:scaleType="centerInside"
+
+        app:srcCompat="@mipmap/merge_down" />
+
+    <View
+        android:id="@+id/sendToDev"
+        android:layout_width="@dimen/paint_icon_width"
+        android:layout_height="@dimen/paint_icon_width"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/btn_save"
+        android:padding="@dimen/icon_padding" />
+</merge>

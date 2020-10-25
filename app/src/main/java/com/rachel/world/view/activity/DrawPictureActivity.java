@@ -54,7 +54,7 @@ public class DrawPictureActivity extends Activity
     public void initView()
     {
         setContentView(R.layout.activity_drawpicture);
-        drawPictureVi=(DrawPictureView)findViewById(R.id.drawpicture_canvas);
+        drawPictureVi= findViewById(R.id.drawpicture_canvas);
         pictureDialog=new PictureDialog(DrawPictureActivity.this,R.style.GraffitiDialog);
         topToolbar=(View)findViewById(R.id.drawpicture_toptoolbar);
         downToolbar=(View)findViewById(R.id.drawpicture_downtoolbar);

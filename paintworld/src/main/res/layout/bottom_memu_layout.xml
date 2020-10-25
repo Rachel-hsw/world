@@ -1,21 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<net.huanci.hsj.paint.BottomMenuView android:layout_gravity="bottom" android:id="@id/bottom_menu_layout" android:background="?bg_draw_top" android:paddingLeft="5.0dip" android:paddingTop="2.0dip" android:paddingRight="5.0dip" android:paddingBottom="2.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/items1" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/shapebtn" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/shape" />
-        <FrameLayout android:id="@id/penchoose_btn" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:layout_marginLeft="5.0dip">
-            <androidx.appcompat.widget.AppCompatImageView android:id="@id/penchoose" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@drawable/brush" />
-            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="bottom|center|right" android:id="@id/penchoose_check" android:layout_width="7.0dip" android:layout_height="7.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="6.0dip" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/check_trangle" />
+<net.huanci.hsj.paint.BottomMenuView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/bottom_menu_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="?bg_draw_top"
+    android:baselineAligned="false"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingLeft="5.0dip"
+    android:paddingTop="2.0dip"
+    android:paddingRight="5.0dip"
+    android:paddingBottom="2.0dip">
+
+    <LinearLayout
+        android:id="@id/items1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/shapebtn"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:background="@drawable/retangle_mask_selector"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/shape" />
+
+        <FrameLayout
+            android:id="@id/penchoose_btn"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:layout_marginLeft="5.0dip">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/penchoose"
+                android:layout_width="@dimen/paint_icon_width"
+                android:layout_height="@dimen/paint_icon_width"
+                android:background="@drawable/retangle_mask_selector"
+                android:padding="@dimen/icon_padding"
+                android:scaleType="centerInside"
+                android:tint="?paint_icon_tink"
+                app:srcCompat="@drawable/brush" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/penchoose_check"
+                android:layout_width="7.0dip"
+                android:layout_height="7.0dip"
+                android:layout_gravity="bottom|center|right"
+                android:layout_marginRight="5.0dip"
+                android:layout_marginBottom="6.0dip"
+                android:tint="?paint_icon_tink"
+                app:srcCompat="@mipmap/check_trangle" />
         </FrameLayout>
-        <FrameLayout android:id="@id/eraser_btn" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:layout_marginLeft="5.0dip">
-            <androidx.appcompat.widget.AppCompatImageView android:id="@id/eraser" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:scaleType="centerInside" android:tint="?paint_icon_tink" />
-            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="bottom|center|right" android:id="@id/eraser_check" android:layout_width="7.0dip" android:layout_height="7.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="6.0dip" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/check_trangle" />
+
+        <FrameLayout
+            android:id="@id/eraser_btn"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:layout_marginLeft="5.0dip">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/eraser"
+                android:layout_width="@dimen/paint_icon_width"
+                android:layout_height="@dimen/paint_icon_width"
+                android:background="@drawable/retangle_mask_selector"
+                android:padding="@dimen/icon_padding"
+                android:scaleType="centerInside"
+                android:tint="?paint_icon_tink" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@id/eraser_check"
+                android:layout_width="7.0dip"
+                android:layout_height="7.0dip"
+                android:layout_gravity="bottom|center|right"
+                android:layout_marginRight="5.0dip"
+                android:layout_marginBottom="6.0dip"
+                android:tint="?paint_icon_tink"
+                app:srcCompat="@mipmap/check_trangle" />
         </FrameLayout>
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/choose_color" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:layout_marginLeft="5.0dip" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/choose_color" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/layer" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:layout_marginLeft="5.0dip" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/layer" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/choose_color"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:layout_marginLeft="5.0dip"
+            android:background="@drawable/retangle_mask_selector"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/choose_color" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/layer"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:layout_marginLeft="5.0dip"
+            android:background="@drawable/retangle_mask_selector"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/layer" />
     </LinearLayout>
-    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/items2" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/undo" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:scaleType="centerInside" app:srcCompat="@mipmap/undo" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/redo" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:layout_marginLeft="5.0dip" android:scaleType="centerInside" app:srcCompat="@drawable/selector_redo" />
+
+    <LinearLayout
+        android:id="@id/items2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/undo"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:background="@drawable/retangle_mask_selector"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            app:srcCompat="@mipmap/undo" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/redo"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:layout_marginLeft="5.0dip"
+            android:background="@drawable/retangle_mask_selector"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/selector_redo" />
     </LinearLayout>
 </net.huanci.hsj.paint.BottomMenuView>

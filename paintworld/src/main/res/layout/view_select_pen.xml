@@ -1,117 +1,663 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="?item_clor" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/paint_selburhs_title_height">
-        <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="?bold_text_color" android:id="@id/huabi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:text="画笔" android:layout_centerVertical="true" style="@style/NormalStyle" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/more" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:scaleType="centerInside" android:tint="?paint_icon_tink" android:layout_alignParentRight="true" android:layout_centerVertical="true" app:srcCompat="@mipmap/more" />
-        <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="?bold_text_color" android:id="@id/huabi_setting" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="画笔设置" android:layout_centerInParent="true" style="@style/NormalStyle" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/back" android:padding="@dimen/icon_padding" android:visibility="gone" android:layout_width="@dimen/paint_brush_icon_width" android:layout_height="@dimen/paint_brush_icon_width" android:layout_marginLeft="7.0dip" android:scaleType="centerInside" android:tint="?paint_icon_tink" android:layout_centerVertical="true" app:srcCompat="@drawable/back" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="?item_clor"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/paint_selburhs_title_height">
+
+        <TextView
+            android:id="@id/huabi"
+            style="@style/NormalStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18.0dip"
+            android:text="画笔"
+            android:textColor="?bold_text_color"
+            android:textSize="15.0sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/more"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/retangle_mask_selector"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/more" />
+
+        <TextView
+            android:id="@id/huabi_setting"
+            style="@style/NormalStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="画笔设置"
+            android:textColor="?bold_text_color"
+            android:textSize="15.0sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/back"
+            android:layout_width="@dimen/paint_brush_icon_width"
+            android:layout_height="@dimen/paint_brush_icon_width"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7.0dip"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            android:visibility="visible"
+            app:srcCompat="@drawable/back" />
     </RelativeLayout>
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="@dimen/paint_brush_preview_height" android:layout_marginLeft="14.0dip" android:layout_marginRight="14.0dip">
-        <net.huanci.hsj.paint.BasePaintView android:id="@id/basePaintView" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-        <net.huanci.hsj.view.MaskImageView android:id="@id/select_pen_mask" android:layout_width="fill_parent" android:layout_height="fill_parent" app:miv_is_ignore_alpha="false" />
-        <TextView android:textSize="13.0sp" android:layout_gravity="start|bottom|center" android:id="@id/pen_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="9.0dip" android:layout_marginBottom="5.0dip" />
-        <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="end|center|top" android:id="@id/brush_other_setting" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_brush_icon_width" android:layout_height="@dimen/paint_brush_icon_width" android:scaleType="centerInside" app:srcCompat="@mipmap/setup" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/paint_brush_preview_height"
+        android:layout_marginLeft="14.0dip"
+        android:layout_marginRight="14.0dip">
+
+        <net.huanci.hsj.paint.BasePaintView
+            android:id="@id/basePaintView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <net.huanci.hsj.view.MaskImageView
+            android:id="@id/select_pen_mask"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            app:miv_is_ignore_alpha="false" />
+
+        <TextView
+            android:id="@id/pen_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|bottom|center"
+            android:layout_marginLeft="9.0dip"
+            android:layout_marginBottom="5.0dip"
+            android:textSize="13.0sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/brush_other_setting"
+            android:layout_width="@dimen/paint_brush_icon_width"
+            android:layout_height="@dimen/paint_brush_icon_width"
+            android:layout_gravity="end|center|top"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            app:srcCompat="@mipmap/setup" />
     </FrameLayout>
-    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <LinearLayout android:orientation="vertical" android:id="@id/base_setting" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
-            <TextView android:textSize="13.0sp" android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="23.0dip" android:layout_marginTop="13.0dip" android:text="画笔" />
-            <androidx.recyclerview.widget.RecyclerView android:id="@id/brush_recyclerView" android:layout_width="fill_parent" android:layout_height="@dimen/paint_brush_rc_height" android:layout_marginLeft="9.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="9.0dip" />
-            <include android:id="@id/width_setting" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="19.0dip" android:layout_marginRight="19.0dip" layout="@layout/view_brush_setting" />
-            <include android:id="@id/opacity_setting" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="19.0dip" android:layout_marginRight="19.0dip" android:layout_marginBottom="10.0dip" layout="@layout/view_brush_setting" />
-            <Button android:id="@id/export_brushpkg" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="导出当前画笔包的配置文件" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:id="@id/base_setting"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23.0dip"
+                android:layout_marginTop="13.0dip"
+                android:text="画笔"
+                android:textColor="?item_text_color"
+                android:textSize="13.0sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@id/brush_recyclerView"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/paint_brush_rc_height"
+                android:layout_marginLeft="9.0dip"
+                android:layout_marginTop="7.0dip"
+                android:layout_marginRight="9.0dip" />
+
+            <include
+                android:id="@id/width_setting"
+                layout="@layout/view_brush_setting"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19.0dip"
+                android:layout_marginRight="19.0dip" />
+
+            <include
+                android:id="@id/opacity_setting"
+                layout="@layout/view_brush_setting"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19.0dip"
+                android:layout_marginRight="19.0dip"
+                android:layout_marginBottom="10.0dip" />
+
+            <Button
+                android:id="@id/export_brushpkg"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:padding="5.0dip"
+                android:text="导出当前画笔包的配置文件" />
         </LinearLayout>
-        <ScrollView android:scrollbarThumbVertical="?all_line_gray" android:id="@id/high_level_setting" android:visibility="invisible" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="8.0dip" android:layout_alignBottom="@id/base_setting" android:fadeScrollbars="false">
-            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
-                <LinearLayout android:orientation="vertical" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                    <include android:id="@id/width_min" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/width_max" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/width_random" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
+
+        <ScrollView
+            android:id="@id/high_level_setting"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignBottom="@id/base_setting"
+            android:layout_marginLeft="8.0dip"
+            android:layout_marginTop="15.0dip"
+            android:layout_marginRight="8.0dip"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="?all_line_gray"
+            android:scrollbars="vertical"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10.0dip"
+                android:layout_marginRight="10.0dip"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <include
+                        android:id="@id/width_min"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@id/width_max"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@id/width_random"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
-                <LinearLayout android:orientation="vertical" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/brush_setting_group_margin">
-                    <include android:id="@id/opacity_min" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/opacity_max" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/opacity_random" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/brush_setting_group_margin"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <include
+                        android:id="@id/opacity_min"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@id/opacity_max"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@id/opacity_random"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
                 </LinearLayout>
-                <LinearLayout android:orientation="vertical" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/brush_setting_group_margin">
-                    <include android:id="@id/liuliang_min" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/liuliang_max" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/liuliang_random" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/brush_setting_group_margin"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <include
+                        android:id="@id/liuliang_min"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible" />
+
+                    <include
+                        android:id="@id/liuliang_max"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@id/liuliang_random"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible" />
                 </LinearLayout>
-                <LinearLayout android:orientation="vertical" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/brush_setting_group_margin">
-                    <include android:id="@id/spacing" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/dynamic_spacing" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/brush_setting_group_margin"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <include
+                        android:id="@id/spacing"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@id/dynamic_spacing"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
-                <LinearLayout android:orientation="vertical" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/brush_setting_group_margin">
-                    <include android:id="@id/angle" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/dynamic_angle" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/yuandu" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip">
-                        <TextView android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="沿画笔笔迹方向旋转" android:layout_centerVertical="true" style="@style/tinyStyle" />
-                        <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/use_touch_angle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/brush_setting_group_margin"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <include
+                        android:id="@id/angle"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@id/dynamic_angle"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible" />
+
+                    <include
+                        android:id="@id/yuandu"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5.0dip"
+                        android:layout_marginRight="5.0dip">
+
+                        <TextView
+                            style="@style/tinyStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="沿画笔笔迹方向旋转"
+                            android:textColor="?item_text_color" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@id/use_touch_angle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:theme="?switchStyle" />
                     </RelativeLayout>
                 </LinearLayout>
-                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/brush_setting_group_margin">
-                    <include android:id="@id/hardness" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/hollowVal" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip">
-                        <TextView android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="方形笔触" android:layout_centerVertical="true" style="@style/tinyStyle" />
-                        <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/square_brush" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/brush_setting_group_margin"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@id/hardness"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <include
+                        android:id="@id/hollowVal"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5.0dip"
+                        android:layout_marginRight="5.0dip">
+
+                        <TextView
+                            style="@style/tinyStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="方形笔触"
+                            android:textColor="?item_text_color" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@id/square_brush"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:theme="?switchStyle" />
                     </RelativeLayout>
                 </LinearLayout>
-                <LinearLayout android:orientation="vertical" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="5.0dip">
-                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-                        <TextView android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="形状" android:layout_centerVertical="true" style="@style/NormalStyle" />
-                        <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/useShapeSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            style="@style/NormalStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="形状"
+                            android:textColor="?item_text_color" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@id/useShapeSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:theme="?switchStyle" />
                     </RelativeLayout>
-                    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
-                        <net.huanci.hsj.view.paint.LayerImageView android:id="@id/shape_tex" android:padding="1.0dip" android:layout_width="80.0dip" android:layout_height="80.0dip" android:layout_marginLeft="@dimen/margin_normal_half" android:scaleType="fitCenter" />
-                        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
-                            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                                <TextView android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="颜色" android:layout_centerVertical="true" style="@style/TimeStyle" />
-                                <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/shapeColorSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10.0dip">
+
+                        <net.huanci.hsj.view.paint.LayerImageView
+                            android:id="@id/shape_tex"
+                            android:layout_width="80.0dip"
+                            android:layout_height="80.0dip"
+                            android:layout_marginLeft="@dimen/margin_normal_half"
+                            android:padding="1.0dip"
+                            android:scaleType="fitCenter" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/TimeStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="颜色"
+                                    android:textColor="?item_text_color" />
+
+                                <androidx.appcompat.widget.SwitchCompat
+                                    android:id="@id/shapeColorSwitch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_normal"
+                                    android:theme="?switchStyle" />
                             </LinearLayout>
-                            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_normal">
-                                <TextView android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="反转" android:layout_centerVertical="true" style="@style/TimeStyle" />
-                                <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/reverseShapeSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_normal" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_normal"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    style="@style/TimeStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="反转"
+                                    android:textColor="?item_text_color" />
+
+                                <androidx.appcompat.widget.SwitchCompat
+                                    android:id="@id/reverseShapeSwitch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/margin_normal"
+                                    android:theme="?switchStyle" />
                             </LinearLayout>
                         </LinearLayout>
                     </RelativeLayout>
                 </LinearLayout>
-                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip">
-                    <TextView android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="形状RGB值影响透明度" android:layout_centerVertical="true" style="@style/tinyStyle" />
-                    <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/shapeColorAlphaSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginRight="5.0dip">
+
+                    <TextView
+                        style="@style/tinyStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="形状RGB值影响透明度"
+                        android:textColor="?item_text_color" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@id/shapeColorAlphaSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:theme="?switchStyle" />
                 </RelativeLayout>
-                <TextView android:textSize="11.0sp" android:textColor="?item_text_color" android:id="@id/tv_open_press_switch" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="5.0dip" android:text="要使用压感，请先打开[绘画设置>压感设置>使用笔压]开关" style="@style/tinyStyle" />
-                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip">
-                    <TextView android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="输入设备压感" android:layout_centerVertical="true" style="@style/tinyStyle" />
-                    <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/commonPressSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@id/tv_open_press_switch"
+                    style="@style/tinyStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:text="要使用压感，请先打开[绘画设置>压感设置>使用笔压]开关"
+                    android:textColor="?item_text_color"
+                    android:textSize="11.0sp"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginRight="5.0dip">
+
+                    <TextView
+                        style="@style/tinyStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="输入设备压感"
+                        android:textColor="?item_text_color" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@id/commonPressSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:theme="?switchStyle" />
                 </RelativeLayout>
-                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip">
-                    <TextView android:textColor="?item_text_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="速度模拟压感" android:layout_centerVertical="true" style="@style/tinyStyle" />
-                    <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/speedPressSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginRight="5.0dip">
+
+                    <TextView
+                        style="@style/tinyStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="速度模拟压感"
+                        android:textColor="?item_text_color" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@id/speedPressSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:theme="?switchStyle" />
                 </RelativeLayout>
-                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="5.0dip">
-                    <RelativeLayout android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="纹理" android:layout_centerVertical="true" style="@style/NormalStyle" />
-                        <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/useTexSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginTop="20.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/NormalStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="纹理" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@id/useTexSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:theme="?switchStyle" />
                     </RelativeLayout>
-                    <RelativeLayout android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
-                        <androidx.appcompat.widget.AppCompatImageView android:id="@id/brush_tex" android:background="@drawable/brush_tex_bg" android:layout_width="80.0dip" android:layout_height="80.0dip" android:scaleType="fitCenter" />
-                        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_toRightOf="@id/brush_tex" android:layout_centerVertical="true">
-                            <RelativeLayout android:id="@id/tex_offset" android:layout_width="fill_parent" android:layout_height="wrap_content">
-                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="偏移" android:layout_centerVertical="true" style="@style/TimeStyle" />
-                                <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/useTexOffsetSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10.0dip"
+                        android:visibility="gone">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@id/brush_tex"
+                            android:layout_width="80.0dip"
+                            android:layout_height="80.0dip"
+                            android:background="@drawable/brush_tex_bg"
+                            android:scaleType="fitCenter" />
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="15.0dip"
+                            android:layout_toRightOf="@id/brush_tex">
+
+                            <RelativeLayout
+                                android:id="@id/tex_offset"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    style="@style/TimeStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="偏移" />
+
+                                <androidx.appcompat.widget.SwitchCompat
+                                    android:id="@id/useTexOffsetSwitch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:theme="?switchStyle" />
                             </RelativeLayout>
-                            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_below="@id/tex_offset">
-                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="反转" android:layout_centerVertical="true" style="@style/TimeStyle" />
-                                <androidx.appcompat.widget.SwitchCompat android:theme="?switchStyle" android:id="@id/reverseTexSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+
+                            <RelativeLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tex_offset"
+                                android:layout_marginTop="15.0dip">
+
+                                <TextView
+                                    style="@style/TimeStyle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="反转" />
+
+                                <androidx.appcompat.widget.SwitchCompat
+                                    android:id="@id/reverseTexSwitch"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:theme="?switchStyle" />
                             </RelativeLayout>
                         </RelativeLayout>
                     </RelativeLayout>
-                    <include android:id="@id/tex_scale" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/tex_contrast" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
-                    <include android:id="@id/tex_depth" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/view_brush_setting" />
+
+                    <include
+                        android:id="@id/tex_scale"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@id/tex_contrast"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+
+                    <include
+                        android:id="@id/tex_depth"
+                        layout="@layout/view_brush_setting"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

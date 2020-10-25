@@ -15,11 +15,9 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapFactory.Options;
-import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PointF;
-import android.graphics.drawable.Drawable;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -32,35 +30,26 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
 import android.provider.MediaStore;
-
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
-
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.widget.Toolbar;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.app.ActivityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import com.iflytek.speech.RecognizerResult;
 import com.iflytek.speech.SpeechError;
-import com.iflytek.ui.RecognizerDialog;
 import com.iflytek.ui.RecognizerDialogListener;
-import com.noahark.moments.ui.activity.CommunityActivity;
-import com.noahark.moments.ui.activity.LoginActivity;
-import com.noahark.moments.ui.activity.MeActivity;
+import com.noahark.moments.ui.widget.TextButton;
 import com.rachel.world.R;
 import com.rachel.world.data.extra.Pattern;
 import com.rachel.world.data.extra.Pel;
@@ -85,8 +74,6 @@ import com.rachel.world.data.touch.Touch;
 import com.rachel.world.data.touch.TransformTouch;
 import com.rachel.world.view.dialog.ColorpickerDialog;
 import com.rachel.world.view.dialog.PenDialog;
-import com.rachel.world.view.fragment.GalleryFragment;
-import com.rachel.world.view.fragment.HelpFragment;
 import com.rachel.world.view.widget.CanvasView;
 
 import java.io.File;
@@ -130,28 +117,25 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
 
     //控件;
     public static View[] allBtns;
-    public static View topToolbarSclVi;
-    private static View downToolbarSclVi;
-    private static Button undoBtn;
-    private static Button redoBtn;
-    private Button openPelbarBtn;
+    private AppCompatImageView openPelbarBtn;
     private static View transbarLinlayout;
 
     private static PopupWindow pelbarPopwin;
     private static PopupWindow canvasbgbarPopwin;
 
-    private static Button extendBtn;
-    public static Button colorBtn;//颜色按钮变字用
+    private static TextButton extendBtn;
+    public static AppCompatImageView colorBtn;//颜色按钮变字用
 
-    static public DrawerLayout drawerLayout;//主抽屉
-    private ActionBarDrawerToggle drawerToggle;//抽屉实现者
 
+    AppCompatImageView openpelbarCheck;
+    AppCompatImageView opentransbarCheck;
+    AppCompatImageView opencrossfillCheck;
     //对话框
     private PenDialog penDialog;//调色板对话框
     private ColorpickerDialog colorpickerDialog;//调色板对话框
 
     //辅助用
-    public static Button curToolVi;//工具条：当前选中的工具
+    public static AppCompatImageView curToolVi;//工具条：当前选中的工具
     private static ImageView curPelVi;//图元条：当前选中的图元
     private ImageView curCanvasbgVi, whiteCanvasbgVi;//背景条：当前选中的背景
     /**************************************************************************************/
@@ -191,7 +175,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     private static final String IMAGE_UNSPECIFIED = "image/*";
     /**************************************************************************************/
     //语音识别
-    private RecognizerDialog isrDialog;
+//    private RecognizerDialog isrDialog;
     private final String APP_ID = "514fb8d7";
     private String said;
     /**************************************************************************************/
@@ -224,6 +208,10 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         }
     };
     private static String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_COARSE_LOCATION};
+    private View topToolbarSclVi;
+    private View downToolbarSclVi;
+    private View bottomView;
+
     /**************************************************************************************/
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -231,14 +219,15 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         initView();
         initData();
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == REQUEST_PERMISSION) {
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this,"获取权限失败,部分功能可能无法正常使用！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "获取权限失败,部分功能可能无法正常使用！", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this,"获取权限成功！", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "获取权限成功！", Toast.LENGTH_SHORT).show();
 
             }
         }
@@ -251,42 +240,24 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     //初始化组件
     public void initView() {
         setContentView(R.layout.activity_main);
-
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);//抽屉
-//		drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED); //关闭手势滑动
-        //R.drawable.btn_selectpel_normal
-        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, null, 0x5555, 0x5555) {
-            public void onDrawerOpened(View drawerView) {
-                ensurePelbarClosed();
-                ensureCanvasbgbarClosed();
-                setToolsClickable(false);
-            }
-
-            public void onDrawerClosed(View drawerView) {
-                if (curFragmentFlag == MAIN_FRAGMENT && topToolbarSclVi.getVisibility() == View.VISIBLE) {
-                    setToolsClickable(true);
-                }
-            }
-        };
-        drawerLayout.setDrawerListener(drawerToggle);//为抽屉注册监听实现类防止popwindow的驻留
-
         //根据id关联基本原始组件
-        canvasVi = (CanvasView) findViewById(R.id.vi_canvas);
-        extendBtn = (Button) findViewById(R.id.btn_extend);
-        openPelbarBtn = (Button) findViewById(R.id.btn_openpelbar);
-        topToolbarSclVi = (View) findViewById(R.id.sclvi_toptoolbar);
-        downToolbarSclVi = (View) findViewById(R.id.sclvi_downtoolbar);
-        undoBtn = (Button) findViewById(R.id.btn_undo);
-        redoBtn = (Button) findViewById(R.id.btn_redo);
-        transbarLinlayout = (View) findViewById(R.id.linlay_transbar);
-        colorBtn = (Button) findViewById(R.id.btn_color);
+        canvasVi = findViewById(R.id.vi_canvas);
+        extendBtn = findViewById(R.id.btn_extend);
+        openPelbarBtn = findViewById(R.id.btn_openpelbar);
+        transbarLinlayout = findViewById(R.id.linlay_transbar);
+        topToolbarSclVi = findViewById(R.id.top_ll);
+        bottomView = findViewById(R.id.bottom_view);
+        downToolbarSclVi = findViewById(R.id.bottom_ll);
+        colorBtn = findViewById(R.id.btn_color);
+        openpelbarCheck = findViewById(R.id.openpelbar_check);
+        opentransbarCheck = findViewById(R.id.opentransbar_check);
+        opencrossfillCheck = findViewById(R.id.opencrossfill_check);
         int[] btnIds = new int[]{R.id.btn_openpelbar, R.id.btn_opentransbar, R.id.btn_opencrossfill,
-                R.id.btn_opencanvasbgbar, R.id.btn_openprocessingbar, R.id.btn_opendrawtext, R.id.btn_opendrawpicture,
-                R.id.btn_opendrawer, R.id.btn_color, R.id.btn_pen, R.id.btn_clear, R.id.btn_save,
+                R.id.btn_opencanvasbgbar, R.id.btn_openprocessingbar, R.id.btn_opendrawtext, R.id.btn_opendrawpicture, R.id.btn_color, R.id.btn_pen, R.id.btn_clear, R.id.btn_save,
                 R.id.btn_undo, R.id.btn_redo};
         allBtns = new View[btnIds.length];
         for (int i = 0; i < btnIds.length; i++)
-            allBtns[i] = (View) findViewById(btnIds[i]);
+            allBtns[i] = findViewById(btnIds[i]);
 
         //构造弹出式窗体
         //图元箱\变换箱\浏览箱\背景箱\填拷删箱
@@ -297,8 +268,8 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
 
         //根据id初始化关联选中的组件
         curToolVi = openPelbarBtn;//初始化选中图元按钮
-        curPelVi = (ImageView) pelbarVi.findViewById(R.id.btn_freehand);//初始化选中自由手绘按钮
-        curCanvasbgVi = whiteCanvasbgVi = (ImageView) canvasbgbarVi.findViewById(R.id.btn_canvasbg0);//初始化选中“黄纸背景”按钮
+        curPelVi = pelbarVi.findViewById(R.id.btn_freehand);//初始化选中自由手绘按钮
+        curCanvasbgVi = whiteCanvasbgVi = canvasbgbarVi.findViewById(R.id.btn_canvasbg0);//初始化选中“黄纸背景”按钮
         /**************************************************************************************/
         // 得到传感器服务
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -316,7 +287,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
 
         /**************************************************************************************/
         //语音识别对话框
-        isrDialog = new RecognizerDialog(this, "appid=" + APP_ID);
+//        isrDialog = new RecognizerDialog(this, "appid=" + APP_ID);
         /**************************************************************************************/
     }
 
@@ -340,9 +311,9 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         redoStack = CanvasView.getRedoStack();
         /**************************************************************************************/
         //语音识别
-        said = "";
-        isrDialog.setEngine("sms", null, null);
-        isrDialog.setListener(this);
+//        said = "";
+//        isrDialog.setEngine("sms", null, null);
+//        isrDialog.setListener(this);
         /**************************************************************************************/
         //雪花飞舞
         blowHandler = new BlowHandler();
@@ -354,105 +325,10 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         mAudioManager.setStreamVolume(AudioManager.STREAM_SYSTEM, 0, 0);
     }
 
-/**
- * 按钮事件
- */
-
     /**
-     * Open/Close布局按钮
+     * 按钮事件
      */
 
-    //打开抽屉
-    public void onOpenDrawerBtn(View v) {
-        ensurePelbarClosed();
-        ensureCanvasbgbarClosed();
-
-        drawerLayout.openDrawer(Gravity.LEFT);
-    }
-
-    //打开编辑个人信息界面
-    public void onEnterMeBtn(View v) {
-        boolean hasLogined = true; //访问服务端检查是否已登录%%%%%%%%%%%%%%%%
-        if (hasLogined) //已登录
-        {
-            Intent intent = new Intent(); // 绑定主活动
-            intent.setClass(MainActivity.this, MeActivity.class);
-            startActivity(intent);
-        } else //未登录
-        {
-            Intent intent = new Intent(); // 绑定主活动
-            intent.setClass(MainActivity.this, LoginActivity.class);
-            startActivity(intent);
-        }
-    }
-
-
-    //打开绘图社区
-    public void onOpenCommunityBtn(View v) {
-        boolean hasLogined = true; //访问服务端检查是否已登录%%%%%%%%%%%%%%%%
-        if (hasLogined) //已登录
-        {
-            Intent intent = new Intent(); // 绑定主活动
-            intent.setClass(MainActivity.this, CommunityActivity.class);
-            startActivity(intent);
-        } else //未登录
-        {
-            Intent intent = new Intent(); // 绑定主活动
-            intent.setClass(MainActivity.this, LoginActivity.class);
-            startActivity(intent);
-        }
-    }
-
-    //打开返回画布
-    public void onCloseDrawerBtn(View v) {
-        if (curFragmentFlag != MAIN_FRAGMENT) {
-            curFragmentFlag = MAIN_FRAGMENT;
-            getSupportFragmentManager().beginTransaction().remove(curFragment).commit();
-            if (canvasVi.getVisibility() != View.VISIBLE)
-                canvasVi.setVisibility(View.VISIBLE);
-        }
-        drawerLayout.closeDrawer(Gravity.LEFT);
-    }
-
-    //打开马上分享
-    public void onOpenShareBtn(View v) throws IOException {
-        String tmpPath = Environment.getExternalStorageDirectory().getPath() + "/tmp" + ".jpg";
-        Bitmap bitmap = CanvasView.getSavedBitmap();
-
-        FileOutputStream fileOutputStream = new FileOutputStream(tmpPath);
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
-        fileOutputStream.close();
-        Toast.makeText(MainActivity.this, "图片已保存(" + tmpPath + ")", Toast.LENGTH_SHORT).show();
-
-        //跳转至分享定位器
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("image/*");
-        intent.putExtra(Intent.EXTRA_TEXT, "#分享自单手涂鸦(Free Graffiti)#");
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.putExtra(Intent.EXTRA_STREAM, android.net.Uri.parse(tmpPath));
-        startActivity(Intent.createChooser(intent, null));
-    }
-
-    //打开我的画廊
-    public void onOpenGalleryBtn(View v) {
-        if (curFragmentFlag != GALLERY_FRAGMENT) {
-            curFragmentFlag = GALLERY_FRAGMENT;
-            curFragment = new GalleryFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, curFragment).commit();
-        }
-        drawerLayout.closeDrawer(Gravity.LEFT);
-    }
-
-    //打开帮助
-    public void onOpenHelpBtn(View v) {
-        if (curFragmentFlag != HELP_FRAGMENT) {
-            curFragmentFlag = HELP_FRAGMENT;
-            curFragment = new HelpFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, curFragment).commit();
-        }
-        drawerLayout.closeDrawer(Gravity.LEFT);
-        Toast.makeText(MainActivity.this, "往下翻还有内容哦~", Toast.LENGTH_SHORT).show();
-    }
 
     //打开工具箱
     public void onOpenToolsBtn(View v) {
@@ -462,6 +338,9 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         {
             ensureSensorFinished();
         } else {
+            if (opentransbarCheck.getVisibility() == View.VISIBLE) {
+                return;
+            }
             openTools();
         }
     }
@@ -471,31 +350,6 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         ensurePelbarClosed();
         ensureCanvasbgbarClosed();
         clearRedoStack();//清空重做栈
-
-        if (curToolVi.getId() == R.id.btn_opentransbar
-                || curToolVi.getId() == R.id.btn_opencrossfill
-                || curPelVi.getId() == R.id.btn_keepdrawing)
-            extendBtn.setVisibility(View.VISIBLE);
-        else
-            extendBtn.setVisibility(View.GONE);
-
-        Animation downDisappearAnim = AnimationUtils.loadAnimation(context, R.anim.downdisappear);
-        Animation topDisappearAnim = AnimationUtils.loadAnimation(context, R.anim.topdisappear);
-        Animation leftDisappearAnim = AnimationUtils.loadAnimation(context, R.anim.leftdisappear);
-        Animation rightDisappearAnim = AnimationUtils.loadAnimation(context, R.anim.rightdisappear);
-
-        downToolbarSclVi.startAnimation(downDisappearAnim);
-        topToolbarSclVi.startAnimation(topDisappearAnim);
-        undoBtn.startAnimation(rightDisappearAnim);
-        redoBtn.startAnimation(leftDisappearAnim);
-
-        downToolbarSclVi.setVisibility(View.GONE);
-        topToolbarSclVi.setVisibility(View.GONE);
-        undoBtn.setVisibility(View.GONE);
-        redoBtn.setVisibility(View.GONE);
-
-        setToolsClickable(false);
-
         //无传感器注册
         if (sensorMode == NOSENSOR) {
             if (curToolVi.getId() == R.id.btn_opentransbar) //若为选中模式
@@ -503,10 +357,6 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
                 Animation leftAppearAnim = AnimationUtils.loadAnimation(context, R.anim.leftappear);
                 transbarLinlayout.setVisibility(View.VISIBLE); //显示变换箱
                 transbarLinlayout.startAnimation(leftAppearAnim);
-            } else if (curPelVi.getId() == R.id.btn_brokenline
-                    || curPelVi.getId() == R.id.btn_polygon) {
-                extendBtn.setVisibility(View.VISIBLE);
-                extendBtn.setBackgroundResource(R.drawable.btn_extend_normal);
             }
         }
     }
@@ -519,7 +369,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         if (pelbarPopwin.isShowing())//如果悬浮栏打开
             pelbarPopwin.dismiss();//关闭
         else
-            pelbarPopwin.showAtLocation(downToolbarSclVi, Gravity.BOTTOM, 0, downToolbarSclVi.getHeight());//打开悬浮窗
+            pelbarPopwin.showAtLocation(bottomView, Gravity.BOTTOM, 0, bottomView.getHeight() + downToolbarSclVi.getHeight());//打开悬浮窗
 
         //按下也要注册当前选中图元的touch
         switch (curPelVi.getId()) {
@@ -554,21 +404,6 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     public static void openTools() {
         if (transbarLinlayout.getVisibility() == View.VISIBLE) //如果变换箱为打开状态
             transbarLinlayout.setVisibility(View.GONE);//关闭
-
-        //弹出上下工具栏的动画
-        Animation downAppearAnim = AnimationUtils.loadAnimation(context, R.anim.downappear);
-        Animation topAppearAnim = AnimationUtils.loadAnimation(context, R.anim.topappear);
-        Animation leftAppearAnim = AnimationUtils.loadAnimation(context, R.anim.leftappear);
-        Animation rightAppearAnim = AnimationUtils.loadAnimation(context, R.anim.rightappear);
-        downToolbarSclVi.startAnimation(downAppearAnim);
-        topToolbarSclVi.startAnimation(topAppearAnim);
-        redoBtn.startAnimation(leftAppearAnim);
-        undoBtn.startAnimation(rightAppearAnim);
-        downToolbarSclVi.setVisibility(View.VISIBLE);
-        topToolbarSclVi.setVisibility(View.VISIBLE);
-        undoBtn.setVisibility(View.VISIBLE);
-        redoBtn.setVisibility(View.VISIBLE);
-        setToolsClickable(true);
     }
 
     //打开变换条
@@ -577,7 +412,6 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         ensureCanvasbgbarClosed();
         updateToolbarIcons(v);
         closeTools();
-
         sensorManager.unregisterListener(sensorEventListener);// 取消上一个传感器的注册
         sensorMode = NOSENSOR;
 
@@ -590,7 +424,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         if (canvasbgbarPopwin.isShowing())//如果悬浮栏打开
             canvasbgbarPopwin.dismiss();//关闭
         else
-            canvasbgbarPopwin.showAtLocation(downToolbarSclVi, Gravity.BOTTOM, 0, downToolbarSclVi.getHeight());//打开悬浮窗
+            canvasbgbarPopwin.showAtLocation(bottomView, Gravity.BOTTOM, 0, bottomView.getHeight() + downToolbarSclVi.getHeight());//打开悬浮窗
     }
 
     //交叉填充
@@ -673,9 +507,9 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
 
     //麦克风语音识别（子）
     public void onMicroBtn(View v) {
-        closeTools();//自动关闭工具箱进入作图
-        isrDialog.show();//显示语音对话框
-        Toast.makeText(this, "进入语音识图：人、花朵、太阳、房子、小草、笔、笑脸、指环", Toast.LENGTH_LONG).show();
+//        closeTools();//自动关闭工具箱进入作图
+//        isrDialog.show();//显示语音对话框
+//        Toast.makeText(this, "进入语音识图：人、花朵、太阳、房子、小草、笔、笑脸、指环", Toast.LENGTH_LONG).show();
     }
 
     //Gps定位画图（子）
@@ -766,38 +600,6 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         curPelVi.setImageDrawable(null);//上次选中的图元去框
         v.setImageResource(R.drawable.bg_highlight_frame);//改变子菜单的图片（加框）
         curPelVi = v;//转接当前选中
-
-        //修改父菜单图标
-        int fatherDrawableId = 0;
-        switch (v.getId()) {
-            case R.id.btn_bessel:
-                fatherDrawableId = R.drawable.btn_bessel_pressed;
-                break;
-            case R.id.btn_brokenline:
-                fatherDrawableId = R.drawable.btn_brokenline_pressed;
-                break;
-            case R.id.btn_freehand:
-                fatherDrawableId = R.drawable.btn_freehand_pressed;
-                break;
-            case R.id.btn_line:
-                fatherDrawableId = R.drawable.btn_line_pressed;
-                break;
-            case R.id.btn_oval:
-                fatherDrawableId = R.drawable.btn_oval_pressed;
-                break;
-            case R.id.btn_polygon:
-                fatherDrawableId = R.drawable.btn_polygon_pressed;
-                break;
-            case R.id.btn_rect:
-                fatherDrawableId = R.drawable.btn_rect_pressed;
-                break;
-            case R.id.btn_keepdrawing:
-                fatherDrawableId = R.drawable.btn_keepdrawing_pressed;
-                break;
-        }
-
-        final Drawable fatherDrawable = getResources().getDrawable(fatherDrawableId);
-        curToolVi.setCompoundDrawablesWithIntrinsicBounds(null, fatherDrawable, null, null);
     }
 
     //更新画布背景箱相关图标
@@ -840,99 +642,41 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         canvasVi.setBackgroundBitmap(backgroundDrawable);
     }
 
+    public void updateCheckState(AppCompatImageView view) {
+        AppCompatImageView[] views = {openpelbarCheck, opentransbarCheck, opencrossfillCheck};
+        for (AppCompatImageView item : views) {
+            if (view.getId() == item.getId()) {
+                item.setVisibility(View.VISIBLE);
+            } else {
+                item.setVisibility(View.GONE);
+            }
+        }
+        if (view.getId() == opentransbarCheck.getId()) {
+            transbarLinlayout.setVisibility(View.VISIBLE);
+            extendBtn.setVisibility(View.VISIBLE);
+        } else {
+            extendBtn.setVisibility(View.GONE);
+            transbarLinlayout.setVisibility(View.GONE);
+        }
+
+    }
+
     //更新工具条相关图标
     public void updateToolbarIcons(View v) {
-        Button btn = (Button) v;
-        //变白、变蓝(筛选图片资源)
-        int lastDrawableId = 0;//上次选中的按钮需变回的图片
-        switch (curToolVi.getId()) {
-            case R.id.btn_openpelbar: {
+        AppCompatImageView btn = (AppCompatImageView) v;
+        switch (v.getId()) {
+            case R.id.btn_openpelbar:
                 //之前曾选中了哪个图形，就以那个图形的蓝色底作为背景
-                switch (curPelVi.getId()) {
-                    case R.id.btn_bessel:
-                        lastDrawableId = R.drawable.btn_bessel_normal;
-                        break;
-                    case R.id.btn_brokenline:
-                        lastDrawableId = R.drawable.btn_brokenline_normal;
-                        break;
-                    case R.id.btn_freehand:
-                        lastDrawableId = R.drawable.btn_freehand_normal;
-                        break;
-                    case R.id.btn_line:
-                        lastDrawableId = R.drawable.btn_line_normal;
-                        break;
-                    case R.id.btn_oval:
-                        lastDrawableId = R.drawable.btn_oval_normal;
-                        break;
-                    case R.id.btn_polygon:
-                        lastDrawableId = R.drawable.btn_polygon_normal;
-                        break;
-                    case R.id.btn_rect:
-                        lastDrawableId = R.drawable.btn_rect_normal;
-                        break;
-                    case R.id.btn_keepdrawing:
-                        lastDrawableId = R.drawable.btn_keepdrawing_normal;
-                        break;
-                }
-            }
-            break;//图元
+                updateCheckState(openpelbarCheck);
+                break;//图元
             case R.id.btn_opentransbar:
-                lastDrawableId = R.drawable.btn_selectpel_normal;
+                updateCheckState(opentransbarCheck);
                 break;//选中
             case R.id.btn_opencrossfill:
-                lastDrawableId = R.drawable.btn_crossfill_normal;
+                updateCheckState(opencrossfillCheck);
                 break;//浏览
         }
-
-        int nextDrawableId = 0;//刚才按下的按钮将要变成的图片
-        switch (v.getId()) {
-            case R.id.btn_openpelbar: {
-                //之前曾选中了哪个图形，就以那个图形的蓝色底作为背景
-                switch (curPelVi.getId()) {
-                    case R.id.btn_bessel:
-                        nextDrawableId = R.drawable.btn_bessel_pressed;
-                        break;
-                    case R.id.btn_brokenline:
-                        nextDrawableId = R.drawable.btn_brokenline_pressed;
-                        break;
-                    case R.id.btn_freehand:
-                        nextDrawableId = R.drawable.btn_freehand_pressed;
-                        break;
-                    case R.id.btn_line:
-                        nextDrawableId = R.drawable.btn_line_pressed;
-                        break;
-                    case R.id.btn_oval:
-                        nextDrawableId = R.drawable.btn_oval_pressed;
-                        break;
-                    case R.id.btn_polygon:
-                        nextDrawableId = R.drawable.btn_polygon_pressed;
-                        break;
-                    case R.id.btn_rect:
-                        nextDrawableId = R.drawable.btn_rect_pressed;
-                        break;
-                    case R.id.btn_keepdrawing:
-                        nextDrawableId = R.drawable.btn_keepdrawing_pressed;
-                        break;
-                }
-            }
-            break;//图元
-            case R.id.btn_opentransbar:
-                nextDrawableId = R.drawable.btn_selectpel_pressed;
-                break;//选中
-            case R.id.btn_opencrossfill:
-                nextDrawableId = R.drawable.btn_crossfill_pressed;
-                break;//交叉填充
-        }
-
-        final Drawable lastDrawable = getResources().getDrawable(lastDrawableId);
-        curToolVi.setCompoundDrawablesWithIntrinsicBounds(null, lastDrawable, null, null);
-        curToolVi.setTextColor(Color.WHITE);
-
-        final Drawable nextDrawable = getResources().getDrawable(nextDrawableId);
-        btn.setCompoundDrawablesWithIntrinsicBounds(null, nextDrawable, null, null);
-        btn.setTextColor(Color.parseColor("#0099CC"));
-
-        curToolVi = btn;//转接当前选中
+        curToolVi = btn;
     }
 
     /**
@@ -1007,7 +751,6 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         }
 
         sharkWaiting = false;//重新开启摇一摇监听
-        extendBtn.setBackgroundResource(R.drawable.btn_extend_normal);//消去ok按钮
     }
 
 //	private void setToolsInClickable()//抽屉打开后禁止上下所有按钮
@@ -1048,7 +791,6 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         // 取消当前传感器的注册
         sensorManager.unregisterListener(sensorEventListener);// 取消上一个传感器的注册
         sensorMode = NOSENSOR;
-        extendBtn.setBackgroundResource(R.drawable.btn_extend_normal);
 
         //selectedPel的路径组成的区域敲定
         (selectedPel.region).setPath(selectedPel.path, CanvasView.getClipRegion());
@@ -1066,7 +808,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         // 取消当前传感器的注册
         sensorManager.unregisterListener(sensorEventListener);// 取消上一个传感器的注册
         sensorMode = NOSENSOR;
-        extendBtn.setBackgroundResource(R.drawable.btn_extend_normal);
+
 
         //敲定该图元的路径，区域，画笔,名称
         (newPel.region).setPath(newPel.path, CanvasView.getClipRegion());
@@ -1143,7 +885,6 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         //开启飘花线程和加速度传感器监听
         registerSnowThread();
         sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_GAME);
-        extendBtn.setBackgroundResource(R.drawable.selector_ok);
     }
 
     //变换图元传感器
@@ -1198,7 +939,6 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
             }
             registerSnowThread();
             sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_GAME);
-            extendBtn.setBackgroundResource(R.drawable.selector_ok); //变勾图标
         } else {
             Toast.makeText(MainActivity.this, "请先选中一个图形！", Toast.LENGTH_SHORT).show();
         }
@@ -1608,56 +1348,42 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         return context;
     }
 
-    /**
-     * back键彻底退出应用
-     */
-    public boolean onKeyDown(int keyCode, KeyEvent event) // 捕获View的按键事件
-    {
-        //按下反键
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (hasExitAppDialog == false) //没有退出对话框
-            {
-                //弹出再次确认对话框
-                class okClick implements DialogInterface.OnClickListener {
-                    public void onClick(DialogInterface dialog, int which) //ok
-                    {
-                        android.os.Process.killProcess(android.os.Process.myPid());//杀死进程
-                        MainActivity.this.onDestroy();//摧毁活动
-                        System.exit(0);//返回系统
-                    }
-                }
-                class cancelClick implements DialogInterface.OnClickListener //cancel
-                {
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        onBackBtn(null);
+    }
 
-                //实例化确认对话框
-                dialog = new AlertDialog.Builder(MainActivity.this);
-                dialog.setIcon(drawable.ic_dialog_info);
-                dialog.setMessage("您确定要退出？");
-                dialog.setPositiveButton("确定", new okClick());
-                dialog.setNegativeButton("取消", new cancelClick());
-                dialog.create();
-                dialog.show();
-            }
-            return true;
-        } else if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN && sensorMode == NOSENSOR) //音量增大键响应撤销
-        {
-            onUndoBtn(null);
-            return true;
-        } else if (keyCode == KeyEvent.KEYCODE_VOLUME_UP && sensorMode == NOSENSOR)//音量减小键响应重做
-        {
-            onRedoBtn(null);
-            return true;
-        } else if (keyCode == KeyEvent.KEYCODE_MENU) //菜单键弹出工具箱
-        {
-            if (topToolbarSclVi.getVisibility() == View.VISIBLE)
-                closeTools();
-            else
-                onOpenToolsBtn(null);
-        }
-        return super.onKeyDown(keyCode, event);//返回上级页面继续处理onkeydown事件
+    public void onBackBtn(View v) {
+        MainActivity.this.finish();
+//        //按下反键
+//        if (hasExitAppDialog == false) //没有退出对话框
+//        {
+//            //弹出再次确认对话框
+//            class okClick implements DialogInterface.OnClickListener {
+//                public void onClick(DialogInterface dialog, int which) //ok
+//                {
+//                    clearData();
+//                    android.os.Process.killProcess(android.os.Process.myPid());//杀死进程
+//                    MainActivity.this.finish();
+//                }
+//            }
+//            class cancelClick implements DialogInterface.OnClickListener //cancel
+//            {
+//                public void onClick(DialogInterface dialog, int which) {
+//                }
+//            }
+//
+//            //实例化确认对话框
+//            dialog = new AlertDialog.Builder(MainActivity.this);
+//            dialog.setIcon(drawable.ic_dialog_info);
+//            dialog.setMessage("您确定要退出？");
+//            dialog.setPositiveButton("确定", new okClick());
+//            dialog.setNegativeButton("取消", new cancelClick());
+//            dialog.create();
+//            dialog.show();
+//        }
+
     }
     /**********************************************************************************/
     /**
@@ -1759,9 +1485,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         }
     }
 
-    public void onBackBtn(View v) {
-        drawerLayout.openDrawer(Gravity.LEFT);
-    }
+
     /**********************************************************************/
     /**
      * 雪花飞舞
@@ -1817,10 +1541,5 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-    }
-
-    public static void setToolsClickable(boolean bool) {
-        for (int i = 0; i < allBtns.length; i++)
-            allBtns[i].setClickable(bool);
     }
 }

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rachel.world"
     android:installLocation="auto">
+
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -46,18 +47,21 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
 
     <application
-        android:name=".utils.GraffitiApplication"
+        android:largeHeap="true"
+        android:name="com.noahark.moments.GraffitiApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:screenOrientation="portrait"
-        android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+        android:theme="@style/AppTheme">
+
+
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="Betfz7e6xmAD1rByfN3AfKyV" />
         <!-- 到时候改成LoginActivity -->
         <activity
-            android:name="com.rachel.world.view.activity.MainActivity"
+            android:name=".view.activity.CommunityActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:screenOrientation="portrait">
@@ -71,6 +75,10 @@
         <activity android:name="com.rachel.world.view.activity.ProcessingActivity"></activity>
         <activity android:name="com.rachel.world.view.activity.DrawTextActivity"></activity>
         <activity android:name="com.rachel.world.view.activity.DrawPictureActivity"></activity>
+        <activity android:name=".view.activity.MainActivity"
+            android:theme="@style/ActivityTheme" />
+        <activity android:name=".view.fragment.GalleryActivity" />
+        <activity android:name=".view.activity.UserCenterActivity" />
 
         <service
             android:name="com.baidu.location.f"

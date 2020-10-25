@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     android:orientation="vertical">
 
     <RelativeLayout
         style="@style/GraffitiButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0">
+        android:layout_weight="0"
+        android:background="@color/white"
+        android:visibility="gone">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -18,30 +20,32 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:gravity="center_vertical"
-            android:onClick="onCloseTabPageBtn">
+            android:onClick="onCloseTabPageBtn"
+            android:visibility="gone">
 
 
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/img_back"/>
+                android:background="@drawable/img_back" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="返回"
                 android:textColor="@color/white"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:gravity="center"
             android:text="动态"
-            android:textColor="@color/white"
-            android:textSize="20sp"/>
+            android:textColor="@color/black666"
+            android:textSize="16sp" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -50,15 +54,16 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:background="@drawable/img_post"
-            android:onClick="onEnterPostBtn"/>
+            android:onClick="onEnterPostBtn"
+            android:visibility="gone" />
     </RelativeLayout>
 
-    <com.chanven.lib.cptr.PtrClassicFrameLayout
-        xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
+    <com.chanven.lib.cptr.PtrClassicFrameLayout xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
         android:id="@+id/refresh_layout_circle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/background_color"
         cube_ptr:ptr_duration_to_close="200"
         cube_ptr:ptr_duration_to_close_header="700"
         cube_ptr:ptr_keep_header_when_refresh="true"
@@ -71,14 +76,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@color/white"
             android:choiceMode="singleChoice"
             android:fadingEdge="none"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
             android:listSelector="@color/white"
             android:overScrollMode="never"
-            android:scrollbarStyle="outsideOverlay"
-            android:headerDividersEnabled="false"
-            android:footerDividersEnabled="false">
-        </ListView>
+            android:scrollbarStyle="outsideOverlay"></ListView>
     </com.chanven.lib.cptr.PtrClassicFrameLayout>
 
+    <!--<include layout="@layout/shadow_bottom" />-->
 </LinearLayout>

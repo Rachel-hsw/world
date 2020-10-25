@@ -1,55 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/alphapurple"
     android:orientation="vertical">
 
-    <RelativeLayout
-        style="@style/GraffitiButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0">
+    <include layout="@layout/title_layout" />
 
-        <LinearLayout
-            android:id="@+id/close_userzone"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_vertical">
-
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/img_back"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="返回"
-                android:textColor="@color/white"
-                android:textSize="15sp"/>
-        </LinearLayout>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="陈十一"
-            android:textColor="@color/white"
-            android:textSize="20sp"/>
-
-    </RelativeLayout>
-
-    <com.chanven.lib.cptr.PtrClassicFrameLayout
-        xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
+    <com.chanven.lib.cptr.PtrClassicFrameLayout xmlns:cube_ptr="http://schemas.android.com/apk/res-auto"
         android:id="@+id/refresh_layout_userzone"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -67,13 +26,12 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:choiceMode="singleChoice"
-            android:fadingEdge="none"
             android:divider="@null"
+            android:fadingEdge="none"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
             android:listSelector="@color/white"
             android:overScrollMode="never"
-            android:scrollbarStyle="outsideOverlay"
-            android:headerDividersEnabled="false"
-            android:footerDividersEnabled="false">
-        </ListView>
+            android:scrollbarStyle="outsideOverlay"></ListView>
     </com.chanven.lib.cptr.PtrClassicFrameLayout>
 </LinearLayout>

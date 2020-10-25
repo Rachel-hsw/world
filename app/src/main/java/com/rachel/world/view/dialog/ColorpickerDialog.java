@@ -13,6 +13,7 @@ import com.larswerkman.holocolorpicker.ColorPicker;
 import com.larswerkman.holocolorpicker.OpacityBar;
 import com.larswerkman.holocolorpicker.SaturationBar;
 import com.larswerkman.holocolorpicker.ValueBar;
+import com.noahark.moments.ui.widget.TextButton;
 import com.rachel.world.R;
 import com.rachel.world.data.touch.DrawTouch;
 import com.rachel.world.view.activity.DrawTextActivity;
@@ -29,7 +30,7 @@ public class ColorpickerDialog extends Dialog implements OnClickListener
 	private SaturationBar saturationBar;
 	private ValueBar valueBar;
 
-	private Button okBtn;
+	private TextButton okBtn;
 
 	public ColorpickerDialog(Context context, int theme)
 	{
@@ -55,7 +56,7 @@ public class ColorpickerDialog extends Dialog implements OnClickListener
 		valueBar = (ValueBar) findViewById(R.id.colorpicker_valuebar);
 
 		//按钮对象
-		okBtn=(Button)findViewById(R.id.btn_colorpicker_ok);
+		okBtn=findViewById(R.id.btn_colorpicker_ok);
 	}
 
 	//初始化数据
@@ -78,7 +79,6 @@ public class ColorpickerDialog extends Dialog implements OnClickListener
 			{
 				int curColor=picker.getColor();
 				DrawTouch.getCurPaint().setColor(curColor);//设置当前颜色
-				(MainActivity.colorBtn).setTextColor(curColor);//改变颜色二字
 
 				if(DrawTextActivity.drawTextVi != null)//是在编辑文字界面打开的
 				{

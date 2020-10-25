@@ -1,23 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/layout_top" android:background="?bg_draw_top" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout android:orientation="horizontal" android:id="@id/opt_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true">
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/drawTool" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/draw_tool" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/paintSetting" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:layout_marginLeft="@dimen/margin_normal_half" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/draw_setting" />
-        <androidx.appcompat.widget.AppCompatImageView android:id="@id/more" android:background="@drawable/retangle_mask_selector" android:padding="@dimen/icon_padding" android:layout_width="@dimen/paint_icon_width" android:layout_height="@dimen/paint_icon_width" android:layout_marginLeft="@dimen/margin_normal_half" android:scaleType="centerInside" android:tint="?paint_icon_tink" app:srcCompat="@mipmap/more" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/layout_top"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="?bg_draw_top"
+    android:padding="2.0dip">
+
+    <LinearLayout
+        android:id="@id/opt_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/drawTool"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:background="@drawable/retangle_mask_selector"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/draw_tool" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/paintSetting"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:layout_marginLeft="@dimen/margin_normal_half"
+            android:background="@drawable/retangle_mask_selector"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/draw_setting" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@id/more"
+            android:layout_width="@dimen/paint_icon_width"
+            android:layout_height="@dimen/paint_icon_width"
+            android:layout_marginLeft="@dimen/margin_normal_half"
+            android:background="@drawable/retangle_mask_selector"
+            android:padding="@dimen/icon_padding"
+            android:scaleType="centerInside"
+            android:tint="?paint_icon_tink"
+            app:srcCompat="@mipmap/more" />
     </LinearLayout>
-    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/room_info_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_alignTop="@id/opt_layout" android:layout_alignBottom="@id/opt_layout">
-        <LinearLayout android:orientation="horizontal" android:id="@id/left_time_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:layout_width="10.0dip" android:layout_height="10.0dip" android:tint="?paint_icon_tink" app:srcCompat="@drawable/clock" />
-            <TextView android:textSize="12.0sp" android:textColor="?paint_icon_tink" android:layout_gravity="center_vertical" android:id="@id/left_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:text="00:00" />
+
+    <LinearLayout
+        android:id="@id/room_info_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/opt_layout"
+        android:layout_alignBottom="@id/opt_layout"
+        android:layout_marginLeft="10.0dip"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@id/left_time_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="10.0dip"
+                android:layout_height="10.0dip"
+                android:layout_gravity="center_vertical"
+                android:tint="?paint_icon_tink"
+                app:srcCompat="@drawable/clock" />
+
+            <TextView
+                android:id="@id/left_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="4.0dip"
+                android:text="00:00"
+                android:textColor="?paint_icon_tink"
+                android:textSize="12.0sp" />
         </LinearLayout>
-        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-            <androidx.appcompat.widget.AppCompatImageView android:layout_gravity="center_vertical" android:layout_width="10.0dip" android:layout_height="10.0dip" android:tint="?paint_icon_tink" app:srcCompat="@drawable/player" />
-            <TextView android:textSize="12.0sp" android:textColor="?paint_icon_tink" android:layout_gravity="center_vertical" android:id="@id/player_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:text="0/0" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="10.0dip"
+                android:layout_height="10.0dip"
+                android:layout_gravity="center_vertical"
+                android:tint="?paint_icon_tink"
+                app:srcCompat="@drawable/player" />
+
+            <TextView
+                android:id="@id/player_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="4.0dip"
+                android:text="0/0"
+                android:textColor="?paint_icon_tink"
+                android:textSize="12.0sp" />
         </LinearLayout>
     </LinearLayout>
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="65.0dip" android:layout_marginRight="11.0dip" android:layout_toLeftOf="@id/opt_layout" android:layout_alignTop="@id/opt_layout" android:layout_alignBottom="@id/opt_layout">
-        <androidx.recyclerview.widget.RecyclerView android:id="@id/joined_user_rv" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-        <View android:layout_gravity="right" android:id="@id/top_mask" android:layout_width="15.0dip" android:layout_height="fill_parent" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/opt_layout"
+        android:layout_alignBottom="@id/opt_layout"
+        android:layout_marginLeft="65.0dip"
+        android:layout_marginRight="11.0dip"
+        android:layout_toLeftOf="@id/opt_layout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@id/joined_user_rv"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" />
+
+        <View
+            android:id="@id/top_mask"
+            android:layout_width="15.0dip"
+            android:layout_height="fill_parent"
+            android:layout_gravity="right" />
     </FrameLayout>
 </RelativeLayout>

@@ -1,57 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@color/background_color"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-
-    <RelativeLayout
-        style="@style/GraffitiButton"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0">
+        android:background="@drawable/search_edittext_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="7.0dip">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:gravity="center_vertical"
-            android:onClick="onCloseTabPageBtn">
-
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/img_back"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="返回"
-                android:textColor="@color/white"
-                android:textSize="15sp"/>
-        </LinearLayout>
-
-        <TextView
+        <androidx.appcompat.widget.AppCompatImageView
+            android:paddingTop="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="发现"
-            android:textColor="@color/white"
-            android:textSize="20sp"/>
+            app:srcCompat="@drawable/main_search" />
 
-        <!--<ImageButton-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_marginRight="10dp"-->
-            <!--android:background="@drawable/img_post"-->
-            <!--android:onClick="onEnterPostBtn"/>-->
+        <EditText
+            android:paddingTop="20dp"
+            android:id="@+id/et_search"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:layout_weight="1.0"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:textColor="#ff646466" />
+    </LinearLayout>
+    <include layout="@layout/shadow_bottom" />
 
-    </RelativeLayout>
+
 </LinearLayout>

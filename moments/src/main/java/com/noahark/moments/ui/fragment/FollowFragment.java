@@ -22,6 +22,7 @@ import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
@@ -68,71 +69,7 @@ public class FollowFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_follow,container,false);
-        mFollowListView = (ListView) rootView.findViewById(R.id.followlist);
-
-//		mFollowSelectListView = (ListView)findViewById(R.id.Followlist_select);
-//
-//        mFollowSelectEditText = (EditText)findViewById(R.id.edittext_Follow_select);
-//        mFollowSelectEditText.setOnFocusChangeListener(new SelectEditTextFocuser());
-//        mFollowSelectEditText.addTextChangedListener(new SelectEditTextWatcher());
-//
-//        mFollowSelectCancelBtn = (TextView)findViewById(R.id.btn_Follow_selectcancel);
-
-        mFollowBeanList = new ArrayList<FollowBean>();
-
-        //用户数据
-        FollowBean followBean = new FollowBean();
-        followBean.setAvatar("http://tupian.enterdesk.com/2014/xll/11/01/4/5.1.jpg");
-        followBean.setNickname("evelen");
-
-        //加入
-        mFollowBeanList.add(followBean);
-
-        FollowBean followBean1 = new FollowBean();
-        followBean1.setAvatar("http://tupian.enterdesk.com/2014/mxy/11/5/4/10.jpg");
-        followBean1.setNickname("xiaoyao");
-
-        mFollowBeanList.add(followBean1);
-        mFollowBeanList.add(followBean);
-        mFollowBeanList.add(followBean1);
-        mFollowBeanList.add(followBean);
-        mFollowBeanList.add(followBean1);
-        mFollowBeanList.add(followBean);
-        mFollowBeanList.add(followBean1);
-        mFollowBeanList.add(followBean);
-
-
-        mFollowListAdapter = new FollowAdapter(getContext(),mFollowBeanList);
-        mFollowListView.setAdapter(mFollowListAdapter);
-
-        refreshLayout = (PtrClassicFrameLayout)rootView.findViewById(R.id.refresh_layout_follow);
-
-        //初次自动加载
-        refreshLayout.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                refreshLayout.autoRefresh(true);
-            }
-        }, 150);
-
-        //下拉加载
-        refreshLayout.setPtrHandler(new PtrDefaultHandler() {
-
-            @Override
-            public void onRefreshBegin(PtrFrameLayout frame) {
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        refreshLayout.refreshComplete();
-                    }
-                }, 1500);
-            }
-        });
-
-//		ViewCompat.setElevation(rootView, 50);
-
+        View rootView = inflater.inflate(R.layout.listitem_chat_header,container,false);
         return rootView;
     }
 

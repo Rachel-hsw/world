@@ -6,6 +6,9 @@ import android.widget.Toast;
 
 import com.mrwujay.cascade.activity.WheelActivity;
 import com.noahark.moments.R;
+import com.noahark.moments.ui.widget.TextButton;
+import com.noahark.moments.utils.ToastUtils;
+import com.noahark.moments.utils.TopTitleUtils;
 
 import kankan.wheel.widget.OnWheelChangedListener;
 import kankan.wheel.widget.WheelView;
@@ -20,6 +23,18 @@ public class MeDistrictActivity extends WheelActivity implements OnWheelChangedL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_me_district);
+        TextButton textView = new TextButton(this);
+        textView.setText("保存");
+        textView.setTextSize(16);
+        textView.setTextColor(getColor(R.color.color_1897F2));
+        textView.setClickable(false);
+        new TopTitleUtils(this)
+                .setTitle("地区")
+                .addRightView(textView)
+                .setRightViewVisiable(View.VISIBLE)
+                .setRight(v -> {
+                    ToastUtils.get().showText("保存成功");
+                });
         setUpViews();
         setUpListener();
         setUpData();
@@ -75,7 +90,7 @@ public class MeDistrictActivity extends WheelActivity implements OnWheelChangedL
         String[] areas = mDistrictDatasMap.get(mCurrentCityName);
 
         if (areas == null) {
-            areas = new String[] { "" };
+            areas = new String[]{""};
         }
         mViewDistrict.setViewAdapter(new ArrayWheelAdapter<String>(this, areas));
         mViewDistrict.setCurrentItem(0);
@@ -89,7 +104,7 @@ public class MeDistrictActivity extends WheelActivity implements OnWheelChangedL
         mCurrentProviceName = mProvinceDatas[pCurrent];
         String[] cities = mCitisDatasMap.get(mCurrentProviceName);
         if (cities == null) {
-            cities = new String[] { "" };
+            cities = new String[]{""};
         }
         mViewCity.setViewAdapter(new ArrayWheelAdapter<String>(this, cities));
         mViewCity.setCurrentItem(0);
@@ -97,17 +112,16 @@ public class MeDistrictActivity extends WheelActivity implements OnWheelChangedL
     }
 
     private void showSelectedResult() {
-        Toast.makeText(this, "当前选中:"+mCurrentProviceName+","+mCurrentCityName+","
-                +mCurrentDistrictName+","+mCurrentZipCode, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "当前选中:" + mCurrentProviceName + "," + mCurrentCityName + ","
+                + mCurrentDistrictName + "," + mCurrentZipCode, Toast.LENGTH_SHORT).show();
     }
 
 
-    public void onCloseMeDistrictBtn(View view)
-    {
+    public void onCloseMeDistrictBtn(View view) {
         finish();
     }
 
-    public void onSaveMeDistrictBtn(View view){
+    public void onSaveMeDistrictBtn(View view) {
         showSelectedResult();
     }
 }
