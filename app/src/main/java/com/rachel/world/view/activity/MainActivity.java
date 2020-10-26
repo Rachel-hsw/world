@@ -2,6 +2,7 @@ package com.rachel.world.view.activity;
 
 import android.Manifest;
 import android.R.drawable;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.ProgressDialog;
@@ -149,8 +150,12 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     public static Sensor sensor;
     private int responseCount = 0;
 
-    // 传感器常量，向TransformTouch中传递
-    public static final int NOSENSOR = 0;// 没有传感器
+
+    /* 传感器常量，向TransformTouch中传递 */
+    /**
+     * 没有传感器
+     */
+    public static final int NOSENSOR = 0;
     public static final int ACCELEROMETER = 1;// 加速度
     public static final int PROXIMITY = 2; //逼近
     public static final int ORIENTATION = 3;// 方向
@@ -160,8 +165,11 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     private Vibrator vibrator;
     private static boolean sharkWaiting = false;
 
-    //辅助数据
-    private static Matrix transMatrix = new Matrix(); //存放变换后因子的零时变量
+    /*辅助数据*/
+    /**
+     * 存放变换后因子的零时变量
+     */
+    private static Matrix transMatrix = new Matrix();
     private static Matrix savedMatrix = new Matrix();
     private Pel savedPel;
     private Step step;
@@ -184,8 +192,13 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     /**************************************************************************************/
     //进度对话框必要组件
     private ProgressDialog progressDialog;
-    final Handler loadInBitmapHandler = new Handler() //载入图片线程消息处理者
+    /**
+     * 载入图片线程消息处理者
+     */
+    @SuppressLint("HandlerLeak")
+    final Handler loadInBitmapHandler = new Handler()
     {
+        @Override
         public void handleMessage(Message msg) {
             try {
                 progressDialog.dismiss();
@@ -197,8 +210,12 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         }
     };
 
-    //摇一摇
+    /**
+     * 摇一摇
+     */
+    @SuppressLint("HandlerLeak")
     final Handler shakeHandler = new Handler() {
+        @Override
         public void handleMessage(Message msg) {
             try {
                 onClearBtn(null);
@@ -208,11 +225,11 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         }
     };
     private static String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.ACCESS_COARSE_LOCATION};
-    private View topToolbarSclVi;
     private View downToolbarSclVi;
     private View bottomView;
 
     /**************************************************************************************/
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCompat.requestPermissions(this, permissions, REQUEST_PERMISSION);
@@ -245,7 +262,6 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         extendBtn = findViewById(R.id.btn_extend);
         openPelbarBtn = findViewById(R.id.btn_openpelbar);
         transbarLinlayout = findViewById(R.id.linlay_transbar);
-        topToolbarSclVi = findViewById(R.id.top_ll);
         bottomView = findViewById(R.id.bottom_view);
         downToolbarSclVi = findViewById(R.id.bottom_ll);
         colorBtn = findViewById(R.id.btn_color);
@@ -256,8 +272,9 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
                 R.id.btn_opencanvasbgbar, R.id.btn_openprocessingbar, R.id.btn_opendrawtext, R.id.btn_opendrawpicture, R.id.btn_color, R.id.btn_pen, R.id.btn_clear, R.id.btn_save,
                 R.id.btn_undo, R.id.btn_redo};
         allBtns = new View[btnIds.length];
-        for (int i = 0; i < btnIds.length; i++)
+        for (int i = 0; i < btnIds.length; i++) {
             allBtns[i] = findViewById(btnIds[i]);
+        }
 
         //构造弹出式窗体
         //图元箱\变换箱\浏览箱\背景箱\填拷删箱
@@ -295,8 +312,9 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     public void initData() {
         //事先生成图片被存储的文件夹
         File file = new File(Environment.getExternalStorageDirectory().getPath() + softDir);
-        if (!file.exists())
+        if (!file.exists()) {
             file.mkdirs();
+        }
 
         //获取屏幕宽高
         WindowManager wm = this.getWindowManager();
@@ -325,17 +343,18 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         mAudioManager.setStreamVolume(AudioManager.STREAM_SYSTEM, 0, 0);
     }
 
+
+
     /**
-     * 按钮事件
+     * 打开工具箱
+     *
+     * @param v view
      */
-
-
-    //打开工具箱
     public void onOpenToolsBtn(View v) {
-        ensurePelFinished();//确保图形已经完全画好
-
-        if (sensorMode != NOSENSOR) //取消注册传感器、包装好步骤step存入undo栈、敲定该次步骤图元
-        {
+        //确保图形已经完全画好
+        ensurePelFinished();
+        //取消注册传感器、包装好步骤step存入undo栈、敲定该次步骤图元
+        if (sensorMode != NOSENSOR) {
             ensureSensorFinished();
         } else {
             if (opentransbarCheck.getVisibility() == View.VISIBLE) {
@@ -361,15 +380,20 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         }
     }
 
-    //打开图形条
+    /**
+     * 打开图形条
+     * @param v view
+     */
     public void onOpenPelbarBtn(View v) {
         ensureCanvasbgbarClosed();
         updateToolbarIcons(v);//更新工具条图标显示
 
         if (pelbarPopwin.isShowing())//如果悬浮栏打开
+        {
             pelbarPopwin.dismiss();//关闭
-        else
+        } else {
             pelbarPopwin.showAtLocation(bottomView, Gravity.BOTTOM, 0, bottomView.getHeight() + downToolbarSclVi.getHeight());//打开悬浮窗
+        }
 
         //按下也要注册当前选中图元的touch
         switch (curPelVi.getId()) {
@@ -403,7 +427,9 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     //打开工具箱
     public static void openTools() {
         if (transbarLinlayout.getVisibility() == View.VISIBLE) //如果变换箱为打开状态
+        {
             transbarLinlayout.setVisibility(View.GONE);//关闭
+        }
     }
 
     //打开变换条
@@ -422,9 +448,11 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     public void onOpenCanvasbgbarBtn(View v) {
         ensurePelbarClosed();
         if (canvasbgbarPopwin.isShowing())//如果悬浮栏打开
+        {
             canvasbgbarPopwin.dismiss();//关闭
-        else
+        } else {
             canvasbgbarPopwin.showAtLocation(bottomView, Gravity.BOTTOM, 0, bottomView.getHeight() + downToolbarSclVi.getHeight());//打开悬浮窗
+        }
     }
 
     //交叉填充
@@ -558,9 +586,11 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
 
             (selectedPel.paint).set(DrawTouch.getCurPaint());//以当前画笔的色态作为选中画笔的
             if (selectedPel.closure == true)//封闭图形
+            {
                 (selectedPel.paint).setStyle(Paint.Style.FILL);//填充区域
-            else
+            } else {
                 (selectedPel.paint).setStyle(Paint.Style.STROKE);//填充边框
+            }
 
             Paint newPaint = new Paint(selectedPel.paint);////设置新画笔（undo用）
             undoStack.push(new FillpelStep(selectedPel, oldPaint, newPaint));//将该“步”压入undo栈
@@ -685,13 +715,16 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     //确保悬浮图形条关闭
     private static void ensurePelbarClosed() {
         if (pelbarPopwin.isShowing())//如果悬浮栏打开
+        {
             pelbarPopwin.dismiss();//关闭
+        }
     }
 
     //确保悬浮背景条关闭
     private static void ensureCanvasbgbarClosed() {
-        if (canvasbgbarPopwin.isShowing())
+        if (canvasbgbarPopwin.isShowing()) {
             canvasbgbarPopwin.dismiss();//关闭
+        }
     }
 
     //确保未画完的图元能够真正敲定
@@ -832,7 +865,9 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     //清空重做栈
     public static void clearRedoStack() {
         if (!redoStack.empty())//redo栈不空
+        {
             redoStack.clear();//清空redo栈
+        }
     }
 
 /**
@@ -956,6 +991,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
 
     //单手操作传感器监听者
     class singleHandSensorEventListener implements SensorEventListener {
+        @Override
         public void onSensorChanged(SensorEvent event) //传感器变化
         {
             if (curToolVi.getId() == R.id.btn_opentransbar) //变换图元
@@ -1004,6 +1040,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
             }
         }
 
+        @Override
         public void onAccuracyChanged(Sensor sensor, int accuracy) //精度
         {
         }
@@ -1011,6 +1048,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
 
     //单手操作传感器监听者
     class shakeSensorEventListener implements SensorEventListener {
+        @Override
         public void onSensorChanged(SensorEvent event) //传感器变化
         {
             if (sharkWaiting == false) {
@@ -1029,6 +1067,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
             }
         }
 
+        @Override
         public void onAccuracyChanged(Sensor sensor, int accuracy) //精度
         {
         }
@@ -1057,10 +1096,15 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         }
     }
 
-    //清空
+    /**
+     * 清空
+     * 弹出再次确认对话框
+     *
+     * @param v view
+     */
     public void onClearBtn(View v) {
-        //弹出再次确认对话框
         class okClick implements DialogInterface.OnClickListener {
+            @Override
             public void onClick(DialogInterface dialog, int which) //ok
             {
                 clearData();
@@ -1069,6 +1113,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         }
         class cancelClick implements DialogInterface.OnClickListener //cancel
         {
+            @Override
             public void onClick(DialogInterface dialog, int which) {
                 sharkWaiting = false;
             }
@@ -1110,6 +1155,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         final EditText editTxt = new EditText(MainActivity.this);//作品的名称编辑框
         //弹出编辑对话框
         class okClick implements DialogInterface.OnClickListener {
+            @Override
             public void onClick(DialogInterface dialog, int which) //ok
             {
                 try {
@@ -1131,6 +1177,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
                         dialog1.setIcon(drawable.ic_dialog_info);
                         dialog1.setMessage("该名称已存在，是否覆盖？");
                         dialog1.setPositiveButton("覆盖", new OnClickListener() {
+                            @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 try {
                                     Bitmap bitmap = CanvasView.getSavedBitmap();
@@ -1148,6 +1195,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
                             }
                         });
                         dialog1.setNegativeButton("取消", new OnClickListener() {
+                            @Override
                             public void onClick(DialogInterface dialog, int which) {
                             }
                         });
@@ -1161,6 +1209,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
         }
         class cancelClick implements DialogInterface.OnClickListener //cancel
         {
+            @Override
             public void onClick(DialogInterface dialog, int which) {
             }
         }
@@ -1235,8 +1284,9 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     @Override
     protected void onActivityResult(int requestCode, int resultCode, final Intent data) {
         //程序初始化时调用
-        if (resultCode == REQUEST_CODE_NONE)
+        if (resultCode == REQUEST_CODE_NONE) {
             return;
+        }
 
         // 触发拍照模式的“确定”、“取消”、“返键”按钮后
         if (requestCode == REQUEST_CODE_GRAPH) {
@@ -1246,6 +1296,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
             progressDialog.show();
 
             new Thread(new Runnable() {
+                @Override
                 public void run() {
                     try {
                         //获取图片
@@ -1281,6 +1332,7 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
             progressDialog.show();
 
             new Thread(new Runnable() {
+                @Override
                 public void run() {
                     try {
                         //获取选择的图片
@@ -1355,7 +1407,12 @@ public class MainActivity extends FragmentActivity implements RecognizerDialogLi
     }
 
     public void onBackBtn(View v) {
+        clearData();
+        sharkWaiting = false;
+        android.os.Process.killProcess(android.os.Process.myPid());//杀死进程
+
         MainActivity.this.finish();
+
 //        //按下反键
 //        if (hasExitAppDialog == false) //没有退出对话框
 //        {

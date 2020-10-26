@@ -8,11 +8,12 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.noahark.moments.R;
+import com.noahark.moments.ui.base.BaseActivity;
 import com.noahark.moments.ui.widget.TextButton;
 import com.noahark.moments.utils.ToastUtils;
 import com.noahark.moments.utils.TopTitleUtils;
 
-public class MeSexActivity extends AppCompatActivity {
+public class MeSexActivity extends BaseActivity {
 
     private String sex = "M";
     private ImageView maleCheckedImgVi;
@@ -36,6 +37,11 @@ public class MeSexActivity extends AppCompatActivity {
                 });
         maleCheckedImgVi = (ImageView)findViewById(R.id.sex_male_imgvi);
         femaleCheckedImgVi = (ImageView)findViewById(R.id.sex_female_imgvi);
+    }
+
+    @Override
+    protected int layoutResId() {
+        return 0;
     }
 
     public void onCloseMeSexBtn(View view)

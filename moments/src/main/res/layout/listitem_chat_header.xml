@@ -9,6 +9,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:clickable="true"
         android:id="@+id/layout_at"
         android:layout_width="fill_parent"
         android:layout_height="52dp"
@@ -66,6 +67,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:clickable="true"
         android:id="@+id/layout_comment"
         android:layout_width="fill_parent"
         android:layout_height="52dp"
@@ -124,6 +126,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:clickable="true"
         android:id="@+id/layout_fans"
         android:layout_width="fill_parent"
         android:layout_height="52dp"
@@ -184,6 +187,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:clickable="true"
         android:id="@+id/layout_gift"
         android:layout_width="fill_parent"
         android:layout_height="52dp"
@@ -244,6 +248,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:clickable="true"
         android:id="@+id/layout_praise"
         android:layout_width="fill_parent"
         android:layout_height="52dp"
@@ -304,6 +309,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:clickable="true"
         android:id="@+id/layout_imGroup"
         android:layout_width="fill_parent"
         android:layout_height="52dp"
@@ -364,6 +370,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:clickable="true"
         android:id="@+id/layout_sys"
         android:layout_width="fill_parent"
         android:layout_height="52dp"

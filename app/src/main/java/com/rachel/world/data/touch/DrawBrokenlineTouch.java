@@ -74,7 +74,8 @@ public class DrawBrokenlineTouch extends DrawTouch {
 		}
 	}
 
-	public boolean isNeedToOpenTools()
+	@Override
+    public boolean isNeedToOpenTools()
 	{
 		if(dis < 10f)
 		{

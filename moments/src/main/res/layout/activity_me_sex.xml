@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout
+    android:fitsSystemWindows="true"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -33,6 +34,7 @@
             style="@style/MeEditText"/>
 
         <ImageView
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/img_radiochecked"
@@ -69,7 +71,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/sex_female_imgvi"
             android:background="@drawable/img_radiochecked"
-            android:visibility="invisible"/>
+            android:visibility="visible"/>
     </LinearLayout>
 
 </LinearLayout>

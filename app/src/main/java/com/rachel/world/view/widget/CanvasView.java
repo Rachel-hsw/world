@@ -129,10 +129,11 @@ public class CanvasView extends View {
     }
 
     //触摸事件
+    @Override
     public boolean onTouchEvent(MotionEvent event) {
+        //非传感器模式才响应屏幕
         if (MainActivity.getSensorMode() == MainActivity.NOSENSOR
-                && MainActivity.curFragmentFlag == MainActivity.MAIN_FRAGMENT) //非传感器模式才响应屏幕
-        {
+                && MainActivity.curFragmentFlag == MainActivity.MAIN_FRAGMENT) {
             //第一只手指坐标
             touch.setCurPoint(new PointF(event.getX(0), event.getY(0)));
 
@@ -164,6 +165,7 @@ public class CanvasView extends View {
                 case MotionEvent.ACTION_POINTER_UP://第二只手抬起
                     touch.up();
                     break;
+                default:
             }
             invalidate();
         }
@@ -171,11 +173,17 @@ public class CanvasView extends View {
         return true;
     }
 
-    //重绘
+    /**
+     * 重绘
+     * @param canvas canvas
+     */
+    @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawBitmap(savedBitmap, 0, 0, new Paint());// 画其余图元
+        // 画其余图元
+        canvas.drawBitmap(savedBitmap, 0, 0, new Paint());
         if (selectedPel != null) {
-            if (touch.getClass().getSimpleName().equals("TransformTouch")) //选中状态才产生动态画笔效果
+            //选中状态才产生动态画笔效果
+            if (touch.getClass().getSimpleName().equals("TransformTouch"))
             {
                 setAnimPaint();
                 canvas.drawPath(selectedPel.path, animPelPaint);
@@ -260,7 +268,9 @@ public class CanvasView extends View {
                 savedCanvas.drawBitmap(picture.createContent(), picture.getBeginPoint().x, picture.getBeginPoint().y, drawPicturePaint);
                 savedCanvas.restore();
             } else if (!pel.equals(selectedPel))//若非选中的图元
+            {
                 savedCanvas.drawPath(pel.path, pel.paint);
+            }
         }
     }
 
@@ -404,8 +414,9 @@ public class CanvasView extends View {
 
     public static void ensureBitmapRecycled(Bitmap bitmap) //确保传入位图已经回收
     {
-        if (bitmap != null && !bitmap.isRecycled())
+        if (bitmap != null && !bitmap.isRecycled()) {
             bitmap.recycle();
+        }
     }
 /*******************************************************************************/
     /**

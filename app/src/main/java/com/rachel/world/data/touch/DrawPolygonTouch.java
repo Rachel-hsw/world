@@ -76,7 +76,8 @@ public class DrawPolygonTouch extends DrawTouch
 		}
 	}
 
-	public boolean isNeedToOpenTools()
+	@Override
+    public boolean isNeedToOpenTools()
 	{
 		if(dis < 10f)
 		{

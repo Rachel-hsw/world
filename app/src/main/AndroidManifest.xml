@@ -47,6 +47,7 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
 
     <application
+        android:requestLegacyExternalStorage="true"
         android:largeHeap="true"
         android:name="com.noahark.moments.GraffitiApplication"
         android:allowBackup="true"

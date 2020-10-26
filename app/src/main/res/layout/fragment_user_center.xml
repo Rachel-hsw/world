@@ -18,12 +18,12 @@
             android:orientation="vertical">
 
             <RelativeLayout
-                android:visibility="gone"
                 android:id="@+id/layout_loading"
                 android:layout_width="fill_parent"
                 android:layout_height="40.0dip"
                 android:background="@color/bg_topbar"
-                android:gravity="center">
+                android:gravity="center"
+                android:visibility="gone">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imageView_loading"
@@ -44,26 +44,25 @@
             </RelativeLayout>
 
             <LinearLayout
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:paddingBottom="10dp"
-                android:paddingTop="30dp"
-                android:onClick="onEnterMeBtn"
                 android:id="@+id/layout_user"
                 android:layout_width="fill_parent"
-                android:layout_height="120.0dip"
+                android:layout_height="140.0dip"
                 android:background="@color/bg_topbar"
-                android:orientation="horizontal">
+                android:onClick="onEnterMeBtn"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingTop="30dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp">
 
                 <RelativeLayout
                     android:id="@+id/layout_head"
                     android:layout_width="83dp"
                     android:layout_height="83dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_margin="10dp">
+                    android:layout_margin="20dp">
 
-                    <com.facebook.drawee.view.SimpleDraweeView
-                        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+                    <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/profile_image"
                         android:layout_width="83dp"
                         android:layout_height="83dp"
@@ -97,6 +96,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:text="陈十一"
                             android:id="@+id/textView_name"
                             android:layout_width="0.0dip"
                             android:layout_height="wrap_content"
@@ -139,13 +139,13 @@
                     </LinearLayout>
 
                     <TextView
-                        android:text="陈十一"
                         android:id="@+id/textView_intro"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5.0dip"
                         android:ellipsize="end"
                         android:maxLines="2"
+                        android:text="账号：eleveneleven"
                         android:textColor="@color/topbar_words_color"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -168,7 +168,8 @@
                 android:orientation="horizontal"
                 android:visibility="visible">
 
-                <LinearLayout
+                <com.noahark.moments.ui.widget.AlphaLinearLayout
+                    android:clickable="true"
                     android:id="@+id/focus_layout"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
@@ -194,9 +195,10 @@
                         android:text="关注"
                         android:textColor="@color/topbar_words_color"
                         android:textSize="12sp" />
-                </LinearLayout>
+                </com.noahark.moments.ui.widget.AlphaLinearLayout>
 
-                <LinearLayout
+                <com.noahark.moments.ui.widget.AlphaLinearLayout
+                    android:clickable="true"
                     android:id="@+id/fans_layout"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
@@ -222,9 +224,10 @@
                         android:text="粉丝"
                         android:textColor="@color/topbar_words_color"
                         android:textSize="12sp" />
-                </LinearLayout>
+                </com.noahark.moments.ui.widget.AlphaLinearLayout>
 
-                <LinearLayout
+                <com.noahark.moments.ui.widget.AlphaLinearLayout
+                    android:clickable="true"
                     android:id="@+id/work_layout"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
@@ -250,15 +253,16 @@
                         android:text="创作"
                         android:textColor="@color/topbar_words_color"
                         android:textSize="12sp" />
-                </LinearLayout>
+                </com.noahark.moments.ui.widget.AlphaLinearLayout>
 
-                <LinearLayout
-                    android:onClick="onOpenGalleryBtn"
+                <com.noahark.moments.ui.widget.AlphaLinearLayout
+                    android:clickable="true"
                     android:id="@+id/album_layout"
                     android:layout_width="0.0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="1.0"
                     android:gravity="center"
+                    android:onClick="onOpenGalleryBtn"
                     android:orientation="vertical"
                     android:padding="8.0dip">
 
@@ -279,10 +283,11 @@
                         android:text="画集"
                         android:textColor="@color/topbar_words_color"
                         android:textSize="12sp" />
-                </LinearLayout>
+                </com.noahark.moments.ui.widget.AlphaLinearLayout>
             </LinearLayout>
 
             <RelativeLayout
+                android:clickable="true"
                 android:id="@+id/layout_draft"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
@@ -292,18 +297,19 @@
                 <View
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="?selectableItemBackground" />
-                <!--
-                                <androidx.appcompat.widget.AppCompatImageView
-                                    android:id="@+id/imageView5"
-                                    android:layout_width="21dp"
-                                    android:layout_height="21dp"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginStart="20dp"
+                    android:background="?android:selectableItemBackground" />
 
-                                    app:srcCompat="@mipmap/ic_mine_draft" />-->
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="21dp"
+                    android:layout_height="21dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    app:srcCompat="@mipmap/ic_mine_draft" />
+
 
                 <TextView
+                    android:layout_toEndOf="@id/imageView5"
                     android:id="@+id/textview5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -315,6 +321,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:clickable="true"
                 android:id="@+id/layout_collection"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
@@ -324,7 +331,7 @@
                 <View
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="?selectableItemBackground" />
+                    android:background="?android:selectableItemBackground" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imageView8"
@@ -347,6 +354,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:clickable="true"
                 android:id="@+id/layout_mark"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
@@ -359,12 +367,12 @@
                     android:background="?android:selectableItemBackground" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:tint="?no_data_img_tink"
                     android:id="@+id/imageView_mark"
                     android:layout_width="21dp"
                     android:layout_height="21dp"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="20dp"
+                    android:tint="?no_data_img_tink"
 
                     app:srcCompat="@mipmap/shopping_mark" />
 
@@ -396,7 +404,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
                 android:layout_marginTop="1.0px"
-                android:background="#FFFFFF">
+                android:background="#FFFFFF"
+                android:clickable="true">
 
                 <View
                     android:layout_width="fill_parent"
@@ -460,6 +469,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:clickable="true"
                 android:id="@+id/recovery_community_Layout"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
@@ -494,6 +504,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:clickable="true"
                 android:id="@+id/rating_workLayout"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
@@ -536,6 +547,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:clickable="true"
                 android:id="@+id/draw_idea_workLayout"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
@@ -569,6 +581,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:clickable="true"
                 android:id="@+id/little_black_house"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
@@ -602,6 +615,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:clickable="true"
                 android:id="@+id/layout_youth"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
@@ -646,6 +660,7 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:clickable="true"
                 android:id="@+id/layout_advice"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
@@ -692,12 +707,12 @@
                     android:background="?android:selectableItemBackground" />
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:tint="?no_data_img_tink"
                     android:id="@+id/imageView7"
                     android:layout_width="21dp"
                     android:layout_height="21dp"
                     android:layout_centerVertical="true"
                     android:layout_marginStart="20dp"
+                    android:tint="?no_data_img_tink"
                     app:srcCompat="@mipmap/ic_mine_setting" />
 
                 <TextView

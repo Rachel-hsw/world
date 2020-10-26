@@ -7,9 +7,11 @@ import android.view.View;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.noahark.moments.R;
+import com.noahark.moments.ui.base.BaseActivity;
+import com.noahark.moments.utils.ToastUtils;
 import com.noahark.moments.utils.TopTitleUtils;
 
-public class UserSnapshotActivity extends Activity {
+public class UserSnapshotActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,11 @@ public class UserSnapshotActivity extends Activity {
         new TopTitleUtils(this).setTitle("浮生");
         initView();
         initData();
+    }
+
+    @Override
+    protected int layoutResId() {
+        return 0;
     }
 
     public void initView(){
@@ -71,5 +78,9 @@ public class UserSnapshotActivity extends Activity {
         Intent intent = new Intent();
         intent.setClass(this,UserZoneActivity.class);
         startActivity(intent);
+    }
+    public void onEnterChatBtn(View view)
+    {
+        ToastUtils.get().showText("跳转到即时消息界面");
     }
 }

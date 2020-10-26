@@ -1,6 +1,5 @@
 package com.noahark.moments.ui.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -18,20 +17,17 @@ import com.noahark.moments.R;
 import com.noahark.moments.R2;
 import com.noahark.moments.bean.UserZoneBean;
 import com.noahark.moments.ui.adapter.UserZoneAdapter;
+import com.noahark.moments.ui.base.BaseActivity;
 import com.noahark.moments.utils.TopTitleUtils;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import java.sql.Date;
 
-public class UserZoneActivity extends Activity {
-
-    //下拉控件
-    @BindView(R2.id.refresh_layout_userzone)
+public class UserZoneActivity extends BaseActivity {
     PtrClassicFrameLayout mRefreshLayout;
     Handler handler = new Handler();
 
@@ -41,7 +37,6 @@ public class UserZoneActivity extends Activity {
     SimpleDraweeView mAvatarImgVi;
 
     //列表
-    @BindView(R2.id.userzonelist)
     ListView mListView;
 
 
@@ -49,19 +44,23 @@ public class UserZoneActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_zone);
-        ButterKnife.bind(this);
+        mRefreshLayout = findViewById(R.id.refresh_layout_userzone);
+        mListView=findViewById(R.id.userzonelist);
         new TopTitleUtils(this).setTitle("浮生");
         initView();
         initData();
     }
 
+    @Override
+    protected int layoutResId() {
+        return 0;
+    }
 
-    public void initView()
-    {
-        RelativeLayout userZoneListHeaderView = (RelativeLayout) View.inflate(this,R.layout.listitem_userzone_header,null);
+
+    public void initView() {
+        RelativeLayout userZoneListHeaderView = (RelativeLayout) View.inflate(this, R.layout.listitem_userzone_header, null);
         mListView.addHeaderView(userZoneListHeaderView);
         mAvatarImgVi = (SimpleDraweeView) userZoneListHeaderView.findViewById(R.id.avatar_userzone_imgvi);
     }
@@ -117,12 +116,11 @@ public class UserZoneActivity extends Activity {
         });
     }
 
-    public void initListData()
-    {
+    public void initListData() {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(UserZoneActivity.this,"跳转到该条说说详情界面!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(UserZoneActivity.this, "跳转到该条说说详情界面!", Toast.LENGTH_SHORT).show();
             }
         });
         String[] pictureUrls = {

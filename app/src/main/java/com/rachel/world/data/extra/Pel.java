@@ -23,6 +23,7 @@ public class Pel{//图元类
 	}
 
 	//深拷贝
+	@Override
 	public Pel clone()
 	{
 		Pel pel=new Pel();

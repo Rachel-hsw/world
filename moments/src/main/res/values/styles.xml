@@ -120,7 +120,6 @@
     <style name="GraffitiButton">
         <item name="android:textSize">@dimen/mainGraffitiButtonTextSize</item>
         <item name="android:textColor">#FFFFFF</item>
-        <item name="android:background">@drawable/selector_graffitibutton</item>
         <item name="android:paddingTop">@dimen/mainGraffitiButtonPaddingTop</item>
         <item name="android:layout_width">0.0dip</item>
         <item name="android:layout_height">wrap_content</item>
