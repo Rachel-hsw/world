@@ -1,4 +1,4 @@
-package com.noahark.moments.ui.activity;
+package com.rachel.world.view.activity;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -42,12 +42,9 @@ public class MeDistrictActivity extends WheelActivity implements OnWheelChangedL
 
     private void setUpViews() {
         mViewProvince = (WheelView) findViewById(R.id.id_province);
-
         mViewCity = (WheelView) findViewById(R.id.id_city);
-
         mViewDistrict = (WheelView) findViewById(R.id.id_district);
     }
-
     private void setUpListener() {
         // 添加change事件
         mViewProvince.addChangingListener(this);
@@ -56,18 +53,19 @@ public class MeDistrictActivity extends WheelActivity implements OnWheelChangedL
         // 添加change事件
         mViewDistrict.addChangingListener(this);
     }
-
     private void setUpData() {
+        //初始化省份信息
         initProvinceDatas();
         mViewProvince.setViewAdapter(new ArrayWheelAdapter<String>(this, mProvinceDatas));
         // 设置可见条目数量
         mViewProvince.setVisibleItems(7);
         mViewCity.setVisibleItems(7);
         mViewDistrict.setVisibleItems(7);
+        //根据当前的市，更新区WheelView的信息
         updateCities();
+        //根据当前的省，更新市WheelView的信息
         updateAreas();
     }
-
     @Override
     public void onChanged(WheelView wheel, int oldValue, int newValue) {
         // TODO Auto-generated method stub

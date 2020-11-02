@@ -70,50 +70,23 @@ public class UserZoneActivity extends BaseActivity {
         mAvatarImgVi.setImageURI("https://gss0.baidu.com/7Ls0a8Sm2Q5IlBGlnYG/sys/portraith/item/tb.1.cffe3497.noDYhPINR_CR7ksiKxNR3Q?t=1596719117");
 
         //初次自动加载
-        mRefreshLayout.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mRefreshLayout.setLoadMoreEnable(true);
-                mRefreshLayout.autoRefresh(true);
-            }
+        mRefreshLayout.postDelayed(() -> {
+            mRefreshLayout.setLoadMoreEnable(true);
+            mRefreshLayout.autoRefresh(true);
         }, 150);
-
         //下拉加载
         mRefreshLayout.setPtrHandler(new PtrDefaultHandler() {
 
             @Override
             public void onRefreshBegin(PtrFrameLayout frame) {
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        initListData();
-                        mRefreshLayout.refreshComplete();
-
-                    }
+                handler.postDelayed(() -> {
+                    initListData();
+                    mRefreshLayout.refreshComplete();
                 }, 1500);
             }
         });
-
         //上拉加载
-        mRefreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
-
-            @Override
-            public void loadMore() {
-                handler.postDelayed(new Runnable() {
-
-                    @Override
-                    public void run() {
-
-//                        if (page == 1) {
-//                            //set load more disable
-//                            ptrClassicFrameLayout.setLoadMoreEnable(false);
-//                        }
-                        mRefreshLayout.loadMoreComplete(true);
-                    }
-                }, 1000);
-            }
-        });
+        mRefreshLayout.setOnLoadMoreListener(() -> handler.postDelayed(() -> mRefreshLayout.loadMoreComplete(true), 1000));
     }
 
     public void initListData() {

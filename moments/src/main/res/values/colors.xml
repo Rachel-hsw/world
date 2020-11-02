@@ -2,9 +2,10 @@
 <resources>
     <!--全局背景颜色淡灰-->
     <color name="global_bg">#f4f5f9</color>
+    <color name="blue">#ff298ecb</color>
+    <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#999999</color>
-    <color name="colorPrimary">#13227a</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#ff0090ff</color>
     <color name="black999">#999999</color>
     <color name="black666">#ff666666</color>
     <color name="lightgrey">#FFFFFF</color>
@@ -89,7 +90,7 @@
     <color name="big_divider">#fff2f3f5</color>
     <color name="big_divider_night">#ff232425</color>
     <color name="black_overlay">#66000000</color>
-    <color name="blue">#ff44b2fe</color>
+
     <color name="bold_text_color">#ff39393b</color>
     <color name="bold_text_color_night">#ffa1a2a3</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>

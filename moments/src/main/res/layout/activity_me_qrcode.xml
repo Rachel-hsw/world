@@ -61,7 +61,7 @@
                             style="@style/AvatarText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="陈十一"/>
+                            android:text="黄烁文"/>
 
                         <ImageView
                             android:layout_width="20dp"

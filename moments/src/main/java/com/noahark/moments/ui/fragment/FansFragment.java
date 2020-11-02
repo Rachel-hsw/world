@@ -73,7 +73,7 @@ public class FansFragment extends Fragment {
 		//用户数据
 		ChatBean chatBean = new ChatBean();
 		chatBean.setAvatar("http://imgsrc.baidu.com/forum/w%3D580/sign=537a10b1b899a9013b355b3e2d940a58/00bacbef76094b36e0e5d748a3cc7cd98d109d33.jpg");
-		chatBean.setNickname("陈十一");
+		chatBean.setNickname("黄烁文");
 		chatBean.setDate("2019/09/28");
 		chatBean.setContent("我想变成一棵树，开心时，在秋天开花。伤心时，在春天落叶。");
 

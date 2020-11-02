@@ -4,5 +4,8 @@
     <attr name="selectableItemBackground" format="reference" />
     <attr name="bg_draw_top" format="reference|color" />
     <attr name="paint_icon_tink" format="color" />
+    <attr name="time_text_color" format="color" />
+    <attr name="borderlessButtonStyle" format="reference" />
+
 
 </resources>

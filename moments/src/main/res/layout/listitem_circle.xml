@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:text="陈十一" />
+            android:text="黄烁文" />
 
         <!--内容-->
         <TextView

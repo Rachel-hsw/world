@@ -96,7 +96,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:text="陈十一"
+                            android:text="黄烁文"
                             android:id="@+id/textView_name"
                             android:layout_width="0.0dip"
                             android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
                         android:layout_marginTop="5.0dip"
                         android:ellipsize="end"
                         android:maxLines="2"
-                        android:text="账号：eleveneleven"
+                        android:text="账号：huangshuowen2020"
                         android:textColor="@color/topbar_words_color"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -728,4 +728,43 @@
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
+    <LinearLayout
+        android:id="@+id/login_ll"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/not_login" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9.0dip"
+            android:text="更多好玩功能，登录后解锁哦~"
+            android:textColor="?time_text_color"
+            android:textSize="14.0sp" />
+
+        <com.noahark.moments.ui.widget.TextButton
+            android:onClick="onLoginBtn"
+            android:id="@+id/button_login"
+            android:background="@drawable/bg_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35.0dip"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:minWidth="90.0dip"
+            android:minHeight="34.0dip"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="15.0sp" />
+    </LinearLayout>
+
 </FrameLayout>

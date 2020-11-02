@@ -1,123 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/alphapurple"
-    android:orientation="vertical">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
 
-
-    <!--头像-->
-    <com.facebook.drawee.view.SimpleDraweeView
-        xmlns:fresco="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/profile_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        fresco:roundAsCircle="true"
-        fresco:roundingBorderColor="#FCFCFC"
-        fresco:roundingBorderWidth="6dp"
-        fresco:placeholderImage="@drawable/img_defaultavatar"
-        fresco:failureImage="@drawable/img_defaultavatar"/>
+        android:orientation="vertical">
+
+        <include layout="@layout/title_layout" />
+
+        <include layout="@layout/shadow_bottom" />
 
 
-    <!--帐号密码-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="10dp"
-        android:layout_alignLeft="@+id/view"
-        android:layout_below="@+id/profile_image"
-        android:id="@+id/linearLayout">
-
-        <EditText
-            android:id="@+id/edittext_login_username"
+        <com.facebook.drawee.view.SimpleDraweeView xmlns:fresco="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="@dimen/dp_90"
+            android:layout_height="@dimen/dp_90"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            fresco:failureImage="@drawable/hsj_logo"
+            fresco:placeholderImage="@drawable/hsj_logo"
+            fresco:roundAsCircle="true"
+            fresco:roundingBorderColor="#FCFCFC"
+            fresco:roundingBorderWidth="6dp" />
+        <!--帐号密码-->
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@null"
-            android:hint="帐号/手机/邮箱"
-            style="@style/EditText"/>
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
 
-        <ImageButton
+            <EditText
+                android:id="@+id/edittext_login_username"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="帐号/手机/邮箱" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_editclear"
+                android:onClick="onUsernameEditClearBtn" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignBottom="@+id/linearLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/lightgrey" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <EditText
+                android:id="@+id/edittext_login_password"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="密码"
+                android:inputType="textPassword" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_editclear"
+                android:onClick="onPasswordEditClearBtn" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignBottom="@+id/linearLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/lightgrey" />
+
+        <com.noahark.moments.ui.widget.TextButton
+            android:id="@+id/button2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_double_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_double_normal"
+            android:background="@drawable/bg_login"
+            android:gravity="center"
+            android:minHeight="@dimen/dp_40"
+            android:onClick="onLoginBtn"
+            android:text="登录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_font_size" />
+
+        <TextView
+            android:id="@+id/button_feedback"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/selector_editclear"
-            android:onClick="onUsernameEditClearBtn"/>
-    </LinearLayout>
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/margin_double_normal"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginRight="@dimen/margin_double_normal"
+            android:gravity="center"
+            android:padding="@dimen/margin_normal_half"
+            android:text="@string/cannot_get_sms"
+            android:textColor="@drawable/selector_text_color"
+            android:visibility="gone" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_alignBottom="@+id/linearLayout"
-        android:layout_alignParentLeft="true"
-        android:background="@color/lightgrey"/>
+        <RelativeLayout
+            android:id="@+id/layout_register"
+            android:layout_width="fill_parent"
+            android:layout_height="30.0dip"
+            android:layout_marginLeft="@dimen/margin_double_normal"
+            android:layout_marginTop="@dimen/margin_normal_plus"
+            android:layout_marginRight="@dimen/margin_double_normal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:onClick="onEnterRegisterBtn"
+                android:text="注册"
+                android:textColor="@color/item_text_color"
+                android:textSize="@dimen/small_font_size" />
+
+            <TextView
+                android:id="@+id/textView_reset_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="找回密码"
+                android:textColor="@color/item_text_color"
+                android:textSize="@dimen/small_font_size" />
+        </RelativeLayout>
+    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:gravity="center_vertical"
-        android:paddingRight="10dp"
-        android:layout_below="@+id/linearLayout"
-        android:layout_alignParentLeft="true"
-        android:id="@+id/linearLayout2">
-
-        <EditText
-            android:id="@+id/edittext_login_password"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:background="@null"
-            android:hint="密码"
-            android:inputType="textPassword"
-            style="@style/EditText"/>
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/selector_editclear"
-            android:onClick="onPasswordEditClearBtn"/>
-    </LinearLayout>
-
-    <!--登录-->
-    <Button
-        style="@style/CommonButton"
-        android:layout_width="290dp"
-        android:layout_marginTop="20dp"
-        android:onClick="onLoginBtn"
-        android:text="登录"
-        android:id="@+id/button2"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_centerHorizontal="true"/>
-
-
-    <!--新用户注册-->
-    <TextView
-        style="@style/CircleNickName"
+        android:id="@+id/wechat_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="没有帐号？去注册"
-        android:onClick="onEnterRegisterBtn"
-        android:clickable="true"
-        android:layout_below="@+id/button2"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginBottom="@dimen/dp_38"
+        android:orientation="vertical">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/dp_28"
+            android:layout_height="@dimen/dp_24"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/login_wechat" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/margin_normal_half"
+            android:text="微信登录"
+            android:textColor="?time_text_color"
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
 </RelativeLayout>

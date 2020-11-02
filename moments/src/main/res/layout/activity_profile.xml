@@ -127,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/imageButton3"
-                    android:text="陈十一" />
+                    android:text="黄烁文" />
 
                 <ImageButton
                     android:id="@+id/imageButton3"

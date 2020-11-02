@@ -94,7 +94,7 @@
                 app:srcCompat="@mipmap/right" />
 
             <TextView
-                android:text="陈十一"
+                android:text="黄烁文"
                 android:id="@+id/textView_nick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -130,7 +130,7 @@
 
 
             <TextView
-                android:text="eleven"
+                android:text="huangshuowen2020"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"

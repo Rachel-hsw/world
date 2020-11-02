@@ -5,24 +5,25 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-import com.noahark.moments.ui.activity.LoginActivity;
+import com.noahark.moments.Constans;
 import com.noahark.moments.ui.activity.MeActivity;
 import com.noahark.moments.ui.base.BaseActivity;
+import com.noahark.moments.ui.widget.TextButton;
 import com.rachel.world.R;
 import com.rachel.world.view.fragment.GalleryActivity;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UserCenterActivity extends BaseActivity {
     ImageView imageView;
     TextView textView;
+    TextButton loginBtn;
+    LinearLayout loginLl;
 
     @Override
     protected int layoutResId() {
@@ -33,14 +34,25 @@ public class UserCenterActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loginLl = findViewById(R.id.login_ll);
+        loginLl.setVisibility(!Constans.hasLogined ? View.VISIBLE : View.GONE);
+
         imageView = findViewById(R.id.iv_paid);
-        textView=findViewById(R.id.album_num_tv);
+        textView = findViewById(R.id.album_num_tv);
         imageView.setImageLevel(2);
         textView.setText(String.valueOf(getInSDPhoto()));
 
     }
-    private  int  getInSDPhoto() {
-         String softDir = "/FreeGraffiti";
+    public void onLoginBtn(View view)
+    {
+        Intent intent = new Intent();
+        intent.setClass(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+
+    }
+    private int getInSDPhoto() {
+        String softDir = "/FreeGraffiti";
 
         String photosPath = Environment.getExternalStorageDirectory().getPath() + softDir + "/";
 
