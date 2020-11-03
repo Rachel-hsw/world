@@ -104,8 +104,7 @@
             android:layout_height="30.0dip"
             android:layout_marginLeft="@dimen/margin_double_normal"
             android:layout_marginTop="@dimen/margin_normal_plus"
-            android:layout_marginRight="@dimen/margin_double_normal"
-            android:visibility="gone">
+            android:layout_marginRight="@dimen/margin_double_normal">
 
             <TextView
                 android:id="@id/textView_register"

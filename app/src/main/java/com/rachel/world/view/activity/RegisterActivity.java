@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.noahark.moments.R;
+import com.noahark.moments.utils.TopTitleUtils;
 
 public class RegisterActivity extends Activity {
 
@@ -25,9 +26,11 @@ public class RegisterActivity extends Activity {
     }
 
     public void initView() {
-        mCreateUsernameEditText = (EditText) findViewById(R.id.edittext_register_username);
-        mCreatePasswordEditText = (EditText) findViewById(R.id.edittext_register_password);
-        mConfirmPasswordEditText = (EditText) findViewById(R.id.edittext_register_confirmpassword);
+        mCreateUsernameEditText = findViewById(R.id.edittext_register_username);
+        mCreatePasswordEditText = findViewById(R.id.edittext_register_password);
+        mConfirmPasswordEditText = findViewById(R.id.edittext_register_confirmpassword);
+        new TopTitleUtils(this)
+                .setTitle("注册");
     }
 
     public void initData() {

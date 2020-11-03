@@ -148,7 +148,7 @@
             android:layout_marginTop="@dimen/margin_normal_plus"
             android:layout_marginRight="@dimen/margin_double_normal">
 
-            <TextView
+            <com.noahark.moments.ui.widget.TextButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -158,7 +158,7 @@
                 android:textColor="@color/item_text_color"
                 android:textSize="@dimen/small_font_size" />
 
-            <TextView
+            <com.noahark.moments.ui.widget.TextButton
                 android:id="@+id/textView_reset_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

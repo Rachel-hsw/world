@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
+    android:gravity="center_horizontal"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/alphapurple"
+    android:background="@color/white"
     android:orientation="vertical">
 
+    <include layout="@layout/title_layout" />
 
+    <include layout="@layout/shadow_bottom" />
     <!--头像-->
     <com.facebook.drawee.view.SimpleDraweeView
         xmlns:fresco="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
         fresco:roundAsCircle="true"
         fresco:roundingBorderColor="#FCFCFC"
         fresco:roundingBorderWidth="6dp"
-        fresco:placeholderImage="@drawable/img_defaultavatar"
-        fresco:failureImage="@drawable/img_defaultavatar"/>
+        fresco:placeholderImage="@drawable/hsj_logo"
+        fresco:failureImage="@drawable/hsj_logo"/>
 
     <!--创建用户名-->
     <LinearLayout
@@ -30,9 +31,8 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_marginTop="20dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="10dp"
-        android:layout_below="@+id/profile_image"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:id="@+id/linearLayout">
 
         <EditText
@@ -53,17 +53,20 @@
             android:background="@drawable/selector_editclear"
             android:onClick="onCreateUsernameEditClearBtn"/>
     </LinearLayout>
-
+    <View
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/lightgrey" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/white"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingLeft="15dp"
-        android:paddingRight="10dp"
-        android:layout_below="@+id/linearLayout3"
-        android:layout_alignParentLeft="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:id="@+id/linearLayout4">
 
         <EditText
@@ -85,7 +88,12 @@
             android:background="@drawable/selector_editclear"
             android:onClick="onCreatePasswordEditClearBtn"/>
     </LinearLayout>
-
+    <View
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/lightgrey" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -93,10 +101,8 @@
         android:background="@color/white"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingLeft="15dp"
-        android:paddingRight="10dp"
-        android:layout_below="@+id/linearLayout"
-        android:layout_alignParentLeft="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:id="@+id/linearLayout3">
 
         <EditText
@@ -120,27 +126,27 @@
     </LinearLayout>
 
     <View
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/lightgrey"
-        android:layout_alignBottom="@+id/linearLayout3"/>
+        android:background="@color/lightgrey" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/lightgrey"
-        android:layout_alignBottom="@+id/linearLayout"/>
+
 
     <!--登录-->
-    <Button
-        style="@style/CommonButton"
+    <com.noahark.moments.ui.widget.TextButton
+        android:gravity="center"
+        android:background="@drawable/bg_login"
         android:layout_width="290dp"
         android:onClick="onRegisterBtn"
         android:text="注册"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         android:id="@+id/button"
-        android:layout_below="@+id/linearLayout4"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="33dp"/>
+
+        android:layout_marginTop="33dp"
+        android:layout_height="48dp" />
 
 
     <!--新用户注册-->
@@ -149,10 +155,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="已有帐号？去登录"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:onClick="onBackToLoginBtn"
         android:clickable="true"/>
 
-</RelativeLayout>
+</LinearLayout>
